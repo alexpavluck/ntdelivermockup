@@ -1,0 +1,1669 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NTDeliver — Redesign Mockup</title>
+<style>
+  /* ── Reset & base ── */
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+         font-size: 14px; color: #1a2340; background: #f4f6fb; }
+  a { color: #1a6fc4; text-decoration: none; }
+  a:hover { text-decoration: underline; }
+
+  /* ── Colour tokens ── */
+  :root {
+    --navy:   #1e2d6b;
+    --blue:   #1a6fc4;
+    --teal:   #0aa6a6;
+    --orange: #e87722;
+    --green:  #27a76b;
+    --red:    #d94040;
+    --yellow: #f5a623;
+    --bg:     #f4f6fb;
+    --card:   #ffffff;
+    --border: #dde3ef;
+    --text:   #1a2340;
+    --muted:  #6b7a99;
+  }
+
+  /* ── Top nav ── */
+  nav {
+    background: var(--navy);
+    display: flex; align-items: center;
+    padding: 0 24px; height: 52px;
+    position: sticky; top: 0; z-index: 100;
+    gap: 4px;
+  }
+  .nav-logo {
+    display: flex; align-items: center; gap: 9px;
+    color: #fff; font-weight: 700; font-size: 15px;
+    margin-right: 20px; cursor: pointer;
+    flex-shrink: 0;
+  }
+  .nav-logo svg { width: 28px; height: 28px; }
+  .nav-logo .tagline { font-size: 9px; font-weight: 400; opacity: .7;
+                       letter-spacing: .3px; display: block; line-height: 1.2; }
+
+  .nav-item {
+    color: rgba(255,255,255,.82); font-size: 13px;
+    padding: 6px 12px; border-radius: 4px; cursor: pointer;
+    white-space: nowrap; position: relative;
+    user-select: none; transition: background .15s;
+  }
+  .nav-item:hover, .nav-item.active { background: rgba(255,255,255,.14); color: #fff; }
+  .nav-item .caret { font-size: 10px; margin-left: 3px; opacity: .7; }
+
+  /* dropdown */
+  .nav-dropdown { position: relative; }
+  .nav-dropdown-menu {
+    display: none; position: absolute; top: calc(100% + 4px); left: 0;
+    background: #fff; border: 1px solid var(--border);
+    border-radius: 8px; min-width: 190px;
+    box-shadow: 0 8px 24px rgba(0,0,0,.13);
+    overflow: hidden; z-index: 200;
+  }
+  .nav-dropdown:hover .nav-dropdown-menu { display: block; }
+  .nav-dropdown-menu a {
+    display: flex; align-items: center; gap: 8px;
+    padding: 10px 14px; color: var(--text); font-size: 13px;
+    border-bottom: 1px solid #f0f2f8;
+    cursor: pointer; transition: background .12s;
+  }
+  .nav-dropdown-menu a:last-child { border-bottom: none; }
+  .nav-dropdown-menu a:hover { background: #f0f5ff; }
+  .nav-dropdown-menu .dd-icon { font-size: 15px; }
+  .nav-dropdown-menu .dd-sub { font-size: 11px; color: var(--muted); }
+
+  .nav-search {
+    margin-left: auto; display: flex; align-items: center;
+    background: rgba(255,255,255,.12); border: 1px solid rgba(255,255,255,.2);
+    border-radius: 6px; padding: 4px 10px; gap: 6px; flex-shrink: 0;
+  }
+  .nav-search input {
+    background: none; border: none; outline: none;
+    color: #fff; font-size: 12px; width: 160px;
+  }
+  .nav-search input::placeholder { color: rgba(255,255,255,.5); }
+  .nav-search svg { color: rgba(255,255,255,.55); }
+
+  .nav-user {
+    margin-left: 12px; color: rgba(255,255,255,.8); font-size: 12px;
+    display: flex; align-items: center; gap: 8px; cursor: pointer;
+    flex-shrink: 0;
+  }
+  .avatar {
+    width: 28px; height: 28px; border-radius: 50%;
+    background: var(--orange); color: #fff; font-weight: 700;
+    font-size: 12px; display: flex; align-items: center; justify-content: center;
+  }
+
+  /* ── Page switcher (mockup nav) ── */
+  .page-tabs {
+    background: #e8ecf5; border-bottom: 2px solid var(--border);
+    display: flex; gap: 2px; padding: 0 24px; overflow-x: auto;
+  }
+  .page-tab {
+    padding: 9px 16px; font-size: 12px; font-weight: 600;
+    color: var(--muted); cursor: pointer; border-bottom: 2px solid transparent;
+    margin-bottom: -2px; white-space: nowrap; transition: color .15s;
+  }
+  .page-tab:hover { color: var(--navy); }
+  .page-tab.active { color: var(--navy); border-bottom-color: var(--orange); }
+  .page-label {
+    padding: 6px 24px; background: #fff3e8; font-size: 11px;
+    color: #8a4a00; border-bottom: 1px solid #fcd9b5;
+    display: flex; align-items: center; gap: 6px;
+  }
+
+  /* ── Generic layout helpers ── */
+  .page { display: none; }
+  .page.active { display: block; }
+  .container { max-width: 1320px; margin: 0 auto; padding: 28px 24px; }
+
+  /* cards */
+  .card {
+    background: var(--card); border: 1px solid var(--border);
+    border-radius: 10px; padding: 20px;
+  }
+  .card-title {
+    font-size: 12px; font-weight: 700; text-transform: uppercase;
+    letter-spacing: .6px; color: var(--muted); margin-bottom: 14px;
+  }
+
+  /* kpi tiles */
+  .kpi-row { display: grid; gap: 14px; }
+  .kpi-4 { grid-template-columns: repeat(4, 1fr); }
+  .kpi-5 { grid-template-columns: repeat(5, 1fr); }
+  .kpi-3 { grid-template-columns: repeat(3, 1fr); }
+  .kpi-tile {
+    background: var(--card); border: 1px solid var(--border);
+    border-radius: 10px; padding: 18px 20px;
+    display: flex; flex-direction: column; gap: 4px;
+  }
+  .kpi-tile .label { font-size: 11px; color: var(--muted); font-weight: 600;
+                     text-transform: uppercase; letter-spacing: .5px; }
+  .kpi-tile .value { font-size: 32px; font-weight: 700; line-height: 1.1; }
+  .kpi-tile .sub   { font-size: 11px; color: var(--muted); margin-top: 2px; }
+  .kpi-tile .trend-up   { color: var(--green); font-weight: 600; }
+  .kpi-tile .trend-down { color: var(--red);   font-weight: 600; }
+  .kpi-tile.accent-green { border-top: 3px solid var(--green); }
+  .kpi-tile.accent-blue  { border-top: 3px solid var(--blue);  }
+  .kpi-tile.accent-orange{ border-top: 3px solid var(--orange);}
+  .kpi-tile.accent-red   { border-top: 3px solid var(--red);   }
+  .kpi-tile.accent-teal  { border-top: 3px solid var(--teal);  }
+
+  /* two-column layout */
+  .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .three-col { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px; }
+  .sidebar-layout { display: grid; grid-template-columns: 220px 1fr; gap: 16px;
+                    align-items: start; }
+
+  /* section headings */
+  h2.section-title {
+    font-size: 20px; font-weight: 700; color: var(--navy);
+    margin-bottom: 4px;
+  }
+  p.section-sub { font-size: 13px; color: var(--muted); margin-bottom: 20px; }
+
+  /* ── Workspace cards (home) ── */
+  .workspace-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+  .workspace-card {
+    background: var(--card); border: 1.5px solid var(--border);
+    border-radius: 14px; padding: 28px 24px; cursor: pointer;
+    transition: box-shadow .2s, border-color .2s, transform .15s;
+    position: relative; overflow: hidden;
+  }
+  .workspace-card::before {
+    content: ''; position: absolute; top: 0; left: 0; right: 0; height: 4px;
+  }
+  .workspace-card.country::before  { background: var(--blue); }
+  .workspace-card.partner::before  { background: var(--teal); }
+  .workspace-card.pharma::before   { background: var(--orange); }
+  .workspace-card:hover {
+    box-shadow: 0 6px 24px rgba(26,45,100,.14);
+    border-color: #a0b4d8; transform: translateY(-2px);
+  }
+  .workspace-card .ws-icon { font-size: 32px; margin-bottom: 12px; }
+  .workspace-card .ws-name { font-size: 17px; font-weight: 700; color: var(--navy); margin-bottom: 6px; }
+  .workspace-card .ws-desc { font-size: 12px; color: var(--muted); line-height: 1.6; }
+  .workspace-card .ws-tools { margin-top: 16px; display: flex; flex-wrap: wrap; gap: 6px; }
+  .ws-badge {
+    font-size: 10px; font-weight: 600; padding: 3px 8px; border-radius: 99px;
+    background: #eef2fc; color: var(--navy);
+  }
+  .ws-btn {
+    margin-top: 20px; display: inline-block; padding: 8px 16px;
+    border-radius: 6px; font-size: 12px; font-weight: 600;
+    color: #fff; cursor: pointer; border: none;
+  }
+  .country .ws-btn  { background: var(--blue); }
+  .partner .ws-btn  { background: var(--teal); }
+  .pharma  .ws-btn  { background: var(--orange); }
+
+  /* ── Hero banner ── */
+  .hero {
+    background: linear-gradient(135deg, var(--navy) 0%, #1a5a9a 100%);
+    color: #fff; border-radius: 14px; padding: 36px 40px;
+    margin-bottom: 28px; position: relative; overflow: hidden;
+  }
+  .hero::after {
+    content: ''; position: absolute; right: -60px; top: -60px;
+    width: 300px; height: 300px; border-radius: 50%;
+    background: rgba(255,255,255,.04);
+  }
+  .hero h1 { font-size: 26px; font-weight: 800; margin-bottom: 6px; }
+  .hero p  { font-size: 14px; opacity: .8; max-width: 520px; line-height: 1.6; }
+  .hero .hero-stats {
+    display: flex; gap: 32px; margin-top: 24px;
+  }
+  .hero-stat .hs-val { font-size: 28px; font-weight: 800; }
+  .hero-stat .hs-lbl { font-size: 11px; opacity: .65; margin-top: 2px; }
+
+  /* ── MDA Hero (country workspace) ── */
+  .mda-hero {
+    background: linear-gradient(135deg, #0e2060 0%, #1a6fc4 100%);
+    border-radius: 14px; color: #fff; padding: 28px 32px;
+    display: grid; grid-template-columns: 1fr auto; gap: 24px;
+    align-items: center; margin-bottom: 20px;
+  }
+  .mda-hero h2 { font-size: 22px; font-weight: 800; margin-bottom: 4px; }
+  .mda-hero .mda-sub { font-size: 13px; opacity: .75; margin-bottom: 18px; }
+  .mda-status-pills { display: flex; gap: 10px; flex-wrap: wrap; }
+  .pill {
+    display: inline-flex; align-items: center; gap: 5px;
+    padding: 5px 12px; border-radius: 99px; font-size: 11px; font-weight: 700;
+  }
+  .pill.green  { background: rgba(39,167,107,.22); color: #7ff2be; }
+  .pill.orange { background: rgba(232,119,34,.22);  color: #ffc880; }
+  .pill.red    { background: rgba(217,64,64,.22);   color: #ffaaaa; }
+  .pill.blue   { background: rgba(255,255,255,.15); color: rgba(255,255,255,.9); }
+  .pill .dot { width: 7px; height: 7px; border-radius: 50%; }
+  .pill.green  .dot { background: #27a76b; }
+  .pill.orange .dot { background: var(--orange); }
+  .pill.red    .dot { background: var(--red); }
+  .pill.blue   .dot { background: rgba(255,255,255,.6); }
+  .mda-hero-right { text-align: right; }
+  .countdown { font-size: 48px; font-weight: 900; line-height: 1; }
+  .countdown-lbl { font-size: 12px; opacity: .65; margin-top: 4px; }
+  .mda-action-btn {
+    margin-top: 14px; background: #fff; color: var(--navy);
+    border: none; border-radius: 8px; padding: 10px 20px;
+    font-size: 13px; font-weight: 700; cursor: pointer;
+    white-space: nowrap;
+  }
+  .mda-action-btn:hover { background: #e8f0fe; }
+
+  /* ── Sidebar nav ── */
+  .sidebar-nav {
+    background: var(--card); border: 1px solid var(--border);
+    border-radius: 10px; overflow: hidden;
+  }
+  .sidebar-nav-section { padding: 10px 0; }
+  .sidebar-nav-section + .sidebar-nav-section {
+    border-top: 1px solid var(--border);
+  }
+  .sidebar-nav-heading {
+    font-size: 10px; font-weight: 700; text-transform: uppercase;
+    letter-spacing: .7px; color: var(--muted); padding: 8px 14px 4px;
+  }
+  .sidebar-nav-item {
+    display: flex; align-items: center; gap: 8px;
+    padding: 8px 14px; font-size: 12px; color: var(--text);
+    cursor: pointer; transition: background .12s;
+    border-left: 3px solid transparent;
+  }
+  .sidebar-nav-item:hover { background: #f0f5ff; }
+  .sidebar-nav-item.active {
+    background: #e8f0fe; color: var(--blue);
+    border-left-color: var(--blue); font-weight: 600;
+  }
+  .sidebar-nav-item .sni-icon { font-size: 14px; }
+
+  /* ── Timeline bar ── */
+  .timeline-bar-wrap { margin-top: 8px; }
+  .timeline-bar-labels { display: flex; justify-content: space-between;
+                         font-size: 10px; color: var(--muted); margin-bottom: 4px; }
+  .timeline-bar-track { height: 14px; border-radius: 99px; background: #e8ecf5;
+                        position: relative; overflow: hidden; }
+  .timeline-bar-fill { height: 100%; border-radius: 99px; }
+  .timeline-bar-fill.green  { background: var(--green); }
+  .timeline-bar-fill.orange { background: var(--orange); }
+  .timeline-bar-fill.red    { background: var(--red); }
+
+  /* ── Drug readiness table ── */
+  .readiness-table { width: 100%; border-collapse: collapse; font-size: 12px; }
+  .readiness-table th {
+    background: #f0f4fb; font-weight: 600; font-size: 11px;
+    text-transform: uppercase; letter-spacing: .4px; color: var(--muted);
+    padding: 8px 12px; text-align: left; border-bottom: 1px solid var(--border);
+  }
+  .readiness-table td { padding: 9px 12px; border-bottom: 1px solid #f0f3f8; }
+  .readiness-table tr:last-child td { border-bottom: none; }
+  .readiness-table tr:hover td { background: #fafbff; }
+  .badge {
+    display: inline-block; padding: 2px 8px; border-radius: 99px;
+    font-size: 10px; font-weight: 700;
+  }
+  .badge.ok      { background: #d4f4e6; color: #0a6b3b; }
+  .badge.warn    { background: #fff0d6; color: #7a4600; }
+  .badge.danger  { background: #fde0e0; color: #8b1a1a; }
+  .badge.info    { background: #dceeff; color: #0a3d7a; }
+
+  /* ── Mini sparkline SVG ── */
+  .sparkline { display: block; }
+
+  /* ── Shipment pipeline ── */
+  .pipeline-row {
+    display: flex; align-items: center; gap: 10px;
+    padding: 10px 0; border-bottom: 1px solid #f0f3f8; font-size: 12px;
+  }
+  .pipeline-row:last-child { border-bottom: none; }
+  .pipeline-flag { font-size: 18px; }
+  .pipeline-info { flex: 1; }
+  .pipeline-info .pi-name { font-weight: 600; color: var(--navy); }
+  .pipeline-info .pi-meta { font-size: 11px; color: var(--muted); }
+  .pipeline-eta { font-size: 11px; font-weight: 600;
+                  background: #f0f4fb; padding: 3px 8px; border-radius: 6px; }
+
+  /* ── Gaps & Risks ── */
+  .risk-item {
+    display: flex; gap: 12px; align-items: flex-start;
+    padding: 12px 0; border-bottom: 1px solid #f0f3f8;
+  }
+  .risk-item:last-child { border-bottom: none; }
+  .risk-icon {
+    width: 32px; height: 32px; border-radius: 8px; display: flex;
+    align-items: center; justify-content: center; font-size: 15px; flex-shrink: 0;
+  }
+  .risk-icon.red    { background: #fde0e0; }
+  .risk-icon.orange { background: #fff0d6; }
+  .risk-icon.yellow { background: #fffae0; }
+  .risk-body .rb-title { font-weight: 600; font-size: 12px; color: var(--navy); }
+  .risk-body .rb-desc  { font-size: 11px; color: var(--muted); margin-top: 2px; }
+
+  /* ── All Tools index ── */
+  .filter-bar { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 16px; align-items: center; }
+  .filter-btn {
+    padding: 5px 12px; border: 1.5px solid var(--border); border-radius: 99px;
+    font-size: 11px; font-weight: 600; cursor: pointer; background: var(--card);
+    color: var(--muted); transition: all .15s;
+  }
+  .filter-btn:hover { border-color: var(--blue); color: var(--blue); }
+  .filter-btn.on { background: var(--blue); color: #fff; border-color: var(--blue); }
+  .filter-search {
+    margin-left: auto; border: 1.5px solid var(--border); border-radius: 8px;
+    padding: 5px 12px; font-size: 12px; outline: none; width: 200px;
+  }
+  .tool-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+  .tool-card {
+    background: var(--card); border: 1px solid var(--border); border-radius: 10px;
+    padding: 14px 16px; cursor: pointer; transition: box-shadow .15s, border-color .15s;
+  }
+  .tool-card:hover { box-shadow: 0 4px 16px rgba(0,0,0,.09); border-color: #a0b4d8; }
+  .tool-card .tc-name { font-weight: 700; font-size: 13px; color: var(--navy); margin-bottom: 4px; }
+  .tool-card .tc-desc { font-size: 11px; color: var(--muted); line-height: 1.5; margin-bottom: 10px; }
+  .tc-tags { display: flex; gap: 5px; flex-wrap: wrap; }
+  .tag {
+    font-size: 10px; padding: 2px 7px; border-radius: 99px; font-weight: 600;
+  }
+  .tag.country { background: #dceeff; color: #0a3d7a; }
+  .tag.partner { background: #d4f4f4; color: #0a4e4e; }
+  .tag.pharma  { background: #fff0d6; color: #7a4600; }
+  .tag.planning   { background: #e8e0ff; color: #3a0090; }
+  .tag.inventory  { background: #fde0e0; color: #8b1a1a; }
+  .tag.shipment   { background: #d4f4e6; color: #0a6b3b; }
+  .tag.kpis       { background: #f0f4fb; color: var(--navy); }
+  .tag.download   { background: #f5f0ff; color: #4a0090; }
+  .tag.impact     { background: #fff8e0; color: #6b4a00; }
+
+  /* ── API page ── */
+  .api-card {
+    background: var(--card); border: 1px solid var(--border); border-radius: 10px;
+    padding: 18px 20px; display: flex; gap: 16px; align-items: flex-start;
+    cursor: pointer; transition: box-shadow .15s;
+  }
+  .api-card:hover { box-shadow: 0 4px 16px rgba(0,0,0,.09); }
+  .api-method {
+    font-size: 10px; font-weight: 800; padding: 4px 8px; border-radius: 5px;
+    background: #d4f4e6; color: #0a6b3b; flex-shrink: 0; margin-top: 2px;
+  }
+  .api-name  { font-weight: 700; font-size: 13px; color: var(--navy); margin-bottom: 3px; }
+  .api-path  { font-family: monospace; font-size: 11px; color: var(--blue);
+               background: #f0f5ff; padding: 2px 6px; border-radius: 4px; }
+  .api-desc  { font-size: 11px; color: var(--muted); margin-top: 5px; line-height: 1.5; }
+  .code-block {
+    background: #1a2340; color: #a8d8ff; font-family: monospace;
+    font-size: 11px; border-radius: 8px; padding: 14px 16px; line-height: 1.7;
+    margin-top: 10px; overflow-x: auto;
+  }
+  .code-block .kw  { color: #ff9eb5; }
+  .code-block .str { color: #a8ffb0; }
+  .code-block .num { color: #ffd580; }
+
+  /* ── MDA Planning Tool detail ── */
+  .mda-tool-header {
+    display: flex; align-items: center; gap: 12px; margin-bottom: 20px;
+  }
+  .mda-tool-header h2 { font-size: 20px; font-weight: 800; color: var(--navy); }
+  .mda-tool-header .country-selector {
+    margin-left: auto; padding: 7px 12px; border: 1.5px solid var(--border);
+    border-radius: 8px; font-size: 13px; background: var(--card); cursor: pointer;
+  }
+  .coverage-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .round-block {
+    background: var(--card); border: 1px solid var(--border); border-radius: 10px;
+    padding: 16px 18px;
+  }
+  .round-block .rb-header {
+    display: flex; justify-content: space-between; align-items: center;
+    margin-bottom: 12px;
+  }
+  .round-block .rb-title { font-weight: 700; color: var(--navy); font-size: 13px; }
+  .round-block .rb-date  { font-size: 11px; color: var(--muted); }
+  .round-progress-track {
+    height: 10px; border-radius: 99px; background: #e8ecf5; overflow: hidden; margin: 8px 0;
+  }
+  .round-progress-fill { height: 100%; border-radius: 99px; }
+  .rp-green  { background: var(--green); }
+  .rp-orange { background: var(--orange); }
+  .need-row {
+    display: flex; justify-content: space-between; font-size: 11px;
+    color: var(--muted); margin-top: 6px;
+  }
+  .need-row strong { color: var(--text); }
+  .calendar-mini {
+    display: grid; grid-template-columns: repeat(7, 1fr);
+    gap: 4px; margin-top: 12px;
+  }
+  .cal-day {
+    aspect-ratio: 1; border-radius: 5px; font-size: 10px; font-weight: 600;
+    display: flex; align-items: center; justify-content: center;
+    background: #f0f4fb; color: var(--muted);
+  }
+  .cal-day.mda-day { background: var(--blue); color: #fff; }
+  .cal-day.today   { background: var(--navy); color: #fff; }
+  .cal-day.ship    { background: #d4f4e6; color: #0a6b3b; }
+
+  /* ── Misc utility ── */
+  .mt8  { margin-top: 8px; }
+  .mt14 { margin-top: 14px; }
+  .mt20 { margin-top: 20px; }
+  .mt28 { margin-top: 28px; }
+  .mb14 { margin-bottom: 14px; }
+  .flex-between { display: flex; justify-content: space-between; align-items: center; }
+  .link-sm { font-size: 12px; color: var(--blue); cursor: pointer; }
+  .link-sm:hover { text-decoration: underline; }
+  .divider { border: none; border-top: 1px solid var(--border); margin: 18px 0; }
+  .scroll-y { overflow-y: auto; max-height: 320px; }
+
+  /* status dot */
+  .sdot { display: inline-block; width: 8px; height: 8px; border-radius: 50%; margin-right: 4px; }
+  .sdot.green  { background: var(--green); }
+  .sdot.orange { background: var(--orange); }
+  .sdot.red    { background: var(--red); }
+
+  /* Donor workspace */
+  .global-map-placeholder {
+    background: linear-gradient(135deg, #e8f0fe 0%, #d4eaff 100%);
+    border-radius: 10px; height: 220px; display: flex; align-items: center;
+    justify-content: center; color: var(--muted); font-size: 13px; font-style: italic;
+    position: relative; overflow: hidden;
+  }
+  .map-dots { position: absolute; inset: 0; }
+  .mdot {
+    position: absolute; width: 8px; height: 8px; border-radius: 50%; opacity: .75;
+  }
+
+  /* ── Responsive tweaks ── */
+  @media (max-width: 900px) {
+    .workspace-grid, .kpi-4, .kpi-5, .three-col { grid-template-columns: 1fr 1fr; }
+    .sidebar-layout { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ═══════════════════════════════════════
+     TOP NAVIGATION
+═══════════════════════════════════════ -->
+<nav>
+  <!-- Logo -->
+  <div class="nav-logo" onclick="setPage('home')">
+    <svg viewBox="0 0 28 28" fill="none">
+      <circle cx="14" cy="14" r="13" fill="#1a6fc4"/>
+      <path d="M7 14 L14 7 L21 14 L14 21 Z" fill="#fff" opacity=".9"/>
+      <circle cx="14" cy="14" r="4" fill="#e87722"/>
+    </svg>
+    <div>
+      <span>NTDeliver</span>
+      <span class="tagline">Supply Chain Information System</span>
+    </div>
+  </div>
+
+  <!-- Workspaces dropdown -->
+  <div class="nav-dropdown">
+    <div class="nav-item" id="nav-workspaces">Workspaces <span class="caret">▾</span></div>
+    <div class="nav-dropdown-menu">
+      <a onclick="setPage('country')">
+        <span class="dd-icon">🌍</span>
+        <div><div>Country Workspace</div><div class="dd-sub">MDA Planning · Stock · Orders</div></div>
+      </a>
+      <a onclick="setPage('donor')">
+        <span class="dd-icon">🤝</span>
+        <div><div>Partner / Donor Workspace</div><div class="dd-sub">Portfolio · Gaps · Monitoring</div></div>
+      </a>
+      <a onclick="setPage('pharma')">
+        <span class="dd-icon">💊</span>
+        <div><div>Pharma Workspace</div><div class="dd-sub">Manufacturing · KPIs · Pipeline</div></div>
+      </a>
+    </div>
+  </div>
+
+  <div class="nav-item" onclick="setPage('mda')">MDA Planning Tool</div>
+  <div class="nav-item" onclick="setPage('alltools')">All Tools &amp; Reports</div>
+  <div class="nav-item" onclick="setPage('api')">Data &amp; API</div>
+  <div class="nav-item">Support</div>
+
+  <!-- Search -->
+  <div class="nav-search">
+    <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+      <circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/>
+    </svg>
+    <input placeholder="Enter PO number or search…">
+  </div>
+
+  <!-- User -->
+  <div class="nav-user">
+    <div class="avatar">A</div>
+    <span>alex@standardco.de</span>
+  </div>
+</nav>
+
+<!-- Mockup page switcher -->
+<div class="page-tabs">
+  <div class="page-tab active" data-page="home"     onclick="setPage('home')">🏠 Home</div>
+  <div class="page-tab"        data-page="country"  onclick="setPage('country')">🌍 Country Workspace</div>
+  <div class="page-tab"        data-page="mda"      onclick="setPage('mda')">📋 MDA Planning Tool</div>
+  <div class="page-tab"        data-page="donor"    onclick="setPage('donor')">🤝 Partner / Donor Workspace</div>
+  <div class="page-tab"        data-page="pharma"   onclick="setPage('pharma')">💊 Pharma Workspace</div>
+  <div class="page-tab"        data-page="alltools" onclick="setPage('alltools')">🗂 All Tools &amp; Reports</div>
+  <div class="page-tab"        data-page="api"      onclick="setPage('api')">⚡ Data &amp; API</div>
+</div>
+<div class="page-label">
+  <span>🎨</span> <strong>Mockup — click any tab above or any card/button to navigate between screens</strong>
+</div>
+
+
+<!-- ═══════════════════════════════════════
+     PAGE: HOME
+═══════════════════════════════════════ -->
+<div class="page active" id="page-home">
+<div class="container">
+
+  <!-- Hero -->
+  <div class="hero">
+    <h1>NTDeliver — Supply Chain Intelligence</h1>
+    <p>A single platform for countries, donors, and pharma to plan, track and analyse NTD medicine delivery from order to last-mile.</p>
+    <div class="hero-stats">
+      <div class="hero-stat"><div class="hs-val">47</div><div class="hs-lbl">Countries served</div></div>
+      <div class="hero-stat"><div class="hs-val">1.4B</div><div class="hs-lbl">Tablets tracked (YTD)</div></div>
+      <div class="hero-stat"><div class="hs-val">28</div><div class="hs-lbl">Active POs</div></div>
+      <div class="hero-stat"><div class="hs-val">6</div><div class="hs-lbl">Donor programmes</div></div>
+    </div>
+  </div>
+
+  <!-- Workspace selection -->
+  <h2 class="section-title">Choose your workspace</h2>
+  <p class="section-sub">Each workspace is tailored to your role — with the tools and data you need front and centre.</p>
+
+  <div class="workspace-grid">
+    <!-- Country -->
+    <div class="workspace-card country" onclick="setPage('country')">
+      <div class="ws-icon">🌍</div>
+      <div class="ws-name">Country Workspace</div>
+      <div class="ws-desc">Everything a national NTD programme needs: MDA readiness at a glance, stock on hand, incoming shipments, batch expiries, and documentation.</div>
+      <div class="ws-tools">
+        <span class="ws-badge">MDA Planning Tool</span>
+        <span class="ws-badge">Inventory</span>
+        <span class="ws-badge">Country Summary</span>
+        <span class="ws-badge">Batch Expiry</span>
+        <span class="ws-badge">Proof of Delivery</span>
+      </div>
+      <button class="ws-btn">Open workspace →</button>
+    </div>
+
+    <!-- Partner/Donor -->
+    <div class="workspace-card partner" onclick="setPage('donor')">
+      <div class="ws-icon">🤝</div>
+      <div class="ws-name">Partner / Donor Workspace</div>
+      <div class="ws-desc">Portfolio-level visibility across all countries: order status, gaps and risks, monitoring data, and where partner support is most needed.</div>
+      <div class="ws-tools">
+        <span class="ws-badge">Global KPIs</span>
+        <span class="ws-badge">Gaps &amp; Risks</span>
+        <span class="ws-badge">Monitoring Table</span>
+        <span class="ws-badge">ALB Tracker</span>
+        <span class="ws-badge">Data Exports</span>
+      </div>
+      <button class="ws-btn">Open workspace →</button>
+    </div>
+
+    <!-- Pharma -->
+    <div class="workspace-card pharma" onclick="setPage('pharma')">
+      <div class="ws-icon">💊</div>
+      <div class="ws-name">Pharma Workspace</div>
+      <div class="ws-desc">Manufacturing pipeline, global stock, demand forecasts, KPIs, and collaboration tools for WHO and partner coordination.</div>
+      <div class="ws-tools">
+        <span class="ws-badge">Global Shipped &amp; Forecasted</span>
+        <span class="ws-badge">PO Priority Tool</span>
+        <span class="ws-badge">KPIs</span>
+        <span class="ws-badge">JRSM Status</span>
+        <span class="ws-badge">Greenlight</span>
+      </div>
+      <button class="ws-btn">Open workspace →</button>
+    </div>
+  </div>
+
+  <!-- Quick links row -->
+  <div class="mt28 two-col">
+    <div class="card">
+      <div class="card-title">Recently visited</div>
+      <div style="display:flex;flex-direction:column;gap:8px">
+        <a class="link-sm" onclick="setPage('mda')" style="display:flex;align-items:center;gap:8px">📋 MDA Planning Tool — Nigeria <span style="margin-left:auto;color:var(--muted);font-size:10px">2 hrs ago</span></a>
+        <a class="link-sm" style="display:flex;align-items:center;gap:8px">📦 Country Summary — Ethiopia <span style="margin-left:auto;color:var(--muted);font-size:10px">Yesterday</span></a>
+        <a class="link-sm" style="display:flex;align-items:center;gap:8px">📊 KPIs Dashboard <span style="margin-left:auto;color:var(--muted);font-size:10px">Mon</span></a>
+        <a class="link-sm" style="display:flex;align-items:center;gap:8px">📁 Consolidated Tracking (Download) <span style="margin-left:auto;color:var(--muted);font-size:10px">Mon</span></a>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-title">Notices &amp; alerts</div>
+      <div style="display:flex;flex-direction:column;gap:10px">
+        <div class="risk-item" style="padding:6px 0">
+          <div class="risk-icon red">⚠️</div>
+          <div class="risk-body">
+            <div class="rb-title">344 POs missing packing lists</div>
+            <div class="rb-desc">Review needed before next shipment window</div>
+          </div>
+        </div>
+        <div class="risk-item" style="padding:6px 0">
+          <div class="risk-icon orange">📅</div>
+          <div class="risk-body">
+            <div class="rb-title">3 countries have MDA within 60 days</div>
+            <div class="rb-desc">Myanmar · Kiribati · Zambia — check stock adequacy</div>
+          </div>
+        </div>
+        <div class="risk-item" style="padding:6px 0">
+          <div class="risk-icon yellow">💊</div>
+          <div class="risk-body">
+            <div class="rb-title">Batch expiring in 90 days — Ethiopia ALB</div>
+            <div class="rb-desc">1.2M tablets · Warehouse Addis Ababa</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+</div><!-- /page-home -->
+
+
+<!-- ═══════════════════════════════════════
+     PAGE: COUNTRY WORKSPACE
+═══════════════════════════════════════ -->
+<div class="page" id="page-country">
+<div class="container">
+
+  <!-- MDA Hero -->
+  <div class="mda-hero">
+    <div>
+      <h2>🌍 Country Workspace — Nigeria</h2>
+      <div class="mda-sub">Primary question: What do we have, what's coming, when, and is it enough for our MDAs?</div>
+      <div class="mda-status-pills">
+        <div class="pill green"><span class="dot"></span> IVM: Stock adequate</div>
+        <div class="pill orange"><span class="dot"></span> ALB: Short 2.1M tabs</div>
+        <div class="pill green"><span class="dot"></span> PZQ: Stock adequate</div>
+        <div class="pill blue"><span class="dot"></span> Shipment inbound · ETA Apr 14</div>
+      </div>
+    </div>
+    <div class="mda-hero-right">
+      <div class="countdown">42</div>
+      <div class="countdown-lbl">days until MDA Round 1</div>
+      <button class="mda-action-btn" onclick="setPage('mda')">📋 Open MDA Planning Tool</button>
+    </div>
+  </div>
+
+  <!-- KPI tiles -->
+  <div class="kpi-row kpi-4 mb14">
+    <div class="kpi-tile accent-blue">
+      <div class="label">Drugs on hand</div>
+      <div class="value">18.4M</div>
+      <div class="sub">tablets across 3 warehouses</div>
+    </div>
+    <div class="kpi-tile accent-green">
+      <div class="label">In-transit</div>
+      <div class="value">4.2M</div>
+      <div class="sub">ETA Apr 14, 2025</div>
+    </div>
+    <div class="kpi-tile accent-orange">
+      <div class="label">Expiring &lt;90 days</div>
+      <div class="value">1.2M</div>
+      <div class="sub">ALB · Batch 2022-NGA-04</div>
+    </div>
+    <div class="kpi-tile accent-red">
+      <div class="label">Pending POD</div>
+      <div class="value">3</div>
+      <div class="sub">shipments awaiting proof</div>
+    </div>
+  </div>
+
+  <div class="sidebar-layout">
+    <!-- Left sidebar nav -->
+    <div class="sidebar-nav">
+      <div class="sidebar-nav-section">
+        <div class="sidebar-nav-heading">MDA Planning</div>
+        <div class="sidebar-nav-item active" onclick="setPage('mda')">
+          <span class="sni-icon">📋</span> MDA Planning Tool
+        </div>
+        <div class="sidebar-nav-item">
+          <span class="sni-icon">📈</span> Monthly MDA Planning Data
+        </div>
+      </div>
+      <div class="sidebar-nav-section">
+        <div class="sidebar-nav-heading">Stock &amp; Shipments</div>
+        <div class="sidebar-nav-item">
+          <span class="sni-icon">🏭</span> Inventory
+        </div>
+        <div class="sidebar-nav-item">
+          <span class="sni-icon">⏰</span> Batch Expiry
+        </div>
+        <div class="sidebar-nav-item">
+          <span class="sni-icon">📦</span> Country Summary
+        </div>
+        <div class="sidebar-nav-item">
+          <span class="sni-icon">✅</span> Awaiting Proof of Delivery
+        </div>
+      </div>
+      <div class="sidebar-nav-section">
+        <div class="sidebar-nav-heading">Orders &amp; Docs</div>
+        <div class="sidebar-nav-item">
+          <span class="sni-icon">🔗</span> PO Details
+        </div>
+        <div class="sidebar-nav-item">
+          <span class="sni-icon">⬇️</span> Downloads
+        </div>
+      </div>
+      <div class="sidebar-nav-section">
+        <div class="sidebar-nav-heading">Planning &amp; Coordination</div>
+        <div class="sidebar-nav-item">
+          <span class="sni-icon">📅</span> MDA Report
+        </div>
+        <div class="sidebar-nav-item">
+          <span class="sni-icon">🏥</span> Other Health Campaigns
+        </div>
+      </div>
+    </div>
+
+    <!-- Main content -->
+    <div style="display:flex;flex-direction:column;gap:16px">
+
+      <!-- Drug readiness -->
+      <div class="card">
+        <div class="flex-between mb14">
+          <div class="card-title">Drug readiness vs MDA needs</div>
+          <span class="link-sm" onclick="setPage('mda')">Open full tool →</span>
+        </div>
+        <table class="readiness-table">
+          <thead>
+            <tr>
+              <th>Drug</th><th>On hand</th><th>In transit</th><th>Needed (Round 1)</th><th>Adequacy</th><th>Status</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Ivermectin (IVM)</strong></td>
+              <td>8.6M</td><td>—</td><td>7.2M</td>
+              <td>
+                <div class="timeline-bar-track" style="width:100px">
+                  <div class="timeline-bar-fill green" style="width:100%"></div>
+                </div>
+              </td>
+              <td><span class="badge ok">✓ Sufficient</span></td>
+            </tr>
+            <tr>
+              <td><strong>Albendazole (ALB)</strong></td>
+              <td>6.1M</td><td>4.2M</td><td>12.4M</td>
+              <td>
+                <div class="timeline-bar-track" style="width:100px">
+                  <div class="timeline-bar-fill orange" style="width:83%"></div>
+                </div>
+              </td>
+              <td><span class="badge warn">⚠ Short 2.1M</span></td>
+            </tr>
+            <tr>
+              <td><strong>Praziquantel (PZQ)</strong></td>
+              <td>3.7M</td><td>—</td><td>2.9M</td>
+              <td>
+                <div class="timeline-bar-track" style="width:100px">
+                  <div class="timeline-bar-fill green" style="width:100%"></div>
+                </div>
+              </td>
+              <td><span class="badge ok">✓ Sufficient</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="two-col">
+        <!-- Incoming shipments -->
+        <div class="card">
+          <div class="card-title">Incoming shipments</div>
+          <div class="pipeline-row">
+            <span class="pipeline-flag">🇳🇬</span>
+            <div class="pipeline-info">
+              <div class="pi-name">ALB — 4.2M tablets</div>
+              <div class="pi-meta">PO 203757763 · Eisai · AFRO</div>
+            </div>
+            <div class="pipeline-eta">ETA Apr 14</div>
+          </div>
+          <div class="pipeline-row">
+            <span class="pipeline-flag">🇳🇬</span>
+            <div class="pipeline-info">
+              <div class="pi-name">IVM — 1.8M tablets</div>
+              <div class="pi-meta">PO 203678419 · Merck · AFRO</div>
+            </div>
+            <div class="pipeline-eta">ETA May 3</div>
+          </div>
+          <div class="pipeline-row">
+            <span class="pipeline-flag">🇳🇬</span>
+            <div class="pipeline-info">
+              <div class="pi-name">PZQ — 500K tablets</div>
+              <div class="pi-meta">PO 203692980 · GSK · AFRO</div>
+            </div>
+            <div class="pipeline-eta">ETA May 22</div>
+          </div>
+          <div style="margin-top:10px">
+            <a class="link-sm">View all shipments in Country Summary →</a>
+          </div>
+        </div>
+
+        <!-- Batch expiry -->
+        <div class="card">
+          <div class="card-title">Batch expiry watch</div>
+          <div class="pipeline-row">
+            <span class="pipeline-flag">⚠️</span>
+            <div class="pipeline-info">
+              <div class="pi-name">ALB · Batch 2022-NGA-04</div>
+              <div class="pi-meta">1.2M tablets · Addis Ababa WH</div>
+            </div>
+            <span class="badge warn">68 days</span>
+          </div>
+          <div class="pipeline-row">
+            <span class="pipeline-flag">✅</span>
+            <div class="pipeline-info">
+              <div class="pi-name">IVM · Batch 2023-NGA-01</div>
+              <div class="pi-meta">8.6M tablets · Lagos WH</div>
+            </div>
+            <span class="badge ok">Apr 2026</span>
+          </div>
+          <div class="pipeline-row">
+            <span class="pipeline-flag">✅</span>
+            <div class="pipeline-info">
+              <div class="pi-name">PZQ · Batch 2023-NGA-02</div>
+              <div class="pi-meta">3.7M tablets · Abuja WH</div>
+            </div>
+            <span class="badge ok">Mar 2026</span>
+          </div>
+          <div style="margin-top:10px">
+            <a class="link-sm">View full Batch Expiry report →</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Awaiting POD -->
+      <div class="card">
+        <div class="flex-between mb14">
+          <div class="card-title">Awaiting proof of delivery</div>
+          <span class="badge danger">3 pending</span>
+        </div>
+        <table class="readiness-table">
+          <thead><tr><th>PO Number</th><th>Drug</th><th>Qty</th><th>Delivered</th><th>Action</th></tr></thead>
+          <tbody>
+            <tr>
+              <td><a class="link-sm">203434234</a></td><td>ALB</td><td>500K</td>
+              <td>Feb 12, 2025</td><td><span class="badge warn">Upload POD</span></td>
+            </tr>
+            <tr>
+              <td><a class="link-sm">203576831</a></td><td>IVM</td><td>1.2M</td>
+              <td>Jan 28, 2025</td><td><span class="badge warn">Upload POD</span></td>
+            </tr>
+            <tr>
+              <td><a class="link-sm">203502903</a></td><td>PZQ</td><td>900K</td>
+              <td>Jan 15, 2025</td><td><span class="badge danger">Overdue</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+    </div><!-- /main content -->
+  </div><!-- /sidebar-layout -->
+
+</div>
+</div><!-- /page-country -->
+
+
+<!-- ═══════════════════════════════════════
+     PAGE: MDA PLANNING TOOL (detail)
+═══════════════════════════════════════ -->
+<div class="page" id="page-mda">
+<div class="container">
+
+  <div class="mda-tool-header">
+    <div>
+      <div style="font-size:11px;color:var(--muted);margin-bottom:2px">
+        Country Workspace → MDA Planning
+      </div>
+      <h2>📋 MDA Planning Tool</h2>
+    </div>
+    <select class="country-selector">
+      <option>Nigeria</option>
+      <option>Ethiopia</option>
+      <option>Myanmar</option>
+      <option>Zambia</option>
+      <option>Indonesia</option>
+    </select>
+    <select class="country-selector" style="margin-left:8px">
+      <option>2025</option><option>2026</option>
+    </select>
+    <button style="margin-left:8px;padding:8px 16px;background:var(--navy);color:#fff;border:none;border-radius:8px;font-size:12px;font-weight:700;cursor:pointer">⬇ Export</button>
+  </div>
+
+  <!-- Summary KPIs -->
+  <div class="kpi-row kpi-5 mb14">
+    <div class="kpi-tile accent-blue">
+      <div class="label">Target population</div>
+      <div class="value">14.2M</div>
+      <div class="sub">eligible for treatment</div>
+    </div>
+    <div class="kpi-tile accent-green">
+      <div class="label">Total drugs needed</div>
+      <div class="value">22.5M</div>
+      <div class="sub">tablets across 2 rounds</div>
+    </div>
+    <div class="kpi-tile accent-teal">
+      <div class="label">Stock on hand</div>
+      <div class="value">18.4M</div>
+      <div class="sub">+ 4.2M in transit</div>
+    </div>
+    <div class="kpi-tile accent-orange">
+      <div class="label">Coverage gap</div>
+      <div class="value">2.1M</div>
+      <div class="sub">ALB · Round 1 shortfall</div>
+    </div>
+    <div class="kpi-tile accent-red">
+      <div class="label">Days to Round 1</div>
+      <div class="value">42</div>
+      <div class="sub">Planned: Apr 28, 2025</div>
+    </div>
+  </div>
+
+  <div class="coverage-grid">
+    <!-- Round 1 -->
+    <div class="round-block">
+      <div class="rb-header">
+        <div class="rb-title">Round 1 — April 28, 2025</div>
+        <span class="badge warn">Planning</span>
+      </div>
+      <div style="font-size:11px;color:var(--muted);margin-bottom:8px">IVM + ALB co-administration · LF / Oncho endemic zones</div>
+
+      <div style="font-size:12px;font-weight:600;margin-bottom:4px">Ivermectin (IVM)</div>
+      <div class="round-progress-track">
+        <div class="round-progress-fill rp-green" style="width:100%"></div>
+      </div>
+      <div class="need-row"><span>On hand</span><strong>8.6M / 7.2M needed</strong></div>
+      <div class="need-row"><span>Status</span><strong style="color:var(--green)">✓ Sufficient</strong></div>
+
+      <hr class="divider">
+
+      <div style="font-size:12px;font-weight:600;margin-bottom:4px">Albendazole (ALB)</div>
+      <div class="round-progress-track">
+        <div class="round-progress-fill rp-orange" style="width:49%"></div>
+      </div>
+      <div class="need-row"><span>On hand + transit</span><strong>10.3M / 12.4M needed</strong></div>
+      <div class="need-row"><span>Gap</span><strong style="color:var(--orange)">⚠ 2.1M tablets</strong></div>
+
+      <div style="margin-top:14px;padding:10px 12px;background:#fff8e0;border-radius:8px;font-size:11px;color:#6b4a00">
+        💡 <strong>Recommendation:</strong> Raise emergency request or confirm May 3 IVM shipment covers partial gap. Confirm with Eisai.
+      </div>
+    </div>
+
+    <!-- Round 2 -->
+    <div class="round-block">
+      <div class="rb-header">
+        <div class="rb-title">Round 2 — September 2025</div>
+        <span class="badge info">Forecast</span>
+      </div>
+      <div style="font-size:11px;color:var(--muted);margin-bottom:8px">IVM + ALB + PZQ · Full programme</div>
+
+      <div style="font-size:12px;font-weight:600;margin-bottom:4px">Ivermectin (IVM)</div>
+      <div class="round-progress-track">
+        <div class="round-progress-fill rp-green" style="width:68%"></div>
+      </div>
+      <div class="need-row"><span>Forecast need</span><strong>8.8M tablets</strong></div>
+      <div class="need-row"><span>Projected stock</span><strong style="color:var(--green)">6.0M (post Round 1)</strong></div>
+
+      <hr class="divider">
+
+      <div style="font-size:12px;font-weight:600;margin-bottom:4px">Praziquantel (PZQ)</div>
+      <div class="round-progress-track">
+        <div class="round-progress-fill rp-green" style="width:100%"></div>
+      </div>
+      <div class="need-row"><span>On hand</span><strong>3.7M / 2.9M needed</strong></div>
+      <div class="need-row"><span>Status</span><strong style="color:var(--green)">✓ Sufficient</strong></div>
+
+      <div style="margin-top:14px;padding:10px 12px;background:#d4f4e6;border-radius:8px;font-size:11px;color:#0a4e2b">
+        ✅ Round 2 PZQ and ALB in-transit shipment should cover needs. Monitor IVM depletion after Round 1.
+      </div>
+    </div>
+  </div>
+
+  <!-- Planned vs Shipped vs Used chart placeholder -->
+  <div class="card mt14">
+    <div class="flex-between mb14">
+      <div class="card-title">Monthly MDA Planning Data — Planned vs Shipped vs Used (ALB · Nigeria)</div>
+      <a class="link-sm">View full dashboard →</a>
+    </div>
+    <div style="width:100%;height:160px;position:relative">
+      <svg width="100%" height="160" viewBox="0 0 800 160" preserveAspectRatio="none">
+        <!-- Grid lines -->
+        <line x1="0" y1="40"  x2="800" y2="40"  stroke="#eee" stroke-width="1"/>
+        <line x1="0" y1="80"  x2="800" y2="80"  stroke="#eee" stroke-width="1"/>
+        <line x1="0" y1="120" x2="800" y2="120" stroke="#eee" stroke-width="1"/>
+        <!-- Planned bar (blue) -->
+        <rect x="20"  y="30"  width="60" height="70" fill="#1a6fc4" rx="3" opacity=".85"/>
+        <rect x="140" y="25"  width="60" height="75" fill="#1a6fc4" rx="3" opacity=".85"/>
+        <rect x="260" y="35"  width="60" height="65" fill="#1a6fc4" rx="3" opacity=".85"/>
+        <rect x="380" y="20"  width="60" height="80" fill="#1a6fc4" rx="3" opacity=".85"/>
+        <rect x="500" y="28"  width="60" height="72" fill="#1a6fc4" rx="3" opacity=".85"/>
+        <rect x="620" y="22"  width="60" height="78" fill="#1a6fc4" rx="3" opacity=".85"/>
+        <!-- Shipped bar (teal) -->
+        <rect x="82"  y="45"  width="50" height="55" fill="#0aa6a6" rx="3" opacity=".85"/>
+        <rect x="202" y="38"  width="50" height="62" fill="#0aa6a6" rx="3" opacity=".85"/>
+        <rect x="322" y="50"  width="50" height="50" fill="#0aa6a6" rx="3" opacity=".85"/>
+        <rect x="442" y="32"  width="50" height="68" fill="#0aa6a6" rx="3" opacity=".85"/>
+        <rect x="562" y="40"  width="50" height="60" fill="#0aa6a6" rx="3" opacity=".85"/>
+        <rect x="682" y="35"  width="50" height="65" fill="#0aa6a6" rx="3" opacity=".85"/>
+        <!-- Used line -->
+        <polyline points="47,105 167,92 287,110 407,88 527,95 647,82"
+                  fill="none" stroke="#e87722" stroke-width="2.5" stroke-dasharray="5,3"/>
+        <!-- X labels -->
+        <text x="50"  y="155" font-size="10" fill="#6b7a99" text-anchor="middle">Oct</text>
+        <text x="170" y="155" font-size="10" fill="#6b7a99" text-anchor="middle">Nov</text>
+        <text x="290" y="155" font-size="10" fill="#6b7a99" text-anchor="middle">Dec</text>
+        <text x="410" y="155" font-size="10" fill="#6b7a99" text-anchor="middle">Jan</text>
+        <text x="530" y="155" font-size="10" fill="#6b7a99" text-anchor="middle">Feb</text>
+        <text x="650" y="155" font-size="10" fill="#6b7a99" text-anchor="middle">Mar</text>
+      </svg>
+      <!-- legend -->
+      <div style="position:absolute;top:4px;right:10px;display:flex;gap:14px;font-size:10px;color:var(--muted)">
+        <span><span style="display:inline-block;width:10px;height:10px;background:#1a6fc4;border-radius:2px;margin-right:3px"></span>Planned</span>
+        <span><span style="display:inline-block;width:10px;height:10px;background:#0aa6a6;border-radius:2px;margin-right:3px"></span>Shipped</span>
+        <span style="color:var(--orange)">— — Used</span>
+      </div>
+    </div>
+  </div>
+
+</div>
+</div><!-- /page-mda -->
+
+
+<!-- ═══════════════════════════════════════
+     PAGE: PARTNER / DONOR WORKSPACE
+═══════════════════════════════════════ -->
+<div class="page" id="page-donor">
+<div class="container">
+
+  <div class="hero" style="background:linear-gradient(135deg,#0a5a5a 0%,#0aa6a6 100%);padding:24px 32px;margin-bottom:20px">
+    <h1 style="font-size:20px">🤝 Partner / Donor Workspace</h1>
+    <p>Primary questions: Are orders placed, where are they, what's missing, and how can we support governments?</p>
+  </div>
+
+  <!-- Global KPIs -->
+  <div class="kpi-row kpi-5 mb14">
+    <div class="kpi-tile accent-teal">
+      <div class="label">Countries applying</div>
+      <div class="value">47</div>
+      <div class="sub">active programmes 2025</div>
+    </div>
+    <div class="kpi-tile accent-blue">
+      <div class="label">Tablets planned</div>
+      <div class="value">1.4B</div>
+      <div class="sub">cumulative YTD</div>
+    </div>
+    <div class="kpi-tile accent-green">
+      <div class="label">Tablets shipped</div>
+      <div class="value">1.1B</div>
+      <div class="sub"><span class="trend-up">↑ 9%</span> vs 2024</div>
+    </div>
+    <div class="kpi-tile accent-orange">
+      <div class="label">Avg lead time</div>
+      <div class="value">94d</div>
+      <div class="sub">order to delivery</div>
+    </div>
+    <div class="kpi-tile accent-red">
+      <div class="label">Countries at risk</div>
+      <div class="value">7</div>
+      <div class="sub">insufficient stock vs MDA</div>
+    </div>
+  </div>
+
+  <div class="two-col">
+    <!-- Global map placeholder -->
+    <div class="card">
+      <div class="card-title">Global portfolio — country status</div>
+      <div class="global-map-placeholder">
+        <div class="map-dots">
+          <div class="mdot" style="left:20%;top:35%;background:#27a76b"></div>
+          <div class="mdot" style="left:22%;top:55%;background:#27a76b"></div>
+          <div class="mdot" style="left:30%;top:40%;background:#f5a623"></div>
+          <div class="mdot" style="left:48%;top:30%;background:#27a76b"></div>
+          <div class="mdot" style="left:52%;top:45%;background:#d94040"></div>
+          <div class="mdot" style="left:55%;top:60%;background:#27a76b"></div>
+          <div class="mdot" style="left:65%;top:50%;background:#f5a623"></div>
+          <div class="mdot" style="left:70%;top:35%;background:#27a76b"></div>
+          <div class="mdot" style="left:75%;top:55%;background:#d94040"></div>
+          <div class="mdot" style="left:40%;top:65%;background:#27a76b"></div>
+          <div class="mdot" style="left:25%;top:70%;background:#27a76b"></div>
+          <div class="mdot" style="left:80%;top:65%;background:#f5a623"></div>
+        </div>
+        <span>🗺 Interactive world map · 47 countries</span>
+      </div>
+      <div style="display:flex;gap:14px;margin-top:10px;font-size:10px;color:var(--muted)">
+        <span><span class="sdot green"></span>On track (38)</span>
+        <span><span class="sdot orange"></span>At risk (7)</span>
+        <span><span class="sdot red"></span>Critical (2)</span>
+      </div>
+    </div>
+
+    <!-- Gaps & Risks -->
+    <div class="card">
+      <div class="card-title">Gaps &amp; Risks</div>
+      <div class="risk-item">
+        <div class="risk-icon red">🚨</div>
+        <div class="risk-body">
+          <div class="rb-title">Myanmar — ALB · MDA in 18 days, stock insufficient</div>
+          <div class="rb-desc">2.8M tablets needed · 0.4M on hand · No inbound shipment</div>
+        </div>
+      </div>
+      <div class="risk-item">
+        <div class="risk-icon red">🚨</div>
+        <div class="risk-body">
+          <div class="rb-title">Kiribati — IVM · Batch expiring before MDA date</div>
+          <div class="rb-desc">240K tablets · Expiry Jun 2025 · MDA planned Aug 2025</div>
+        </div>
+      </div>
+      <div class="risk-item">
+        <div class="risk-icon orange">⚠️</div>
+        <div class="risk-body">
+          <div class="rb-title">Nigeria — ALB · 2.1M tablet shortfall for Round 1</div>
+          <div class="rb-desc">Partial coverage by inbound shipment; confirm with Eisai</div>
+        </div>
+      </div>
+      <div class="risk-item">
+        <div class="risk-icon orange">⚠️</div>
+        <div class="risk-body">
+          <div class="rb-title">Zambia — 3 POs missing proof of delivery documentation</div>
+          <div class="rb-desc">Required for donor reporting · Oldest: Jan 15, 2025</div>
+        </div>
+      </div>
+      <div class="risk-item">
+        <div class="risk-icon yellow">💊</div>
+        <div class="risk-body">
+          <div class="rb-title">Ethiopia — Large ALB batch expiring in 68 days</div>
+          <div class="rb-desc">1.2M tablets · Accelerate MDA or consider redistribution</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Monitoring table excerpt -->
+  <div class="card mt14">
+    <div class="flex-between mb14">
+      <div class="card-title">Monitoring table — recent updates</div>
+      <div style="display:flex;gap:8px">
+        <span class="link-sm">Filter by donor ▾</span>
+        <span class="link-sm" style="margin-left:8px">Download full table ⬇</span>
+      </div>
+    </div>
+    <table class="readiness-table">
+      <thead>
+        <tr><th>PO Number</th><th>Country</th><th>Drug</th><th>Donor</th><th>Qty</th><th>Stage</th><th>JRSM Status</th><th>Updated</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><a class="link-sm">203757763</a></td><td>Malaysia</td><td>IVM</td><td>Eisai</td><td>1.2M</td><td><span class="badge info">Issued</span></td><td><span class="badge ok">Approved</span></td><td>Mar 1</td></tr>
+        <tr><td><a class="link-sm">203692980</a></td><td>Zimbabwe</td><td>ALB</td><td>Eisai</td><td>800K</td><td><span class="badge ok">Delivered</span></td><td><span class="badge ok">Approved</span></td><td>Feb 28</td></tr>
+        <tr><td><a class="link-sm">203678419</a></td><td>Nigeria</td><td>IVM</td><td>Merck</td><td>1.8M</td><td><span class="badge warn">In transit</span></td><td><span class="badge warn">Pending</span></td><td>Mar 2</td></tr>
+        <tr><td><a class="link-sm">203576831</a></td><td>Guyana</td><td>ALB</td><td>Eisai</td><td>200K</td><td><span class="badge ok">Delivered</span></td><td><span class="badge info">Under review</span></td><td>Feb 20</td></tr>
+        <tr><td><a class="link-sm">203645215</a></td><td>Denmark</td><td>IVM</td><td>J&amp;J</td><td>500K</td><td><span class="badge info">Issued</span></td><td><span class="badge ok">Approved</span></td><td>Mar 1</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+</div>
+</div><!-- /page-donor -->
+
+
+<!-- ═══════════════════════════════════════
+     PAGE: PHARMA WORKSPACE
+═══════════════════════════════════════ -->
+<div class="page" id="page-pharma">
+<div class="container">
+
+  <div class="hero" style="background:linear-gradient(135deg,#7a3000 0%,#e87722 100%);padding:24px 32px;margin-bottom:20px">
+    <h1 style="font-size:20px">💊 Pharma Workspace</h1>
+    <p>Primary questions: How much is on hand, what's in the pipeline, what is demand over time, and what are our KPIs?</p>
+  </div>
+
+  <div class="kpi-row kpi-4 mb14">
+    <div class="kpi-tile accent-orange">
+      <div class="label">Tablets planned YTD</div>
+      <div class="value">1.4B</div>
+      <div class="sub"><span class="trend-up">↑ 12%</span> vs prior year</div>
+    </div>
+    <div class="kpi-tile accent-green">
+      <div class="label">Tablets shipped YTD</div>
+      <div class="value">1.1B</div>
+      <div class="sub">79% of planned</div>
+    </div>
+    <div class="kpi-tile accent-blue">
+      <div class="label">Avg lead time (order→ship)</div>
+      <div class="value">94d</div>
+      <div class="sub"><span class="trend-down">↑ 6d</span> vs target 88d</div>
+    </div>
+    <div class="kpi-tile accent-red">
+      <div class="label">On-time delivery rate</div>
+      <div class="value">71%</div>
+      <div class="sub"><span class="trend-down">↓ 4%</span> vs last quarter</div>
+    </div>
+  </div>
+
+  <div class="two-col">
+    <!-- Global Shipped & Forecasted -->
+    <div class="card">
+      <div class="card-title">Global shipped &amp; forecasted (ALB · by month)</div>
+      <div style="width:100%;height:140px;position:relative">
+        <svg width="100%" height="140" viewBox="0 0 500 140" preserveAspectRatio="none">
+          <line x1="0" y1="30"  x2="500" y2="30"  stroke="#eee" stroke-width="1"/>
+          <line x1="0" y1="70"  x2="500" y2="70"  stroke="#eee" stroke-width="1"/>
+          <line x1="0" y1="110" x2="500" y2="110" stroke="#eee" stroke-width="1"/>
+          <!-- Shipped (solid fill) -->
+          <rect x="10"  y="45" width="35" height="65" fill="#e87722" rx="2" opacity=".85"/>
+          <rect x="80"  y="30" width="35" height="80" fill="#e87722" rx="2" opacity=".85"/>
+          <rect x="150" y="55" width="35" height="55" fill="#e87722" rx="2" opacity=".85"/>
+          <rect x="220" y="40" width="35" height="70" fill="#e87722" rx="2" opacity=".85"/>
+          <rect x="290" y="35" width="35" height="75" fill="#e87722" rx="2" opacity=".85"/>
+          <!-- Forecast (striped) -->
+          <rect x="360" y="25" width="35" height="85" fill="#e87722" rx="2" opacity=".4"/>
+          <rect x="430" y="20" width="35" height="90" fill="#e87722" rx="2" opacity=".4"/>
+          <text x="365" y="20" font-size="9" fill="#e87722" font-weight="bold">Forecast →</text>
+          <!-- Labels -->
+          <text x="27"  y="128" font-size="9" fill="#6b7a99" text-anchor="middle">Oct</text>
+          <text x="97"  y="128" font-size="9" fill="#6b7a99" text-anchor="middle">Nov</text>
+          <text x="167" y="128" font-size="9" fill="#6b7a99" text-anchor="middle">Dec</text>
+          <text x="237" y="128" font-size="9" fill="#6b7a99" text-anchor="middle">Jan</text>
+          <text x="307" y="128" font-size="9" fill="#6b7a99" text-anchor="middle">Feb</text>
+          <text x="377" y="128" font-size="9" fill="#6b7a99" text-anchor="middle">Mar</text>
+          <text x="447" y="128" font-size="9" fill="#6b7a99" text-anchor="middle">Apr</text>
+        </svg>
+      </div>
+      <a class="link-sm" style="display:block;margin-top:6px">View by product, region, or country →</a>
+    </div>
+
+    <!-- PO Priority Tool -->
+    <div class="card">
+      <div class="card-title">PO Priority Tool — packing &amp; shipping priority</div>
+      <div style="font-size:11px;color:var(--muted);margin-bottom:10px">Priority score based on MDA urgency, stock adequacy, and lead time</div>
+      <table class="readiness-table">
+        <thead><tr><th>Rank</th><th>PO</th><th>Country</th><th>Drug</th><th>MDA in</th><th>Priority</th></tr></thead>
+        <tbody>
+          <tr><td><strong>#1</strong></td><td>203692980</td><td>Myanmar</td><td>ALB</td><td>18 days</td><td><span class="badge danger">🔴 Critical</span></td></tr>
+          <tr><td><strong>#2</strong></td><td>203678419</td><td>Nigeria</td><td>ALB</td><td>42 days</td><td><span class="badge warn">🟠 High</span></td></tr>
+          <tr><td><strong>#3</strong></td><td>203576831</td><td>Zambia</td><td>IVM</td><td>56 days</td><td><span class="badge warn">🟠 High</span></td></tr>
+          <tr><td><strong>#4</strong></td><td>203645215</td><td>Indonesia</td><td>PZQ</td><td>90 days</td><td><span class="badge ok">🟢 Normal</span></td></tr>
+        </tbody>
+      </table>
+      <a class="link-sm" style="display:block;margin-top:8px">Open full PO Priority Tool →</a>
+    </div>
+  </div>
+
+  <div class="two-col mt14">
+    <!-- Greenlight performance -->
+    <div class="card">
+      <div class="card-title">Greenlight performance</div>
+      <div class="kpi-row kpi-3" style="margin-bottom:12px">
+        <div class="kpi-tile" style="padding:10px 12px">
+          <div class="label" style="font-size:10px">Approved &lt;30d</div>
+          <div class="value" style="font-size:22px">64%</div>
+        </div>
+        <div class="kpi-tile" style="padding:10px 12px">
+          <div class="label" style="font-size:10px">Avg approval time</div>
+          <div class="value" style="font-size:22px">38d</div>
+        </div>
+        <div class="kpi-tile" style="padding:10px 12px">
+          <div class="label" style="font-size:10px">Pending review</div>
+          <div class="value" style="font-size:22px">12</div>
+        </div>
+      </div>
+      <a class="link-sm">View Greenlight Performance dashboard →</a>
+    </div>
+
+    <!-- JRSM / Recent comments -->
+    <div class="card">
+      <div class="card-title">Recent comments &amp; JRSM status</div>
+      <div style="display:flex;flex-direction:column;gap:10px;font-size:11px">
+        <div style="padding:8px;background:#f8faff;border-radius:6px;border-left:3px solid var(--blue)">
+          <strong>WHO — Nigeria ALB</strong> · Mar 1<br>
+          <span style="color:var(--muted)">"Confirm ETA on AST/25/0290 — country team waiting on packing list"</span>
+        </div>
+        <div style="padding:8px;background:#f8faff;border-radius:6px;border-left:3px solid var(--teal)">
+          <strong>Eisai — Myanmar</strong> · Feb 28<br>
+          <span style="color:var(--muted)">"Emergency request approved; shipment being prepared"</span>
+        </div>
+        <div style="padding:8px;background:#fff8e0;border-radius:6px;border-left:3px solid var(--yellow)">
+          <strong>Merck — Zambia IVM</strong> · Feb 25<br>
+          <span style="color:var(--muted)">"JRSM review pending — additional data requested"</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+</div><!-- /page-pharma -->
+
+
+<!-- ═══════════════════════════════════════
+     PAGE: ALL TOOLS & REPORTS (indexed)
+═══════════════════════════════════════ -->
+<div class="page" id="page-alltools">
+<div class="container">
+
+  <h2 class="section-title">All Tools &amp; Reports</h2>
+  <p class="section-sub">Searchable index of every tool, dashboard, and download — tagged by audience and function.</p>
+
+  <div class="filter-bar">
+    <span style="font-size:11px;font-weight:700;color:var(--muted);margin-right:4px">Audience:</span>
+    <span class="filter-btn on">All</span>
+    <span class="filter-btn">Country</span>
+    <span class="filter-btn">Partner/Donor</span>
+    <span class="filter-btn">Pharma</span>
+    <span style="font-size:11px;font-weight:700;color:var(--muted);margin-left:12px;margin-right:4px">Function:</span>
+    <span class="filter-btn">Planning</span>
+    <span class="filter-btn">Inventory</span>
+    <span class="filter-btn">Shipment tracking</span>
+    <span class="filter-btn">KPIs</span>
+    <span class="filter-btn">Download</span>
+    <input class="filter-search" placeholder="🔍  Search tools…">
+  </div>
+
+  <!-- Operational Tools section -->
+  <div class="card-title mt14 mb14">Operational Tools</div>
+  <div class="tool-grid">
+    <div class="tool-card" onclick="setPage('mda')">
+      <div class="tc-name">📋 MDA Planning Tool</div>
+      <div class="tc-desc">Central planning tool: stock vs MDA needs, drug adequacy by round, gap alerts, and export. The primary entry point for country teams.</div>
+      <div class="tc-tags">
+        <span class="tag country">Country</span>
+        <span class="tag planning">Planning</span>
+        <span class="tag inventory">Inventory</span>
+      </div>
+    </div>
+    <div class="tool-card">
+      <div class="tc-name">🏭 Inventory</div>
+      <div class="tc-desc">Drugs on hand by batch, warehouse, and expiry date. Filterable by country, product, and date range.</div>
+      <div class="tc-tags">
+        <span class="tag country">Country</span>
+        <span class="tag pharma">Pharma</span>
+        <span class="tag inventory">Inventory</span>
+      </div>
+    </div>
+    <div class="tool-card">
+      <div class="tc-name">⏰ Batch Expiry</div>
+      <div class="tc-desc">Quick "what expires when" view to identify at-risk stock. Supports redistribution and accelerated MDA decisions.</div>
+      <div class="tc-tags">
+        <span class="tag country">Country</span>
+        <span class="tag pharma">Pharma</span>
+        <span class="tag inventory">Inventory</span>
+      </div>
+    </div>
+    <div class="tool-card">
+      <div class="tc-name">📦 Country Summary</div>
+      <div class="tc-desc">All POs, quantities, timelines, and statuses for a single country in one consolidated view.</div>
+      <div class="tc-tags">
+        <span class="tag country">Country</span>
+        <span class="tag shipment">Shipment tracking</span>
+      </div>
+    </div>
+    <div class="tool-card">
+      <div class="tc-name">✅ Awaiting Proof of Delivery</div>
+      <div class="tc-desc">List of shipments requiring POD upload to close the loop on documentation and donor reporting.</div>
+      <div class="tc-tags">
+        <span class="tag country">Country</span>
+        <span class="tag shipment">Shipment tracking</span>
+      </div>
+    </div>
+    <div class="tool-card">
+      <div class="tc-name">🎯 PO Priority Tool</div>
+      <div class="tc-desc">Interactive tool for pharma and WHO to collaboratively set PO packing and shipping priority based on urgency and MDA timing.</div>
+      <div class="tc-tags">
+        <span class="tag pharma">Pharma</span>
+        <span class="tag shipment">Shipment tracking</span>
+        <span class="tag planning">Planning</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Analytics & KPIs -->
+  <div class="card-title mt28 mb14">Analytics &amp; KPIs</div>
+  <div class="tool-grid">
+    <div class="tool-card">
+      <div class="tc-name">📊 KPIs Dashboard</div>
+      <div class="tc-desc">Global and per-partner KPIs: lead times, on-time delivery, stock-outs, and timeliness. Filterable by year and region.</div>
+      <div class="tc-tags">
+        <span class="tag partner">Partner</span>
+        <span class="tag pharma">Pharma</span>
+        <span class="tag kpis">KPIs</span>
+      </div>
+    </div>
+    <div class="tool-card">
+      <div class="tc-name">📈 Monthly MDA Planning Data</div>
+      <div class="tc-desc">Trend dashboard showing planned vs shipped vs used, by drug and country over time.</div>
+      <div class="tc-tags">
+        <span class="tag country">Country</span>
+        <span class="tag planning">Planning</span>
+        <span class="tag kpis">KPIs</span>
+      </div>
+    </div>
+    <div class="tool-card">
+      <div class="tc-name">🌐 Global Shipped &amp; Forecasted</div>
+      <div class="tc-desc">Shipment volumes by country, drug, and partner — with forward forecasts for production planning.</div>
+      <div class="tc-tags">
+        <span class="tag partner">Partner</span>
+        <span class="tag pharma">Pharma</span>
+        <span class="tag shipment">Shipment tracking</span>
+      </div>
+    </div>
+    <div class="tool-card">
+      <div class="tc-name">📅 MDA Report</div>
+      <div class="tc-desc">Links planned MDA rounds with actual dates and quantities used. Foundation for impact reporting.</div>
+      <div class="tc-tags">
+        <span class="tag country">Country</span>
+        <span class="tag partner">Partner</span>
+        <span class="tag impact">Impact</span>
+      </div>
+    </div>
+    <div class="tool-card">
+      <div class="tc-name">🏆 Priority Country KPIs</div>
+      <div class="tc-desc">Focused KPI view for priority countries: planning adherence, coverage, and supply chain performance.</div>
+      <div class="tc-tags">
+        <span class="tag pharma">Pharma</span>
+        <span class="tag partner">Partner</span>
+        <span class="tag kpis">KPIs</span>
+      </div>
+    </div>
+    <div class="tool-card">
+      <div class="tc-name">🟢 Greenlight Performance</div>
+      <div class="tc-desc">Tracks regulatory and approval timelines, approval rates, and pending reviews for pharma coordination.</div>
+      <div class="tc-tags">
+        <span class="tag pharma">Pharma</span>
+        <span class="tag kpis">KPIs</span>
+      </div>
+    </div>
+    <div class="tool-card">
+      <div class="tc-name">💬 Recent Comments</div>
+      <div class="tc-desc">Activity feed of comments across POs for partner coordination and follow-up prioritisation.</div>
+      <div class="tc-tags">
+        <span class="tag partner">Partner</span>
+        <span class="tag pharma">Pharma</span>
+      </div>
+    </div>
+    <div class="tool-card">
+      <div class="tc-name">🔵 JRSM Status</div>
+      <div class="tc-desc">Status of JRSM submissions and WHO review — for pharma coordination with regulators.</div>
+      <div class="tc-tags">
+        <span class="tag pharma">Pharma</span>
+        <span class="tag kpis">KPIs</span>
+      </div>
+    </div>
+    <div class="tool-card">
+      <div class="tc-name">🐛 ALB Tracker</div>
+      <div class="tc-desc">Albendazole-specific tracking dashboard replicating the ALB workbook. For ALB-focused partners and pharma.</div>
+      <div class="tc-tags">
+        <span class="tag partner">Partner</span>
+        <span class="tag pharma">Pharma</span>
+        <span class="tag shipment">Shipment tracking</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Data Exports -->
+  <div class="card-title mt28 mb14">Data Exports</div>
+  <div class="tool-grid" style="grid-template-columns:repeat(3,1fr)">
+    <div class="tool-card">
+      <div class="tc-name">⬇️ Consolidated Tracking</div>
+      <div class="tc-desc">Full PO tracking export across all countries and partners. Stable schema with column dictionary.</div>
+      <div class="tc-tags">
+        <span class="tag country">Country</span>
+        <span class="tag partner">Partner</span>
+        <span class="tag download">Download</span>
+      </div>
+    </div>
+    <div class="tool-card">
+      <div class="tc-name">⬇️ Monitoring Table</div>
+      <div class="tc-desc">Complete PO view export — pre-filterable by country for national teams, or full cross-country for donors.</div>
+      <div class="tc-tags">
+        <span class="tag country">Country</span>
+        <span class="tag partner">Partner</span>
+        <span class="tag download">Download</span>
+      </div>
+    </div>
+    <div class="tool-card">
+      <div class="tc-name">⬇️ No. of Tablets Planned/Shipped</div>
+      <div class="tc-desc">Cumulative YTD figures — tablets planned and shipped, by programme. Used in donor reporting.</div>
+      <div class="tc-tags">
+        <span class="tag partner">Partner</span>
+        <span class="tag pharma">Pharma</span>
+        <span class="tag download">Download</span>
+      </div>
+    </div>
+  </div>
+
+</div>
+</div><!-- /page-alltools -->
+
+
+<!-- ═══════════════════════════════════════
+     PAGE: DATA & API
+═══════════════════════════════════════ -->
+<div class="page" id="page-api">
+<div class="container">
+
+  <div class="hero" style="padding:28px 36px;margin-bottom:20px">
+    <h1>⚡ Data &amp; API</h1>
+    <p>Connect NTDeliver data to your own systems — DHIS2, Power BI, Tableau, Metabase, or any custom dashboard. Role-based access ensures each organisation sees only its own data.</p>
+  </div>
+
+  <div class="two-col">
+    <div>
+      <h2 class="section-title" style="font-size:16px;margin-bottom:12px">API Catalog</h2>
+
+      <div style="display:flex;flex-direction:column;gap:10px">
+        <div class="api-card">
+          <div class="api-method">GET</div>
+          <div>
+            <div class="api-name">Shipments API</div>
+            <div class="api-path">/api/v1/shipments</div>
+            <div class="api-desc">POs, shipment lines, status, dates, quantities, donor, and pharma. Filterable by country, year, drug, and stage.</div>
+          </div>
+        </div>
+        <div class="api-card">
+          <div class="api-method">GET</div>
+          <div>
+            <div class="api-name">Inventory API</div>
+            <div class="api-path">/api/v1/inventory</div>
+            <div class="api-desc">On-hand quantities by batch, warehouse location, and expiry date.</div>
+          </div>
+        </div>
+        <div class="api-card">
+          <div class="api-method">GET</div>
+          <div>
+            <div class="api-name">Planning &amp; MDA API</div>
+            <div class="api-path">/api/v1/mda-plans</div>
+            <div class="api-desc">Planned MDA rounds, target populations, quantities needed per drug and country.</div>
+          </div>
+        </div>
+        <div class="api-card">
+          <div class="api-method">GET</div>
+          <div>
+            <div class="api-name">KPIs &amp; Analytics API</div>
+            <div class="api-path">/api/v1/kpis</div>
+            <div class="api-desc">Pre-aggregated indicators by country, year, and product — where agreements allow.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <h2 class="section-title" style="font-size:16px;margin-bottom:12px">Quick-start recipes</h2>
+
+      <div style="display:flex;flex-direction:column;gap:14px">
+        <div class="card" style="padding:14px 16px">
+          <div style="font-weight:700;font-size:13px;margin-bottom:8px">
+            📡 Get next 6 months of shipments for a country
+          </div>
+          <div class="code-block">
+<span class="kw">GET</span> /api/v1/shipments?country=<span class="str">NGA</span>&after=<span class="str">2025-03-01</span>&before=<span class="str">2025-09-01</span>
+Authorization: Bearer <span class="num">YOUR_API_KEY</span>
+          </div>
+        </div>
+
+        <div class="card" style="padding:14px 16px">
+          <div style="font-weight:700;font-size:13px;margin-bottom:8px">
+            📊 List MDA plans and compare to stock
+          </div>
+          <div class="code-block">
+<span class="kw">GET</span> /api/v1/mda-plans?country=<span class="str">NGA</span>&year=<span class="str">2025</span>
+<span class="kw">GET</span> /api/v1/inventory?country=<span class="str">NGA</span>
+<span class="kw"># </span>Join on drug code to compute adequacy gap
+          </div>
+        </div>
+
+        <div class="card" style="padding:14px 16px">
+          <div style="font-weight:700;font-size:13px;margin-bottom:8px">
+            🔌 Connect to DHIS2 / Power BI
+          </div>
+          <div style="font-size:11px;color:var(--muted);line-height:1.6">
+            Use the Shipments and Inventory endpoints as data sources in Power BI's "Get Data → Web" connector, or schedule a daily DHIS2 import using the /api/v1/shipments feed. Column dictionaries available in the Downloads section.
+          </div>
+        </div>
+      </div>
+
+      <div class="card mt14" style="padding:16px 18px">
+        <div class="card-title">Access &amp; governance</div>
+        <div style="display:flex;flex-direction:column;gap:6px;font-size:12px;color:var(--text)">
+          <div><span class="sdot green"></span><strong>Country users</strong> — own country data only</div>
+          <div><span class="sdot blue" style="background:var(--blue)"></span><strong>Donor/Partner</strong> — portfolio countries</div>
+          <div><span class="sdot orange" style="background:var(--orange)"></span><strong>Pharma</strong> — global or own products (per agreement)</div>
+        </div>
+        <div style="margin-top:10px;padding:10px 12px;background:#f0f5ff;border-radius:8px;font-size:11px;color:var(--navy)">
+          🔑 API keys, rate limits, and documentation available after login. Contact <a class="link-sm">support@ntdeliver.com</a> to request access.
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+</div><!-- /page-api -->
+
+
+<script>
+  function setPage(id) {
+    // hide all pages
+    document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+    document.querySelectorAll('.page-tab').forEach(t => t.classList.remove('active'));
+    // show target
+    const pg = document.getElementById('page-' + id);
+    if (pg) pg.classList.add('active');
+    const tab = document.querySelector('[data-page="' + id + '"]');
+    if (tab) tab.classList.add('active');
+    window.scrollTo(0,0);
+  }
+
+  // filter btn toggle (visual only for mockup)
+  document.querySelectorAll('.filter-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      btn.classList.toggle('on');
+    });
+  });
+</script>
+</body>
+</html>
