@@ -1,0 +1,5191 @@
+{
+  "global": {
+    "total_pos": 1721,
+    "total_tablets": 14279254000,
+    "total_countries": 105,
+    "total_drug_types": 6,
+    "total_donors": 5,
+    "first_year": 2014,
+    "last_year": 2027,
+    "delivered_pos": 1599
+  },
+  "by_drug": [
+    {
+      "drug_code": "ALB",
+      "drug_name": "Albendazole",
+      "total_pos": 882,
+      "total_tablets": 7532270600,
+      "countries_supported": 87,
+      "donors": 1,
+      "first_year": 2014,
+      "last_year": 2027,
+      "delivered_pos": 838,
+      "pct_delivered": 95.0
+    },
+    {
+      "drug_code": "DEC",
+      "drug_name": "Diethylcarbamazine",
+      "total_pos": 196,
+      "total_tablets": 2626229000,
+      "countries_supported": 29,
+      "donors": 1,
+      "first_year": 2015,
+      "last_year": 2027,
+      "delivered_pos": 160,
+      "pct_delivered": 81.6
+    },
+    {
+      "drug_code": "IVM",
+      "drug_name": "Ivermectin",
+      "total_pos": 1,
+      "total_tablets": 62500,
+      "countries_supported": 1,
+      "donors": 1,
+      "first_year": 2022,
+      "last_year": 2022,
+      "delivered_pos": 0,
+      "pct_delivered": 0.0
+    },
+    {
+      "drug_code": "MEB",
+      "drug_name": "Mebendazole",
+      "total_pos": 255,
+      "total_tablets": 1987780000,
+      "countries_supported": 45,
+      "donors": 1,
+      "first_year": 2015,
+      "last_year": 2026,
+      "delivered_pos": 237,
+      "pct_delivered": 92.9
+    },
+    {
+      "drug_code": "PZQ",
+      "drug_name": "Praziquantel",
+      "total_pos": 383,
+      "total_tablets": 2132307400,
+      "countries_supported": 51,
+      "donors": 1,
+      "first_year": 2015,
+      "last_year": 2026,
+      "delivered_pos": 363,
+      "pct_delivered": 94.8
+    },
+    {
+      "drug_code": "TCZ",
+      "drug_name": "Triclabendazole",
+      "total_pos": 4,
+      "total_tablets": 604500,
+      "countries_supported": 4,
+      "donors": 1,
+      "first_year": 2015,
+      "last_year": 2018,
+      "delivered_pos": 1,
+      "pct_delivered": 25.0
+    }
+  ],
+  "by_donor": [
+    {
+      "donor": "GSK",
+      "total_pos": 882,
+      "total_tablets": 7532270600,
+      "countries_supported": 87,
+      "drug_types": 1,
+      "first_year": 2014,
+      "last_year": 2027,
+      "delivered_pos": 838,
+      "drugs_donated": "ALB"
+    },
+    {
+      "donor": "Eisai",
+      "total_pos": 196,
+      "total_tablets": 2626229000,
+      "countries_supported": 29,
+      "drug_types": 1,
+      "first_year": 2015,
+      "last_year": 2027,
+      "delivered_pos": 160,
+      "drugs_donated": "DEC"
+    },
+    {
+      "donor": "Merck KGaA",
+      "total_pos": 383,
+      "total_tablets": 2132307400,
+      "countries_supported": 51,
+      "drug_types": 1,
+      "first_year": 2015,
+      "last_year": 2026,
+      "delivered_pos": 363,
+      "drugs_donated": "PZQ"
+    },
+    {
+      "donor": "J&J",
+      "total_pos": 255,
+      "total_tablets": 1987780000,
+      "countries_supported": 45,
+      "drug_types": 1,
+      "first_year": 2015,
+      "last_year": 2026,
+      "delivered_pos": 237,
+      "drugs_donated": "MEB"
+    },
+    {
+      "donor": "Merck USA",
+      "total_pos": 5,
+      "total_tablets": 667000,
+      "countries_supported": 5,
+      "drug_types": 2,
+      "first_year": 2015,
+      "last_year": 2022,
+      "delivered_pos": 1,
+      "drugs_donated": "IVM,TCZ"
+    }
+  ],
+  "by_country": [
+    {
+      "country": "India",
+      "total_pos": 214,
+      "total_tablets": 4903095600,
+      "drug_types": 2,
+      "donors": 2,
+      "delivered_pos": 199,
+      "drugs_received": "DEC,ALB",
+      "donors_list": "Eisai,GSK"
+    },
+    {
+      "country": "Nigeria",
+      "total_pos": 45,
+      "total_tablets": 1093834000,
+      "drug_types": 3,
+      "donors": 3,
+      "delivered_pos": 44,
+      "drugs_received": "PZQ,MEB,ALB",
+      "donors_list": "Merck KGaA,J&J,GSK"
+    },
+    {
+      "country": "Myanmar",
+      "total_pos": 33,
+      "total_tablets": 711001000,
+      "drug_types": 3,
+      "donors": 3,
+      "delivered_pos": 26,
+      "drugs_received": "ALB,MEB,DEC",
+      "donors_list": "GSK,J&J,Eisai"
+    },
+    {
+      "country": "Bangladesh",
+      "total_pos": 29,
+      "total_tablets": 698644000,
+      "drug_types": 2,
+      "donors": 2,
+      "delivered_pos": 28,
+      "drugs_received": "MEB,ALB",
+      "donors_list": "J&J,GSK"
+    },
+    {
+      "country": "DRC",
+      "total_pos": 34,
+      "total_tablets": 677403000,
+      "drug_types": 2,
+      "donors": 2,
+      "delivered_pos": 33,
+      "drugs_received": "ALB,PZQ",
+      "donors_list": "GSK,Merck KGaA"
+    },
+    {
+      "country": "Indonesia",
+      "total_pos": 35,
+      "total_tablets": 541305000,
+      "drug_types": 3,
+      "donors": 3,
+      "delivered_pos": 30,
+      "drugs_received": "PZQ,DEC,ALB",
+      "donors_list": "Merck KGaA,Eisai,GSK"
+    },
+    {
+      "country": "Ethiopia",
+      "total_pos": 39,
+      "total_tablets": 444456500,
+      "drug_types": 4,
+      "donors": 4,
+      "delivered_pos": 35,
+      "drugs_received": "MEB,ALB,PZQ,IVM",
+      "donors_list": "J&J,GSK,Merck KGaA,Merck USA"
+    },
+    {
+      "country": "Madagascar",
+      "total_pos": 32,
+      "total_tablets": 411234000,
+      "drug_types": 4,
+      "donors": 4,
+      "delivered_pos": 30,
+      "drugs_received": "PZQ,DEC,ALB,MEB",
+      "donors_list": "Merck KGaA,Eisai,GSK,J&J"
+    },
+    {
+      "country": "Tanzania",
+      "total_pos": 30,
+      "total_tablets": 331335000,
+      "drug_types": 3,
+      "donors": 3,
+      "delivered_pos": 24,
+      "drugs_received": "PZQ,ALB,MEB",
+      "donors_list": "Merck KGaA,GSK,J&J"
+    },
+    {
+      "country": "Uganda",
+      "total_pos": 30,
+      "total_tablets": 308607000,
+      "drug_types": 3,
+      "donors": 3,
+      "delivered_pos": 28,
+      "drugs_received": "MEB,PZQ,ALB",
+      "donors_list": "J&J,Merck KGaA,GSK"
+    },
+    {
+      "country": "Philippines",
+      "total_pos": 19,
+      "total_tablets": 231516000,
+      "drug_types": 3,
+      "donors": 3,
+      "delivered_pos": 19,
+      "drugs_received": "DEC,ALB,MEB",
+      "donors_list": "Eisai,GSK,J&J"
+    },
+    {
+      "country": "Nepal",
+      "total_pos": 23,
+      "total_tablets": 225297000,
+      "drug_types": 2,
+      "donors": 2,
+      "delivered_pos": 22,
+      "drugs_received": "ALB,DEC",
+      "donors_list": "GSK,Eisai"
+    },
+    {
+      "country": "Cameroon",
+      "total_pos": 27,
+      "total_tablets": 203478000,
+      "drug_types": 3,
+      "donors": 3,
+      "delivered_pos": 25,
+      "drugs_received": "MEB,PZQ,ALB",
+      "donors_list": "J&J,Merck KGaA,GSK"
+    },
+    {
+      "country": "Rwanda",
+      "total_pos": 32,
+      "total_tablets": 196107000,
+      "drug_types": 3,
+      "donors": 3,
+      "delivered_pos": 32,
+      "drugs_received": "MEB,PZQ,ALB",
+      "donors_list": "J&J,Merck KGaA,GSK"
+    },
+    {
+      "country": "Zambia",
+      "total_pos": 19,
+      "total_tablets": 192049000,
+      "drug_types": 4,
+      "donors": 4,
+      "delivered_pos": 17,
+      "drugs_received": "DEC,ALB,PZQ,MEB",
+      "donors_list": "Eisai,GSK,Merck KGaA,J&J"
+    },
+    {
+      "country": "Mozambique",
+      "total_pos": 21,
+      "total_tablets": 186800000,
+      "drug_types": 2,
+      "donors": 2,
+      "delivered_pos": 21,
+      "drugs_received": "ALB,PZQ",
+      "donors_list": "GSK,Merck KGaA"
+    },
+    {
+      "country": "Kenya",
+      "total_pos": 36,
+      "total_tablets": 186257000,
+      "drug_types": 4,
+      "donors": 4,
+      "delivered_pos": 33,
+      "drugs_received": "ALB,MEB,DEC,PZQ",
+      "donors_list": "GSK,J&J,Eisai,Merck KGaA"
+    },
+    {
+      "country": "C\u00f4te d'Ivoire",
+      "total_pos": 21,
+      "total_tablets": 167136000,
+      "drug_types": 2,
+      "donors": 2,
+      "delivered_pos": 21,
+      "drugs_received": "PZQ,ALB",
+      "donors_list": "Merck KGaA,GSK"
+    },
+    {
+      "country": "Zimbabwe",
+      "total_pos": 21,
+      "total_tablets": 133552000,
+      "drug_types": 3,
+      "donors": 3,
+      "delivered_pos": 17,
+      "drugs_received": "PZQ,ALB,DEC",
+      "donors_list": "Merck KGaA,GSK,Eisai"
+    },
+    {
+      "country": "Sudan",
+      "total_pos": 14,
+      "total_tablets": 107222000,
+      "drug_types": 2,
+      "donors": 2,
+      "delivered_pos": 14,
+      "drugs_received": "ALB,PZQ",
+      "donors_list": "GSK,Merck KGaA"
+    },
+    {
+      "country": "Cambodia",
+      "total_pos": 24,
+      "total_tablets": 106945000,
+      "drug_types": 4,
+      "donors": 4,
+      "delivered_pos": 21,
+      "drugs_received": "ALB,PZQ,MEB,TCZ",
+      "donors_list": "GSK,Merck KGaA,J&J,Merck USA"
+    },
+    {
+      "country": "Viet Nam",
+      "total_pos": 11,
+      "total_tablets": 106099000,
+      "drug_types": 2,
+      "donors": 2,
+      "delivered_pos": 9,
+      "drugs_received": "MEB,TCZ",
+      "donors_list": "J&J,Merck USA"
+    },
+    {
+      "country": "Mali",
+      "total_pos": 19,
+      "total_tablets": 104514000,
+      "drug_types": 2,
+      "donors": 2,
+      "delivered_pos": 18,
+      "drugs_received": "PZQ,ALB",
+      "donors_list": "Merck KGaA,GSK"
+    },
+    {
+      "country": "Angola",
+      "total_pos": 24,
+      "total_tablets": 98072000,
+      "drug_types": 3,
+      "donors": 3,
+      "delivered_pos": 24,
+      "drugs_received": "ALB,PZQ,MEB",
+      "donors_list": "GSK,Merck KGaA,J&J"
+    },
+    {
+      "country": "Egypt",
+      "total_pos": 16,
+      "total_tablets": 97242500,
+      "drug_types": 5,
+      "donors": 5,
+      "delivered_pos": 16,
+      "drugs_received": "ALB,MEB,DEC,PZQ,TCZ",
+      "donors_list": "GSK,J&J,Eisai,Merck KGaA,Merck USA"
+    },
+    {
+      "country": "Guinea",
+      "total_pos": 27,
+      "total_tablets": 95719000,
+      "drug_types": 2,
+      "donors": 2,
+      "delivered_pos": 26,
+      "drugs_received": "PZQ,ALB",
+      "donors_list": "Merck KGaA,GSK"
+    },
+    {
+      "country": "Ghana",
+      "total_pos": 18,
+      "total_tablets": 94919000,
+      "drug_types": 2,
+      "donors": 2,
+      "delivered_pos": 16,
+      "drugs_received": "PZQ,ALB",
+      "donors_list": "Merck KGaA,GSK"
+    },
+    {
+      "country": "Malawi",
+      "total_pos": 12,
+      "total_tablets": 88000000,
+      "drug_types": 2,
+      "donors": 2,
+      "delivered_pos": 12,
+      "drugs_received": "PZQ,ALB",
+      "donors_list": "Merck KGaA,GSK"
+    },
+    {
+      "country": "DPR Korea",
+      "total_pos": 8,
+      "total_tablets": 86577000,
+      "drug_types": 1,
+      "donors": 1,
+      "delivered_pos": 8,
+      "drugs_received": "ALB",
+      "donors_list": "GSK"
+    },
+    {
+      "country": "Niger",
+      "total_pos": 18,
+      "total_tablets": 85344000,
+      "drug_types": 2,
+      "donors": 2,
+      "delivered_pos": 18,
+      "drugs_received": "PZQ,ALB",
+      "donors_list": "Merck KGaA,GSK"
+    },
+    {
+      "country": "Senegal",
+      "total_pos": 28,
+      "total_tablets": 83892000,
+      "drug_types": 3,
+      "donors": 3,
+      "delivered_pos": 28,
+      "drugs_received": "PZQ,MEB,ALB",
+      "donors_list": "Merck KGaA,J&J,GSK"
+    },
+    {
+      "country": "Burkina Faso",
+      "total_pos": 22,
+      "total_tablets": 82260000,
+      "drug_types": 2,
+      "donors": 2,
+      "delivered_pos": 20,
+      "drugs_received": "ALB,PZQ",
+      "donors_list": "GSK,Merck KGaA"
+    },
+    {
+      "country": "Pakistan",
+      "total_pos": 7,
+      "total_tablets": 81937000,
+      "drug_types": 1,
+      "donors": 1,
+      "delivered_pos": 5,
+      "drugs_received": "MEB",
+      "donors_list": "J&J"
+    },
+    {
+      "country": "Afghanistan",
+      "total_pos": 11,
+      "total_tablets": 79615000,
+      "drug_types": 2,
+      "donors": 2,
+      "delivered_pos": 10,
+      "drugs_received": "ALB,MEB",
+      "donors_list": "GSK,J&J"
+    },
+    {
+      "country": "Haiti",
+      "total_pos": 14,
+      "total_tablets": 75942000,
+      "drug_types": 2,
+      "donors": 2,
+      "delivered_pos": 13,
+      "drugs_received": "DEC,ALB",
+      "donors_list": "Eisai,GSK"
+    },
+    {
+      "country": "Chad",
+      "total_pos": 29,
+      "total_tablets": 67489000,
+      "drug_types": 3,
+      "donors": 3,
+      "delivered_pos": 28,
+      "drugs_received": "PZQ,ALB,MEB",
+      "donors_list": "Merck KGaA,GSK,J&J"
+    },
+    {
+      "country": "Zanzibar",
+      "total_pos": 30,
+      "total_tablets": 59015000,
+      "drug_types": 3,
+      "donors": 3,
+      "delivered_pos": 26,
+      "drugs_received": "PZQ,ALB,MEB",
+      "donors_list": "Merck KGaA,GSK,J&J"
+    },
+    {
+      "country": "Togo",
+      "total_pos": 20,
+      "total_tablets": 58836000,
+      "drug_types": 2,
+      "donors": 2,
+      "delivered_pos": 20,
+      "drugs_received": "PZQ,ALB",
+      "donors_list": "Merck KGaA,GSK"
+    },
+    {
+      "country": "South Sudan",
+      "total_pos": 16,
+      "total_tablets": 57108000,
+      "drug_types": 2,
+      "donors": 2,
+      "delivered_pos": 15,
+      "drugs_received": "ALB,PZQ",
+      "donors_list": "GSK,Merck KGaA"
+    },
+    {
+      "country": "Sierra Leone",
+      "total_pos": 22,
+      "total_tablets": 56596000,
+      "drug_types": 3,
+      "donors": 3,
+      "delivered_pos": 19,
+      "drugs_received": "MEB,PZQ,ALB",
+      "donors_list": "J&J,Merck KGaA,GSK"
+    },
+    {
+      "country": "South Africa",
+      "total_pos": 6,
+      "total_tablets": 53776000,
+      "drug_types": 1,
+      "donors": 1,
+      "delivered_pos": 5,
+      "drugs_received": "MEB",
+      "donors_list": "J&J"
+    },
+    {
+      "country": "Benin",
+      "total_pos": 23,
+      "total_tablets": 40481000,
+      "drug_types": 2,
+      "donors": 2,
+      "delivered_pos": 22,
+      "drugs_received": "PZQ,ALB",
+      "donors_list": "Merck KGaA,GSK"
+    },
+    {
+      "country": "CAR",
+      "total_pos": 22,
+      "total_tablets": 40321000,
+      "drug_types": 2,
+      "donors": 2,
+      "delivered_pos": 20,
+      "drugs_received": "ALB,PZQ",
+      "donors_list": "GSK,Merck KGaA"
+    },
+    {
+      "country": "Burundi",
+      "total_pos": 16,
+      "total_tablets": 40072000,
+      "drug_types": 2,
+      "donors": 2,
+      "delivered_pos": 13,
+      "drugs_received": "ALB,PZQ",
+      "donors_list": "GSK,Merck KGaA"
+    },
+    {
+      "country": "Liberia",
+      "total_pos": 23,
+      "total_tablets": 33384000,
+      "drug_types": 3,
+      "donors": 3,
+      "delivered_pos": 23,
+      "drugs_received": "ALB,PZQ,MEB",
+      "donors_list": "GSK,Merck KGaA,J&J"
+    },
+    {
+      "country": "Dominican Republic",
+      "total_pos": 16,
+      "total_tablets": 28982000,
+      "drug_types": 3,
+      "donors": 3,
+      "delivered_pos": 16,
+      "drugs_received": "MEB,ALB,DEC",
+      "donors_list": "J&J,GSK,Eisai"
+    },
+    {
+      "country": "Somalia",
+      "total_pos": 10,
+      "total_tablets": 28877000,
+      "drug_types": 2,
+      "donors": 2,
+      "delivered_pos": 10,
+      "drugs_received": "PZQ,MEB",
+      "donors_list": "Merck KGaA,J&J"
+    },
+    {
+      "country": "Honduras",
+      "total_pos": 8,
+      "total_tablets": 28211000,
+      "drug_types": 2,
+      "donors": 2,
+      "delivered_pos": 8,
+      "drugs_received": "ALB,MEB",
+      "donors_list": "GSK,J&J"
+    },
+    {
+      "country": "Guatemala",
+      "total_pos": 5,
+      "total_tablets": 24572000,
+      "drug_types": 1,
+      "donors": 1,
+      "delivered_pos": 5,
+      "drugs_received": "ALB",
+      "donors_list": "GSK"
+    },
+    {
+      "country": "Yemen",
+      "total_pos": 5,
+      "total_tablets": 23915000,
+      "drug_types": 2,
+      "donors": 2,
+      "delivered_pos": 5,
+      "drugs_received": "ALB,PZQ",
+      "donors_list": "GSK,Merck KGaA"
+    },
+    {
+      "country": "Timor-Leste",
+      "total_pos": 18,
+      "total_tablets": 23907000,
+      "drug_types": 2,
+      "donors": 2,
+      "delivered_pos": 18,
+      "drugs_received": "ALB,DEC",
+      "donors_list": "GSK,Eisai"
+    },
+    {
+      "country": "Iraq",
+      "total_pos": 4,
+      "total_tablets": 22333000,
+      "drug_types": 1,
+      "donors": 1,
+      "delivered_pos": 4,
+      "drugs_received": "MEB",
+      "donors_list": "J&J"
+    },
+    {
+      "country": "Colombia",
+      "total_pos": 15,
+      "total_tablets": 21280000,
+      "drug_types": 2,
+      "donors": 2,
+      "delivered_pos": 14,
+      "drugs_received": "MEB,ALB",
+      "donors_list": "J&J,GSK"
+    },
+    {
+      "country": "Congo",
+      "total_pos": 25,
+      "total_tablets": 21103000,
+      "drug_types": 3,
+      "donors": 3,
+      "delivered_pos": 21,
+      "drugs_received": "ALB,MEB,PZQ",
+      "donors_list": "GSK,J&J,Merck KGaA"
+    },
+    {
+      "country": "Nicaragua",
+      "total_pos": 10,
+      "total_tablets": 20926000,
+      "drug_types": 1,
+      "donors": 1,
+      "delivered_pos": 9,
+      "drugs_received": "MEB",
+      "donors_list": "J&J"
+    },
+    {
+      "country": "Laos",
+      "total_pos": 27,
+      "total_tablets": 20711000,
+      "drug_types": 4,
+      "donors": 4,
+      "delivered_pos": 26,
+      "drugs_received": "ALB,PZQ,MEB,DEC",
+      "donors_list": "GSK,Merck KGaA,J&J,Eisai"
+    },
+    {
+      "country": "Tajikistan",
+      "total_pos": 8,
+      "total_tablets": 17551000,
+      "drug_types": 1,
+      "donors": 1,
+      "delivered_pos": 7,
+      "drugs_received": "ALB",
+      "donors_list": "GSK"
+    },
+    {
+      "country": "Papua New Guinea",
+      "total_pos": 19,
+      "total_tablets": 16938000,
+      "drug_types": 3,
+      "donors": 3,
+      "delivered_pos": 17,
+      "drugs_received": "DEC,ALB,MEB",
+      "donors_list": "Eisai,GSK,J&J"
+    },
+    {
+      "country": "Brazil",
+      "total_pos": 2,
+      "total_tablets": 14329000,
+      "drug_types": 1,
+      "donors": 1,
+      "delivered_pos": 2,
+      "drugs_received": "ALB",
+      "donors_list": "GSK"
+    },
+    {
+      "country": "Guyana",
+      "total_pos": 13,
+      "total_tablets": 13881000,
+      "drug_types": 2,
+      "donors": 2,
+      "delivered_pos": 12,
+      "drugs_received": "ALB,DEC",
+      "donors_list": "GSK,Eisai"
+    },
+    {
+      "country": "Syria",
+      "total_pos": 13,
+      "total_tablets": 12266000,
+      "drug_types": 1,
+      "donors": 1,
+      "delivered_pos": 12,
+      "drugs_received": "MEB",
+      "donors_list": "J&J"
+    },
+    {
+      "country": "Eritrea",
+      "total_pos": 23,
+      "total_tablets": 10189000,
+      "drug_types": 4,
+      "donors": 4,
+      "delivered_pos": 22,
+      "drugs_received": "PZQ,DEC,ALB,MEB",
+      "donors_list": "Merck KGaA,Eisai,GSK,J&J"
+    },
+    {
+      "country": "Mauritania",
+      "total_pos": 9,
+      "total_tablets": 9259000,
+      "drug_types": 2,
+      "donors": 2,
+      "delivered_pos": 9,
+      "drugs_received": "PZQ,ALB",
+      "donors_list": "Merck KGaA,GSK"
+    },
+    {
+      "country": "Comoros",
+      "total_pos": 7,
+      "total_tablets": 8714000,
+      "drug_types": 2,
+      "donors": 2,
+      "delivered_pos": 7,
+      "drugs_received": "ALB,DEC",
+      "donors_list": "GSK,Eisai"
+    },
+    {
+      "country": "Guinea Bissau",
+      "total_pos": 18,
+      "total_tablets": 8472000,
+      "drug_types": 3,
+      "donors": 3,
+      "delivered_pos": 15,
+      "drugs_received": "ALB,MEB,PZQ",
+      "donors_list": "GSK,J&J,Merck KGaA"
+    },
+    {
+      "country": "Paraguay",
+      "total_pos": 8,
+      "total_tablets": 8415000,
+      "drug_types": 1,
+      "donors": 1,
+      "delivered_pos": 8,
+      "drugs_received": "ALB",
+      "donors_list": "GSK"
+    },
+    {
+      "country": "El Salvador",
+      "total_pos": 10,
+      "total_tablets": 8056000,
+      "drug_types": 1,
+      "donors": 1,
+      "delivered_pos": 9,
+      "drugs_received": "ALB",
+      "donors_list": "GSK"
+    },
+    {
+      "country": "Uzbekistan",
+      "total_pos": 1,
+      "total_tablets": 7451000,
+      "drug_types": 1,
+      "donors": 1,
+      "delivered_pos": 1,
+      "drugs_received": "ALB",
+      "donors_list": "GSK"
+    },
+    {
+      "country": "Gabon",
+      "total_pos": 10,
+      "total_tablets": 5745000,
+      "drug_types": 3,
+      "donors": 3,
+      "delivered_pos": 10,
+      "drugs_received": "ALB,PZQ,MEB",
+      "donors_list": "GSK,Merck KGaA,J&J"
+    },
+    {
+      "country": "Fiji",
+      "total_pos": 17,
+      "total_tablets": 4695000,
+      "drug_types": 2,
+      "donors": 2,
+      "delivered_pos": 14,
+      "drugs_received": "DEC,ALB",
+      "donors_list": "Eisai,GSK"
+    },
+    {
+      "country": "Equatorial Guinea",
+      "total_pos": 7,
+      "total_tablets": 4455000,
+      "drug_types": 2,
+      "donors": 2,
+      "delivered_pos": 6,
+      "drugs_received": "ALB,PZQ",
+      "donors_list": "GSK,Merck KGaA"
+    },
+    {
+      "country": "Eswatini",
+      "total_pos": 11,
+      "total_tablets": 3757000,
+      "drug_types": 2,
+      "donors": 2,
+      "delivered_pos": 11,
+      "drugs_received": "PZQ,ALB",
+      "donors_list": "Merck KGaA,GSK"
+    },
+    {
+      "country": "Sri Lanka",
+      "total_pos": 2,
+      "total_tablets": 3496000,
+      "drug_types": 2,
+      "donors": 2,
+      "delivered_pos": 0,
+      "drugs_received": "DEC,ALB",
+      "donors_list": "Eisai,GSK"
+    },
+    {
+      "country": "French Polynesia",
+      "total_pos": 16,
+      "total_tablets": 2886000,
+      "drug_types": 2,
+      "donors": 2,
+      "delivered_pos": 14,
+      "drugs_received": "DEC,ALB",
+      "donors_list": "Eisai,GSK"
+    },
+    {
+      "country": "Israel",
+      "total_pos": 15,
+      "total_tablets": 2886000,
+      "drug_types": 1,
+      "donors": 1,
+      "delivered_pos": 15,
+      "drugs_received": "MEB",
+      "donors_list": "J&J"
+    },
+    {
+      "country": "Gambia",
+      "total_pos": 8,
+      "total_tablets": 2850000,
+      "drug_types": 2,
+      "donors": 2,
+      "delivered_pos": 8,
+      "drugs_received": "ALB,PZQ",
+      "donors_list": "GSK,Merck KGaA"
+    },
+    {
+      "country": "Sao Tome and Principe",
+      "total_pos": 17,
+      "total_tablets": 2591000,
+      "drug_types": 4,
+      "donors": 4,
+      "delivered_pos": 17,
+      "drugs_received": "ALB,PZQ,DEC,MEB",
+      "donors_list": "GSK,Merck KGaA,Eisai,J&J"
+    },
+    {
+      "country": "Samoa",
+      "total_pos": 7,
+      "total_tablets": 2412000,
+      "drug_types": 2,
+      "donors": 2,
+      "delivered_pos": 7,
+      "drugs_received": "DEC,ALB",
+      "donors_list": "Eisai,GSK"
+    },
+    {
+      "country": "Vanuatu",
+      "total_pos": 11,
+      "total_tablets": 2155000,
+      "drug_types": 1,
+      "donors": 1,
+      "delivered_pos": 11,
+      "drugs_received": "ALB",
+      "donors_list": "GSK"
+    },
+    {
+      "country": "Botswana",
+      "total_pos": 6,
+      "total_tablets": 2010000,
+      "drug_types": 3,
+      "donors": 3,
+      "delivered_pos": 6,
+      "drugs_received": "PZQ,ALB,MEB",
+      "donors_list": "Merck KGaA,GSK,J&J"
+    },
+    {
+      "country": "Lesotho",
+      "total_pos": 4,
+      "total_tablets": 1842000,
+      "drug_types": 1,
+      "donors": 1,
+      "delivered_pos": 4,
+      "drugs_received": "ALB",
+      "donors_list": "GSK"
+    },
+    {
+      "country": "Kyrgyzstan",
+      "total_pos": 3,
+      "total_tablets": 1728000,
+      "drug_types": 1,
+      "donors": 1,
+      "delivered_pos": 3,
+      "drugs_received": "ALB",
+      "donors_list": "GSK"
+    },
+    {
+      "country": "Bhutan",
+      "total_pos": 6,
+      "total_tablets": 1632000,
+      "drug_types": 1,
+      "donors": 1,
+      "delivered_pos": 6,
+      "drugs_received": "ALB",
+      "donors_list": "GSK"
+    },
+    {
+      "country": "Malaysia",
+      "total_pos": 12,
+      "total_tablets": 1398000,
+      "drug_types": 2,
+      "donors": 2,
+      "delivered_pos": 9,
+      "drugs_received": "DEC,ALB",
+      "donors_list": "Eisai,GSK"
+    },
+    {
+      "country": "Jordan",
+      "total_pos": 10,
+      "total_tablets": 1253000,
+      "drug_types": 1,
+      "donors": 1,
+      "delivered_pos": 9,
+      "drugs_received": "MEB",
+      "donors_list": "J&J"
+    },
+    {
+      "country": "American Samoa",
+      "total_pos": 6,
+      "total_tablets": 751000,
+      "drug_types": 2,
+      "donors": 2,
+      "delivered_pos": 6,
+      "drugs_received": "DEC,ALB",
+      "donors_list": "Eisai,GSK"
+    },
+    {
+      "country": "Kiribati",
+      "total_pos": 8,
+      "total_tablets": 686000,
+      "drug_types": 1,
+      "donors": 1,
+      "delivered_pos": 7,
+      "drugs_received": "ALB",
+      "donors_list": "GSK"
+    },
+    {
+      "country": "Namibia",
+      "total_pos": 2,
+      "total_tablets": 656000,
+      "drug_types": 2,
+      "donors": 2,
+      "delivered_pos": 2,
+      "drugs_received": "ALB,PZQ",
+      "donors_list": "GSK,Merck KGaA"
+    },
+    {
+      "country": "Cape Verde",
+      "total_pos": 7,
+      "total_tablets": 638000,
+      "drug_types": 2,
+      "donors": 2,
+      "delivered_pos": 7,
+      "drugs_received": "ALB,MEB",
+      "donors_list": "GSK,J&J"
+    },
+    {
+      "country": "Solomon Islands",
+      "total_pos": 7,
+      "total_tablets": 637000,
+      "drug_types": 1,
+      "donors": 1,
+      "delivered_pos": 7,
+      "drugs_received": "ALB",
+      "donors_list": "GSK"
+    },
+    {
+      "country": "Bolivia",
+      "total_pos": 1,
+      "total_tablets": 586000,
+      "drug_types": 1,
+      "donors": 1,
+      "delivered_pos": 0,
+      "drugs_received": "TCZ",
+      "donors_list": "Merck USA"
+    },
+    {
+      "country": "Azerbaijan",
+      "total_pos": 1,
+      "total_tablets": 508000,
+      "drug_types": 1,
+      "donors": 1,
+      "delivered_pos": 1,
+      "drugs_received": "ALB",
+      "donors_list": "GSK"
+    },
+    {
+      "country": "Lebanon",
+      "total_pos": 9,
+      "total_tablets": 465000,
+      "drug_types": 1,
+      "donors": 1,
+      "delivered_pos": 8,
+      "drugs_received": "MEB",
+      "donors_list": "J&J"
+    },
+    {
+      "country": "United Arab Emirates",
+      "total_pos": 1,
+      "total_tablets": 400000,
+      "drug_types": 1,
+      "donors": 1,
+      "delivered_pos": 1,
+      "drugs_received": "MEB",
+      "donors_list": "J&J"
+    },
+    {
+      "country": "Georgia",
+      "total_pos": 1,
+      "total_tablets": 393000,
+      "drug_types": 1,
+      "donors": 1,
+      "delivered_pos": 1,
+      "drugs_received": "MEB",
+      "donors_list": "J&J"
+    },
+    {
+      "country": "Fed States of Mic",
+      "total_pos": 3,
+      "total_tablets": 366000,
+      "drug_types": 2,
+      "donors": 2,
+      "delivered_pos": 2,
+      "drugs_received": "ALB,DEC",
+      "donors_list": "GSK,Eisai"
+    },
+    {
+      "country": "Tuvalu",
+      "total_pos": 8,
+      "total_tablets": 179000,
+      "drug_types": 2,
+      "donors": 2,
+      "delivered_pos": 8,
+      "drugs_received": "DEC,ALB",
+      "donors_list": "Eisai,GSK"
+    },
+    {
+      "country": "Marshall Islands",
+      "total_pos": 4,
+      "total_tablets": 129000,
+      "drug_types": 1,
+      "donors": 1,
+      "delivered_pos": 3,
+      "drugs_received": "ALB",
+      "donors_list": "GSK"
+    },
+    {
+      "country": "Maldives",
+      "total_pos": 1,
+      "total_tablets": 84000,
+      "drug_types": 1,
+      "donors": 1,
+      "delivered_pos": 1,
+      "drugs_received": "DEC",
+      "donors_list": "Eisai"
+    },
+    {
+      "country": "Thailand",
+      "total_pos": 1,
+      "total_tablets": 84000,
+      "drug_types": 1,
+      "donors": 1,
+      "delivered_pos": 1,
+      "drugs_received": "DEC",
+      "donors_list": "Eisai"
+    },
+    {
+      "country": "Switzerland",
+      "total_pos": 1,
+      "total_tablets": 27000,
+      "drug_types": 1,
+      "donors": 1,
+      "delivered_pos": 1,
+      "drugs_received": "PZQ",
+      "donors_list": "Merck KGaA"
+    },
+    {
+      "country": "Tonga",
+      "total_pos": 1,
+      "total_tablets": 26000,
+      "drug_types": 1,
+      "donors": 1,
+      "delivered_pos": 1,
+      "drugs_received": "ALB",
+      "donors_list": "GSK"
+    },
+    {
+      "country": "WHO Geneva",
+      "total_pos": 1,
+      "total_tablets": 18000,
+      "drug_types": 1,
+      "donors": 1,
+      "delivered_pos": 0,
+      "drugs_received": "PZQ",
+      "donors_list": "Merck KGaA"
+    },
+    {
+      "country": "Cook Islands",
+      "total_pos": 1,
+      "total_tablets": 7000,
+      "drug_types": 1,
+      "donors": 1,
+      "delivered_pos": 1,
+      "drugs_received": "ALB",
+      "donors_list": "GSK"
+    },
+    {
+      "country": "Italy",
+      "total_pos": 1,
+      "total_tablets": 400,
+      "drug_types": 1,
+      "donors": 1,
+      "delivered_pos": 1,
+      "drugs_received": "PZQ",
+      "donors_list": "Merck KGaA"
+    }
+  ],
+  "by_year": [
+    {
+      "year": 2014,
+      "total_pos": 1,
+      "total_tablets": 20826000,
+      "countries_supported": 1,
+      "drug_types": 1,
+      "donors": 1,
+      "delivered_pos": 0,
+      "drugs": "ALB"
+    },
+    {
+      "year": 2015,
+      "total_pos": 161,
+      "total_tablets": 1476943500,
+      "countries_supported": 64,
+      "drug_types": 5,
+      "donors": 5,
+      "delivered_pos": 133,
+      "drugs": "MEB,ALB,PZQ,DEC,TCZ"
+    },
+    {
+      "year": 2016,
+      "total_pos": 180,
+      "total_tablets": 1324161000,
+      "countries_supported": 80,
+      "drug_types": 4,
+      "donors": 4,
+      "delivered_pos": 179,
+      "drugs": "DEC,ALB,MEB,PZQ"
+    },
+    {
+      "year": 2017,
+      "total_pos": 172,
+      "total_tablets": 1679621000,
+      "countries_supported": 69,
+      "drug_types": 5,
+      "donors": 5,
+      "delivered_pos": 170,
+      "drugs": "ALB,MEB,PZQ,DEC,TCZ"
+    },
+    {
+      "year": 2018,
+      "total_pos": 191,
+      "total_tablets": 1723752000,
+      "countries_supported": 83,
+      "drug_types": 5,
+      "donors": 5,
+      "delivered_pos": 189,
+      "drugs": "ALB,PZQ,MEB,DEC,TCZ"
+    },
+    {
+      "year": 2019,
+      "total_pos": 175,
+      "total_tablets": 1586872000,
+      "countries_supported": 69,
+      "drug_types": 4,
+      "donors": 4,
+      "delivered_pos": 174,
+      "drugs": "DEC,PZQ,ALB,MEB"
+    },
+    {
+      "year": 2020,
+      "total_pos": 148,
+      "total_tablets": 1090924000,
+      "countries_supported": 74,
+      "drug_types": 4,
+      "donors": 4,
+      "delivered_pos": 146,
+      "drugs": "ALB,PZQ,DEC,MEB"
+    },
+    {
+      "year": 2021,
+      "total_pos": 150,
+      "total_tablets": 1149939000,
+      "countries_supported": 63,
+      "drug_types": 4,
+      "donors": 4,
+      "delivered_pos": 148,
+      "drugs": "ALB,MEB,DEC,PZQ"
+    },
+    {
+      "year": 2022,
+      "total_pos": 115,
+      "total_tablets": 780503500,
+      "countries_supported": 58,
+      "drug_types": 5,
+      "donors": 5,
+      "delivered_pos": 111,
+      "drugs": "ALB,PZQ,MEB,DEC,IVM"
+    },
+    {
+      "year": 2023,
+      "total_pos": 127,
+      "total_tablets": 1020009000,
+      "countries_supported": 59,
+      "drug_types": 4,
+      "donors": 4,
+      "delivered_pos": 126,
+      "drugs": "ALB,MEB,PZQ,DEC"
+    },
+    {
+      "year": 2024,
+      "total_pos": 124,
+      "total_tablets": 991445000,
+      "countries_supported": 59,
+      "drug_types": 4,
+      "donors": 4,
+      "delivered_pos": 122,
+      "drugs": "ALB,PZQ,DEC,MEB"
+    },
+    {
+      "year": 2025,
+      "total_pos": 112,
+      "total_tablets": 822851000,
+      "countries_supported": 57,
+      "drug_types": 4,
+      "donors": 4,
+      "delivered_pos": 90,
+      "drugs": "ALB,MEB,DEC,PZQ"
+    },
+    {
+      "year": 2026,
+      "total_pos": 63,
+      "total_tablets": 610132000,
+      "countries_supported": 32,
+      "drug_types": 4,
+      "donors": 4,
+      "delivered_pos": 10,
+      "drugs": "PZQ,ALB,DEC,MEB"
+    },
+    {
+      "year": 2027,
+      "total_pos": 2,
+      "total_tablets": 1275000,
+      "countries_supported": 1,
+      "drug_types": 2,
+      "donors": 2,
+      "delivered_pos": 1,
+      "drugs": "DEC,ALB"
+    }
+  ],
+  "donor_country": [
+    {
+      "donor": "Eisai",
+      "country": "India",
+      "total_pos": 41,
+      "total_tablets": 1185951000,
+      "drugs": "DEC",
+      "delivered_pos": 33
+    },
+    {
+      "donor": "Eisai",
+      "country": "Myanmar",
+      "total_pos": 14,
+      "total_tablets": 446976000,
+      "drugs": "DEC",
+      "delivered_pos": 12
+    },
+    {
+      "donor": "Eisai",
+      "country": "Indonesia",
+      "total_pos": 12,
+      "total_tablets": 337932000,
+      "drugs": "DEC",
+      "delivered_pos": 8
+    },
+    {
+      "donor": "Eisai",
+      "country": "Madagascar",
+      "total_pos": 9,
+      "total_tablets": 200224000,
+      "drugs": "DEC",
+      "delivered_pos": 7
+    },
+    {
+      "donor": "Eisai",
+      "country": "Zambia",
+      "total_pos": 6,
+      "total_tablets": 117320000,
+      "drugs": "DEC",
+      "delivered_pos": 4
+    },
+    {
+      "donor": "Eisai",
+      "country": "Nepal",
+      "total_pos": 4,
+      "total_tablets": 83664000,
+      "drugs": "DEC",
+      "delivered_pos": 4
+    },
+    {
+      "donor": "Eisai",
+      "country": "Zimbabwe",
+      "total_pos": 5,
+      "total_tablets": 63876000,
+      "drugs": "DEC",
+      "delivered_pos": 3
+    },
+    {
+      "donor": "Eisai",
+      "country": "Kenya",
+      "total_pos": 8,
+      "total_tablets": 57216000,
+      "drugs": "DEC",
+      "delivered_pos": 6
+    },
+    {
+      "donor": "Eisai",
+      "country": "Haiti",
+      "total_pos": 6,
+      "total_tablets": 50130000,
+      "drugs": "DEC",
+      "delivered_pos": 5
+    },
+    {
+      "donor": "Eisai",
+      "country": "Philippines",
+      "total_pos": 5,
+      "total_tablets": 19452000,
+      "drugs": "DEC",
+      "delivered_pos": 5
+    },
+    {
+      "donor": "Eisai",
+      "country": "Timor-Leste",
+      "total_pos": 6,
+      "total_tablets": 16452000,
+      "drugs": "DEC",
+      "delivered_pos": 6
+    },
+    {
+      "donor": "Eisai",
+      "country": "Papua New Guinea",
+      "total_pos": 11,
+      "total_tablets": 12860000,
+      "drugs": "DEC",
+      "delivered_pos": 9
+    },
+    {
+      "donor": "Eisai",
+      "country": "Guyana",
+      "total_pos": 8,
+      "total_tablets": 10944000,
+      "drugs": "DEC",
+      "delivered_pos": 7
+    },
+    {
+      "donor": "Eisai",
+      "country": "Comoros",
+      "total_pos": 3,
+      "total_tablets": 6144000,
+      "drugs": "DEC",
+      "delivered_pos": 3
+    },
+    {
+      "donor": "Eisai",
+      "country": "Fiji",
+      "total_pos": 8,
+      "total_tablets": 3276000,
+      "drugs": "DEC",
+      "delivered_pos": 5
+    },
+    {
+      "donor": "Eisai",
+      "country": "Sri Lanka",
+      "total_pos": 1,
+      "total_tablets": 2496000,
+      "drugs": "DEC",
+      "delivered_pos": 0
+    },
+    {
+      "donor": "Eisai",
+      "country": "French Polynesia",
+      "total_pos": 9,
+      "total_tablets": 2412000,
+      "drugs": "DEC",
+      "delivered_pos": 7
+    },
+    {
+      "donor": "Eisai",
+      "country": "Samoa",
+      "total_pos": 4,
+      "total_tablets": 1968000,
+      "drugs": "DEC",
+      "delivered_pos": 4
+    },
+    {
+      "donor": "Eisai",
+      "country": "Laos",
+      "total_pos": 4,
+      "total_tablets": 1464000,
+      "drugs": "DEC",
+      "delivered_pos": 4
+    },
+    {
+      "donor": "Eisai",
+      "country": "Sao Tome and Principe",
+      "total_pos": 3,
+      "total_tablets": 1356000,
+      "drugs": "DEC",
+      "delivered_pos": 3
+    },
+    {
+      "donor": "Eisai",
+      "country": "Eritrea",
+      "total_pos": 7,
+      "total_tablets": 1044000,
+      "drugs": "DEC",
+      "delivered_pos": 7
+    },
+    {
+      "donor": "Eisai",
+      "country": "Malaysia",
+      "total_pos": 7,
+      "total_tablets": 972000,
+      "drugs": "DEC",
+      "delivered_pos": 4
+    },
+    {
+      "donor": "Eisai",
+      "country": "Dominican Republic",
+      "total_pos": 3,
+      "total_tablets": 732000,
+      "drugs": "DEC",
+      "delivered_pos": 3
+    },
+    {
+      "donor": "Eisai",
+      "country": "American Samoa",
+      "total_pos": 3,
+      "total_tablets": 624000,
+      "drugs": "DEC",
+      "delivered_pos": 3
+    },
+    {
+      "donor": "Eisai",
+      "country": "Fed States of Mic",
+      "total_pos": 1,
+      "total_tablets": 240000,
+      "drugs": "DEC",
+      "delivered_pos": 0
+    },
+    {
+      "donor": "Eisai",
+      "country": "Egypt",
+      "total_pos": 3,
+      "total_tablets": 204000,
+      "drugs": "DEC",
+      "delivered_pos": 3
+    },
+    {
+      "donor": "Eisai",
+      "country": "Tuvalu",
+      "total_pos": 3,
+      "total_tablets": 132000,
+      "drugs": "DEC",
+      "delivered_pos": 3
+    },
+    {
+      "donor": "Eisai",
+      "country": "Maldives",
+      "total_pos": 1,
+      "total_tablets": 84000,
+      "drugs": "DEC",
+      "delivered_pos": 1
+    },
+    {
+      "donor": "Eisai",
+      "country": "Thailand",
+      "total_pos": 1,
+      "total_tablets": 84000,
+      "drugs": "DEC",
+      "delivered_pos": 1
+    },
+    {
+      "donor": "GSK",
+      "country": "India",
+      "total_pos": 173,
+      "total_tablets": 3717144600,
+      "drugs": "ALB",
+      "delivered_pos": 166
+    },
+    {
+      "donor": "GSK",
+      "country": "Nigeria",
+      "total_pos": 24,
+      "total_tablets": 676716000,
+      "drugs": "ALB",
+      "delivered_pos": 24
+    },
+    {
+      "donor": "GSK",
+      "country": "DRC",
+      "total_pos": 23,
+      "total_tablets": 466379000,
+      "drugs": "ALB",
+      "delivered_pos": 22
+    },
+    {
+      "donor": "GSK",
+      "country": "Myanmar",
+      "total_pos": 16,
+      "total_tablets": 262285000,
+      "drugs": "ALB",
+      "delivered_pos": 12
+    },
+    {
+      "donor": "GSK",
+      "country": "Indonesia",
+      "total_pos": 13,
+      "total_tablets": 202587000,
+      "drugs": "ALB",
+      "delivered_pos": 13
+    },
+    {
+      "donor": "GSK",
+      "country": "Tanzania",
+      "total_pos": 18,
+      "total_tablets": 191252000,
+      "drugs": "ALB",
+      "delivered_pos": 15
+    },
+    {
+      "donor": "GSK",
+      "country": "Philippines",
+      "total_pos": 12,
+      "total_tablets": 165330000,
+      "drugs": "ALB",
+      "delivered_pos": 12
+    },
+    {
+      "donor": "GSK",
+      "country": "Nepal",
+      "total_pos": 19,
+      "total_tablets": 141633000,
+      "drugs": "ALB",
+      "delivered_pos": 18
+    },
+    {
+      "donor": "GSK",
+      "country": "C\u00f4te d'Ivoire",
+      "total_pos": 11,
+      "total_tablets": 106512000,
+      "drugs": "ALB",
+      "delivered_pos": 11
+    },
+    {
+      "donor": "GSK",
+      "country": "Madagascar",
+      "total_pos": 9,
+      "total_tablets": 102984000,
+      "drugs": "ALB",
+      "delivered_pos": 9
+    },
+    {
+      "donor": "GSK",
+      "country": "Mozambique",
+      "total_pos": 14,
+      "total_tablets": 102038000,
+      "drugs": "ALB",
+      "delivered_pos": 14
+    },
+    {
+      "donor": "GSK",
+      "country": "DPR Korea",
+      "total_pos": 8,
+      "total_tablets": 86577000,
+      "drugs": "ALB",
+      "delivered_pos": 8
+    },
+    {
+      "donor": "GSK",
+      "country": "Rwanda",
+      "total_pos": 11,
+      "total_tablets": 68066000,
+      "drugs": "ALB",
+      "delivered_pos": 11
+    },
+    {
+      "donor": "GSK",
+      "country": "Afghanistan",
+      "total_pos": 8,
+      "total_tablets": 59129000,
+      "drugs": "ALB",
+      "delivered_pos": 7
+    },
+    {
+      "donor": "GSK",
+      "country": "Sudan",
+      "total_pos": 10,
+      "total_tablets": 58198000,
+      "drugs": "ALB",
+      "delivered_pos": 10
+    },
+    {
+      "donor": "GSK",
+      "country": "Cameroon",
+      "total_pos": 5,
+      "total_tablets": 52654000,
+      "drugs": "ALB",
+      "delivered_pos": 5
+    },
+    {
+      "donor": "GSK",
+      "country": "Cambodia",
+      "total_pos": 6,
+      "total_tablets": 51603000,
+      "drugs": "ALB",
+      "delivered_pos": 5
+    },
+    {
+      "donor": "GSK",
+      "country": "Zambia",
+      "total_pos": 7,
+      "total_tablets": 51534000,
+      "drugs": "ALB",
+      "delivered_pos": 7
+    },
+    {
+      "donor": "GSK",
+      "country": "Guinea",
+      "total_pos": 16,
+      "total_tablets": 50719000,
+      "drugs": "ALB",
+      "delivered_pos": 16
+    },
+    {
+      "donor": "GSK",
+      "country": "South Sudan",
+      "total_pos": 9,
+      "total_tablets": 45966000,
+      "drugs": "ALB",
+      "delivered_pos": 8
+    },
+    {
+      "donor": "GSK",
+      "country": "Angola",
+      "total_pos": 12,
+      "total_tablets": 43262000,
+      "drugs": "ALB",
+      "delivered_pos": 12
+    },
+    {
+      "donor": "GSK",
+      "country": "Senegal",
+      "total_pos": 15,
+      "total_tablets": 42513000,
+      "drugs": "ALB",
+      "delivered_pos": 15
+    },
+    {
+      "donor": "GSK",
+      "country": "Niger",
+      "total_pos": 11,
+      "total_tablets": 42018000,
+      "drugs": "ALB",
+      "delivered_pos": 11
+    },
+    {
+      "donor": "GSK",
+      "country": "Bangladesh",
+      "total_pos": 2,
+      "total_tablets": 40202000,
+      "drugs": "ALB",
+      "delivered_pos": 2
+    },
+    {
+      "donor": "GSK",
+      "country": "Kenya",
+      "total_pos": 12,
+      "total_tablets": 39657000,
+      "drugs": "ALB",
+      "delivered_pos": 11
+    },
+    {
+      "donor": "GSK",
+      "country": "Uganda",
+      "total_pos": 7,
+      "total_tablets": 34891000,
+      "drugs": "ALB",
+      "delivered_pos": 7
+    },
+    {
+      "donor": "GSK",
+      "country": "Ethiopia",
+      "total_pos": 11,
+      "total_tablets": 34780000,
+      "drugs": "ALB",
+      "delivered_pos": 10
+    },
+    {
+      "donor": "GSK",
+      "country": "Sierra Leone",
+      "total_pos": 13,
+      "total_tablets": 33911000,
+      "drugs": "ALB",
+      "delivered_pos": 12
+    },
+    {
+      "donor": "GSK",
+      "country": "CAR",
+      "total_pos": 15,
+      "total_tablets": 32104000,
+      "drugs": "ALB",
+      "delivered_pos": 13
+    },
+    {
+      "donor": "GSK",
+      "country": "Chad",
+      "total_pos": 12,
+      "total_tablets": 31779000,
+      "drugs": "ALB",
+      "delivered_pos": 12
+    },
+    {
+      "donor": "GSK",
+      "country": "Mali",
+      "total_pos": 8,
+      "total_tablets": 29643000,
+      "drugs": "ALB",
+      "delivered_pos": 8
+    },
+    {
+      "donor": "GSK",
+      "country": "Togo",
+      "total_pos": 12,
+      "total_tablets": 29451000,
+      "drugs": "ALB",
+      "delivered_pos": 12
+    },
+    {
+      "donor": "GSK",
+      "country": "Zimbabwe",
+      "total_pos": 10,
+      "total_tablets": 28465000,
+      "drugs": "ALB",
+      "delivered_pos": 8
+    },
+    {
+      "donor": "GSK",
+      "country": "Burkina Faso",
+      "total_pos": 11,
+      "total_tablets": 27252000,
+      "drugs": "ALB",
+      "delivered_pos": 10
+    },
+    {
+      "donor": "GSK",
+      "country": "Malawi",
+      "total_pos": 4,
+      "total_tablets": 26746000,
+      "drugs": "ALB",
+      "delivered_pos": 4
+    },
+    {
+      "donor": "GSK",
+      "country": "Haiti",
+      "total_pos": 8,
+      "total_tablets": 25812000,
+      "drugs": "ALB",
+      "delivered_pos": 8
+    },
+    {
+      "donor": "GSK",
+      "country": "Ghana",
+      "total_pos": 8,
+      "total_tablets": 25295000,
+      "drugs": "ALB",
+      "delivered_pos": 6
+    },
+    {
+      "donor": "GSK",
+      "country": "Guatemala",
+      "total_pos": 5,
+      "total_tablets": 24572000,
+      "drugs": "ALB",
+      "delivered_pos": 5
+    },
+    {
+      "donor": "GSK",
+      "country": "Zanzibar",
+      "total_pos": 18,
+      "total_tablets": 23711000,
+      "drugs": "ALB",
+      "delivered_pos": 16
+    },
+    {
+      "donor": "GSK",
+      "country": "Honduras",
+      "total_pos": 6,
+      "total_tablets": 22767000,
+      "drugs": "ALB",
+      "delivered_pos": 6
+    },
+    {
+      "donor": "GSK",
+      "country": "Benin",
+      "total_pos": 14,
+      "total_tablets": 20996000,
+      "drugs": "ALB",
+      "delivered_pos": 14
+    },
+    {
+      "donor": "GSK",
+      "country": "Liberia",
+      "total_pos": 14,
+      "total_tablets": 20019000,
+      "drugs": "ALB",
+      "delivered_pos": 14
+    },
+    {
+      "donor": "GSK",
+      "country": "Congo",
+      "total_pos": 17,
+      "total_tablets": 19098000,
+      "drugs": "ALB",
+      "delivered_pos": 14
+    },
+    {
+      "donor": "GSK",
+      "country": "Dominican Republic",
+      "total_pos": 7,
+      "total_tablets": 18039000,
+      "drugs": "ALB",
+      "delivered_pos": 7
+    },
+    {
+      "donor": "GSK",
+      "country": "Tajikistan",
+      "total_pos": 8,
+      "total_tablets": 17551000,
+      "drugs": "ALB",
+      "delivered_pos": 7
+    },
+    {
+      "donor": "GSK",
+      "country": "Burundi",
+      "total_pos": 6,
+      "total_tablets": 16195000,
+      "drugs": "ALB",
+      "delivered_pos": 4
+    },
+    {
+      "donor": "GSK",
+      "country": "Brazil",
+      "total_pos": 2,
+      "total_tablets": 14329000,
+      "drugs": "ALB",
+      "delivered_pos": 2
+    },
+    {
+      "donor": "GSK",
+      "country": "Yemen",
+      "total_pos": 3,
+      "total_tablets": 13871000,
+      "drugs": "ALB",
+      "delivered_pos": 3
+    },
+    {
+      "donor": "GSK",
+      "country": "Colombia",
+      "total_pos": 8,
+      "total_tablets": 12852000,
+      "drugs": "ALB",
+      "delivered_pos": 8
+    },
+    {
+      "donor": "GSK",
+      "country": "Paraguay",
+      "total_pos": 8,
+      "total_tablets": 8415000,
+      "drugs": "ALB",
+      "delivered_pos": 8
+    },
+    {
+      "donor": "GSK",
+      "country": "El Salvador",
+      "total_pos": 10,
+      "total_tablets": 8056000,
+      "drugs": "ALB",
+      "delivered_pos": 9
+    },
+    {
+      "donor": "GSK",
+      "country": "Timor-Leste",
+      "total_pos": 12,
+      "total_tablets": 7455000,
+      "drugs": "ALB",
+      "delivered_pos": 12
+    },
+    {
+      "donor": "GSK",
+      "country": "Uzbekistan",
+      "total_pos": 1,
+      "total_tablets": 7451000,
+      "drugs": "ALB",
+      "delivered_pos": 1
+    },
+    {
+      "donor": "GSK",
+      "country": "Laos",
+      "total_pos": 8,
+      "total_tablets": 6188000,
+      "drugs": "ALB",
+      "delivered_pos": 8
+    },
+    {
+      "donor": "GSK",
+      "country": "Guinea Bissau",
+      "total_pos": 11,
+      "total_tablets": 6066000,
+      "drugs": "ALB",
+      "delivered_pos": 9
+    },
+    {
+      "donor": "GSK",
+      "country": "Egypt",
+      "total_pos": 3,
+      "total_tablets": 4060000,
+      "drugs": "ALB",
+      "delivered_pos": 3
+    },
+    {
+      "donor": "GSK",
+      "country": "Equatorial Guinea",
+      "total_pos": 4,
+      "total_tablets": 3474000,
+      "drugs": "ALB",
+      "delivered_pos": 4
+    },
+    {
+      "donor": "GSK",
+      "country": "Guyana",
+      "total_pos": 5,
+      "total_tablets": 2937000,
+      "drugs": "ALB",
+      "delivered_pos": 5
+    },
+    {
+      "donor": "GSK",
+      "country": "Gabon",
+      "total_pos": 6,
+      "total_tablets": 2919000,
+      "drugs": "ALB",
+      "delivered_pos": 6
+    },
+    {
+      "donor": "GSK",
+      "country": "Papua New Guinea",
+      "total_pos": 7,
+      "total_tablets": 2779000,
+      "drugs": "ALB",
+      "delivered_pos": 7
+    },
+    {
+      "donor": "GSK",
+      "country": "Comoros",
+      "total_pos": 4,
+      "total_tablets": 2570000,
+      "drugs": "ALB",
+      "delivered_pos": 4
+    },
+    {
+      "donor": "GSK",
+      "country": "Vanuatu",
+      "total_pos": 11,
+      "total_tablets": 2155000,
+      "drugs": "ALB",
+      "delivered_pos": 11
+    },
+    {
+      "donor": "GSK",
+      "country": "Lesotho",
+      "total_pos": 4,
+      "total_tablets": 1842000,
+      "drugs": "ALB",
+      "delivered_pos": 4
+    },
+    {
+      "donor": "GSK",
+      "country": "Kyrgyzstan",
+      "total_pos": 3,
+      "total_tablets": 1728000,
+      "drugs": "ALB",
+      "delivered_pos": 3
+    },
+    {
+      "donor": "GSK",
+      "country": "Eswatini",
+      "total_pos": 6,
+      "total_tablets": 1651000,
+      "drugs": "ALB",
+      "delivered_pos": 6
+    },
+    {
+      "donor": "GSK",
+      "country": "Bhutan",
+      "total_pos": 6,
+      "total_tablets": 1632000,
+      "drugs": "ALB",
+      "delivered_pos": 6
+    },
+    {
+      "donor": "GSK",
+      "country": "Fiji",
+      "total_pos": 9,
+      "total_tablets": 1419000,
+      "drugs": "ALB",
+      "delivered_pos": 9
+    },
+    {
+      "donor": "GSK",
+      "country": "Mauritania",
+      "total_pos": 2,
+      "total_tablets": 1348000,
+      "drugs": "ALB",
+      "delivered_pos": 2
+    },
+    {
+      "donor": "GSK",
+      "country": "Sri Lanka",
+      "total_pos": 1,
+      "total_tablets": 1000000,
+      "drugs": "ALB",
+      "delivered_pos": 0
+    },
+    {
+      "donor": "GSK",
+      "country": "Sao Tome and Principe",
+      "total_pos": 7,
+      "total_tablets": 824000,
+      "drugs": "ALB",
+      "delivered_pos": 7
+    },
+    {
+      "donor": "GSK",
+      "country": "Kiribati",
+      "total_pos": 8,
+      "total_tablets": 686000,
+      "drugs": "ALB",
+      "delivered_pos": 7
+    },
+    {
+      "donor": "GSK",
+      "country": "Solomon Islands",
+      "total_pos": 7,
+      "total_tablets": 637000,
+      "drugs": "ALB",
+      "delivered_pos": 7
+    },
+    {
+      "donor": "GSK",
+      "country": "Azerbaijan",
+      "total_pos": 1,
+      "total_tablets": 508000,
+      "drugs": "ALB",
+      "delivered_pos": 1
+    },
+    {
+      "donor": "GSK",
+      "country": "Botswana",
+      "total_pos": 3,
+      "total_tablets": 489000,
+      "drugs": "ALB",
+      "delivered_pos": 3
+    },
+    {
+      "donor": "GSK",
+      "country": "French Polynesia",
+      "total_pos": 7,
+      "total_tablets": 474000,
+      "drugs": "ALB",
+      "delivered_pos": 7
+    },
+    {
+      "donor": "GSK",
+      "country": "Eritrea",
+      "total_pos": 6,
+      "total_tablets": 450000,
+      "drugs": "ALB",
+      "delivered_pos": 5
+    },
+    {
+      "donor": "GSK",
+      "country": "Samoa",
+      "total_pos": 3,
+      "total_tablets": 444000,
+      "drugs": "ALB",
+      "delivered_pos": 3
+    },
+    {
+      "donor": "GSK",
+      "country": "Malaysia",
+      "total_pos": 5,
+      "total_tablets": 426000,
+      "drugs": "ALB",
+      "delivered_pos": 5
+    },
+    {
+      "donor": "GSK",
+      "country": "Gambia",
+      "total_pos": 5,
+      "total_tablets": 276000,
+      "drugs": "ALB",
+      "delivered_pos": 5
+    },
+    {
+      "donor": "GSK",
+      "country": "Namibia",
+      "total_pos": 1,
+      "total_tablets": 260000,
+      "drugs": "ALB",
+      "delivered_pos": 1
+    },
+    {
+      "donor": "GSK",
+      "country": "Marshall Islands",
+      "total_pos": 4,
+      "total_tablets": 129000,
+      "drugs": "ALB",
+      "delivered_pos": 3
+    },
+    {
+      "donor": "GSK",
+      "country": "American Samoa",
+      "total_pos": 3,
+      "total_tablets": 127000,
+      "drugs": "ALB",
+      "delivered_pos": 3
+    },
+    {
+      "donor": "GSK",
+      "country": "Fed States of Mic",
+      "total_pos": 2,
+      "total_tablets": 126000,
+      "drugs": "ALB",
+      "delivered_pos": 2
+    },
+    {
+      "donor": "GSK",
+      "country": "Cape Verde",
+      "total_pos": 1,
+      "total_tablets": 102000,
+      "drugs": "ALB",
+      "delivered_pos": 1
+    },
+    {
+      "donor": "GSK",
+      "country": "Tuvalu",
+      "total_pos": 5,
+      "total_tablets": 47000,
+      "drugs": "ALB",
+      "delivered_pos": 5
+    },
+    {
+      "donor": "GSK",
+      "country": "Tonga",
+      "total_pos": 1,
+      "total_tablets": 26000,
+      "drugs": "ALB",
+      "delivered_pos": 1
+    },
+    {
+      "donor": "GSK",
+      "country": "Cook Islands",
+      "total_pos": 1,
+      "total_tablets": 7000,
+      "drugs": "ALB",
+      "delivered_pos": 1
+    },
+    {
+      "donor": "J&J",
+      "country": "Bangladesh",
+      "total_pos": 27,
+      "total_tablets": 658442000,
+      "drugs": "MEB",
+      "delivered_pos": 26
+    },
+    {
+      "donor": "J&J",
+      "country": "Ethiopia",
+      "total_pos": 13,
+      "total_tablets": 239647000,
+      "drugs": "MEB",
+      "delivered_pos": 12
+    },
+    {
+      "donor": "J&J",
+      "country": "Uganda",
+      "total_pos": 13,
+      "total_tablets": 214874000,
+      "drugs": "MEB",
+      "delivered_pos": 12
+    },
+    {
+      "donor": "J&J",
+      "country": "Nigeria",
+      "total_pos": 8,
+      "total_tablets": 119992000,
+      "drugs": "MEB",
+      "delivered_pos": 8
+    },
+    {
+      "donor": "J&J",
+      "country": "Viet Nam",
+      "total_pos": 10,
+      "total_tablets": 106084000,
+      "drugs": "MEB",
+      "delivered_pos": 9
+    },
+    {
+      "donor": "J&J",
+      "country": "Pakistan",
+      "total_pos": 7,
+      "total_tablets": 81937000,
+      "drugs": "MEB",
+      "delivered_pos": 5
+    },
+    {
+      "donor": "J&J",
+      "country": "Cameroon",
+      "total_pos": 10,
+      "total_tablets": 66565000,
+      "drugs": "MEB",
+      "delivered_pos": 9
+    },
+    {
+      "donor": "J&J",
+      "country": "Rwanda",
+      "total_pos": 7,
+      "total_tablets": 63042000,
+      "drugs": "MEB",
+      "delivered_pos": 7
+    },
+    {
+      "donor": "J&J",
+      "country": "Cambodia",
+      "total_pos": 6,
+      "total_tablets": 53828000,
+      "drugs": "MEB",
+      "delivered_pos": 6
+    },
+    {
+      "donor": "J&J",
+      "country": "South Africa",
+      "total_pos": 6,
+      "total_tablets": 53776000,
+      "drugs": "MEB",
+      "delivered_pos": 5
+    },
+    {
+      "donor": "J&J",
+      "country": "Egypt",
+      "total_pos": 4,
+      "total_tablets": 52803000,
+      "drugs": "MEB",
+      "delivered_pos": 4
+    },
+    {
+      "donor": "J&J",
+      "country": "Philippines",
+      "total_pos": 2,
+      "total_tablets": 46734000,
+      "drugs": "MEB",
+      "delivered_pos": 2
+    },
+    {
+      "donor": "J&J",
+      "country": "Kenya",
+      "total_pos": 6,
+      "total_tablets": 37364000,
+      "drugs": "MEB",
+      "delivered_pos": 6
+    },
+    {
+      "donor": "J&J",
+      "country": "Tanzania",
+      "total_pos": 3,
+      "total_tablets": 22696000,
+      "drugs": "MEB",
+      "delivered_pos": 1
+    },
+    {
+      "donor": "J&J",
+      "country": "Iraq",
+      "total_pos": 4,
+      "total_tablets": 22333000,
+      "drugs": "MEB",
+      "delivered_pos": 4
+    },
+    {
+      "donor": "J&J",
+      "country": "Madagascar",
+      "total_pos": 5,
+      "total_tablets": 22175000,
+      "drugs": "MEB",
+      "delivered_pos": 5
+    },
+    {
+      "donor": "J&J",
+      "country": "Nicaragua",
+      "total_pos": 10,
+      "total_tablets": 20926000,
+      "drugs": "MEB",
+      "delivered_pos": 9
+    },
+    {
+      "donor": "J&J",
+      "country": "Afghanistan",
+      "total_pos": 3,
+      "total_tablets": 20486000,
+      "drugs": "MEB",
+      "delivered_pos": 3
+    },
+    {
+      "donor": "J&J",
+      "country": "Syria",
+      "total_pos": 13,
+      "total_tablets": 12266000,
+      "drugs": "MEB",
+      "delivered_pos": 12
+    },
+    {
+      "donor": "J&J",
+      "country": "Somalia",
+      "total_pos": 5,
+      "total_tablets": 11641000,
+      "drugs": "MEB",
+      "delivered_pos": 5
+    },
+    {
+      "donor": "J&J",
+      "country": "Laos",
+      "total_pos": 5,
+      "total_tablets": 10521000,
+      "drugs": "MEB",
+      "delivered_pos": 5
+    },
+    {
+      "donor": "J&J",
+      "country": "Dominican Republic",
+      "total_pos": 6,
+      "total_tablets": 10211000,
+      "drugs": "MEB",
+      "delivered_pos": 6
+    },
+    {
+      "donor": "J&J",
+      "country": "Colombia",
+      "total_pos": 7,
+      "total_tablets": 8428000,
+      "drugs": "MEB",
+      "delivered_pos": 6
+    },
+    {
+      "donor": "J&J",
+      "country": "Honduras",
+      "total_pos": 2,
+      "total_tablets": 5444000,
+      "drugs": "MEB",
+      "delivered_pos": 2
+    },
+    {
+      "donor": "J&J",
+      "country": "Zambia",
+      "total_pos": 3,
+      "total_tablets": 5407000,
+      "drugs": "MEB",
+      "delivered_pos": 3
+    },
+    {
+      "donor": "J&J",
+      "country": "Sierra Leone",
+      "total_pos": 2,
+      "total_tablets": 3344000,
+      "drugs": "MEB",
+      "delivered_pos": 1
+    },
+    {
+      "donor": "J&J",
+      "country": "Israel",
+      "total_pos": 15,
+      "total_tablets": 2886000,
+      "drugs": "MEB",
+      "delivered_pos": 15
+    },
+    {
+      "donor": "J&J",
+      "country": "Chad",
+      "total_pos": 7,
+      "total_tablets": 2535000,
+      "drugs": "MEB",
+      "delivered_pos": 7
+    },
+    {
+      "donor": "J&J",
+      "country": "Myanmar",
+      "total_pos": 3,
+      "total_tablets": 1740000,
+      "drugs": "MEB",
+      "delivered_pos": 2
+    },
+    {
+      "donor": "J&J",
+      "country": "Papua New Guinea",
+      "total_pos": 1,
+      "total_tablets": 1299000,
+      "drugs": "MEB",
+      "delivered_pos": 1
+    },
+    {
+      "donor": "J&J",
+      "country": "Angola",
+      "total_pos": 1,
+      "total_tablets": 1260000,
+      "drugs": "MEB",
+      "delivered_pos": 1
+    },
+    {
+      "donor": "J&J",
+      "country": "Jordan",
+      "total_pos": 10,
+      "total_tablets": 1253000,
+      "drugs": "MEB",
+      "delivered_pos": 9
+    },
+    {
+      "donor": "J&J",
+      "country": "Senegal",
+      "total_pos": 1,
+      "total_tablets": 1100000,
+      "drugs": "MEB",
+      "delivered_pos": 1
+    },
+    {
+      "donor": "J&J",
+      "country": "Zanzibar",
+      "total_pos": 2,
+      "total_tablets": 753000,
+      "drugs": "MEB",
+      "delivered_pos": 2
+    },
+    {
+      "donor": "J&J",
+      "country": "Eritrea",
+      "total_pos": 1,
+      "total_tablets": 684000,
+      "drugs": "MEB",
+      "delivered_pos": 1
+    },
+    {
+      "donor": "J&J",
+      "country": "Cape Verde",
+      "total_pos": 6,
+      "total_tablets": 536000,
+      "drugs": "MEB",
+      "delivered_pos": 6
+    },
+    {
+      "donor": "J&J",
+      "country": "Lebanon",
+      "total_pos": 9,
+      "total_tablets": 465000,
+      "drugs": "MEB",
+      "delivered_pos": 8
+    },
+    {
+      "donor": "J&J",
+      "country": "Gabon",
+      "total_pos": 2,
+      "total_tablets": 432000,
+      "drugs": "MEB",
+      "delivered_pos": 2
+    },
+    {
+      "donor": "J&J",
+      "country": "United Arab Emirates",
+      "total_pos": 1,
+      "total_tablets": 400000,
+      "drugs": "MEB",
+      "delivered_pos": 1
+    },
+    {
+      "donor": "J&J",
+      "country": "Guinea Bissau",
+      "total_pos": 2,
+      "total_tablets": 399000,
+      "drugs": "MEB",
+      "delivered_pos": 2
+    },
+    {
+      "donor": "J&J",
+      "country": "Georgia",
+      "total_pos": 1,
+      "total_tablets": 393000,
+      "drugs": "MEB",
+      "delivered_pos": 1
+    },
+    {
+      "donor": "J&J",
+      "country": "Liberia",
+      "total_pos": 1,
+      "total_tablets": 288000,
+      "drugs": "MEB",
+      "delivered_pos": 1
+    },
+    {
+      "donor": "J&J",
+      "country": "Sao Tome and Principe",
+      "total_pos": 3,
+      "total_tablets": 159000,
+      "drugs": "MEB",
+      "delivered_pos": 3
+    },
+    {
+      "donor": "J&J",
+      "country": "Congo",
+      "total_pos": 1,
+      "total_tablets": 124000,
+      "drugs": "MEB",
+      "delivered_pos": 0
+    },
+    {
+      "donor": "J&J",
+      "country": "Botswana",
+      "total_pos": 1,
+      "total_tablets": 108000,
+      "drugs": "MEB",
+      "delivered_pos": 1
+    },
+    {
+      "donor": "Merck KGaA",
+      "country": "Nigeria",
+      "total_pos": 13,
+      "total_tablets": 297126000,
+      "drugs": "PZQ",
+      "delivered_pos": 12
+    },
+    {
+      "donor": "Merck KGaA",
+      "country": "DRC",
+      "total_pos": 11,
+      "total_tablets": 211024000,
+      "drugs": "PZQ",
+      "delivered_pos": 11
+    },
+    {
+      "donor": "Merck KGaA",
+      "country": "Ethiopia",
+      "total_pos": 14,
+      "total_tablets": 169967000,
+      "drugs": "PZQ",
+      "delivered_pos": 13
+    },
+    {
+      "donor": "Merck KGaA",
+      "country": "Tanzania",
+      "total_pos": 9,
+      "total_tablets": 117387000,
+      "drugs": "PZQ",
+      "delivered_pos": 8
+    },
+    {
+      "donor": "Merck KGaA",
+      "country": "Madagascar",
+      "total_pos": 9,
+      "total_tablets": 85851000,
+      "drugs": "PZQ",
+      "delivered_pos": 9
+    },
+    {
+      "donor": "Merck KGaA",
+      "country": "Mozambique",
+      "total_pos": 7,
+      "total_tablets": 84762000,
+      "drugs": "PZQ",
+      "delivered_pos": 7
+    },
+    {
+      "donor": "Merck KGaA",
+      "country": "Cameroon",
+      "total_pos": 12,
+      "total_tablets": 84259000,
+      "drugs": "PZQ",
+      "delivered_pos": 11
+    },
+    {
+      "donor": "Merck KGaA",
+      "country": "Mali",
+      "total_pos": 11,
+      "total_tablets": 74871000,
+      "drugs": "PZQ",
+      "delivered_pos": 10
+    },
+    {
+      "donor": "Merck KGaA",
+      "country": "Ghana",
+      "total_pos": 10,
+      "total_tablets": 69624000,
+      "drugs": "PZQ",
+      "delivered_pos": 10
+    },
+    {
+      "donor": "Merck KGaA",
+      "country": "Rwanda",
+      "total_pos": 14,
+      "total_tablets": 64999000,
+      "drugs": "PZQ",
+      "delivered_pos": 14
+    },
+    {
+      "donor": "Merck KGaA",
+      "country": "Malawi",
+      "total_pos": 8,
+      "total_tablets": 61254000,
+      "drugs": "PZQ",
+      "delivered_pos": 8
+    },
+    {
+      "donor": "Merck KGaA",
+      "country": "C\u00f4te d'Ivoire",
+      "total_pos": 10,
+      "total_tablets": 60624000,
+      "drugs": "PZQ",
+      "delivered_pos": 10
+    },
+    {
+      "donor": "Merck KGaA",
+      "country": "Uganda",
+      "total_pos": 10,
+      "total_tablets": 58842000,
+      "drugs": "PZQ",
+      "delivered_pos": 9
+    },
+    {
+      "donor": "Merck KGaA",
+      "country": "Burkina Faso",
+      "total_pos": 11,
+      "total_tablets": 55008000,
+      "drugs": "PZQ",
+      "delivered_pos": 10
+    },
+    {
+      "donor": "Merck KGaA",
+      "country": "Angola",
+      "total_pos": 11,
+      "total_tablets": 53550000,
+      "drugs": "PZQ",
+      "delivered_pos": 11
+    },
+    {
+      "donor": "Merck KGaA",
+      "country": "Kenya",
+      "total_pos": 10,
+      "total_tablets": 52020000,
+      "drugs": "PZQ",
+      "delivered_pos": 10
+    },
+    {
+      "donor": "Merck KGaA",
+      "country": "Sudan",
+      "total_pos": 4,
+      "total_tablets": 49024000,
+      "drugs": "PZQ",
+      "delivered_pos": 4
+    },
+    {
+      "donor": "Merck KGaA",
+      "country": "Guinea",
+      "total_pos": 11,
+      "total_tablets": 45000000,
+      "drugs": "PZQ",
+      "delivered_pos": 10
+    },
+    {
+      "donor": "Merck KGaA",
+      "country": "Niger",
+      "total_pos": 7,
+      "total_tablets": 43326000,
+      "drugs": "PZQ",
+      "delivered_pos": 7
+    },
+    {
+      "donor": "Merck KGaA",
+      "country": "Zimbabwe",
+      "total_pos": 6,
+      "total_tablets": 41211000,
+      "drugs": "PZQ",
+      "delivered_pos": 6
+    },
+    {
+      "donor": "Merck KGaA",
+      "country": "Senegal",
+      "total_pos": 12,
+      "total_tablets": 40279000,
+      "drugs": "PZQ",
+      "delivered_pos": 12
+    },
+    {
+      "donor": "Merck KGaA",
+      "country": "Egypt",
+      "total_pos": 5,
+      "total_tablets": 40174000,
+      "drugs": "PZQ",
+      "delivered_pos": 5
+    },
+    {
+      "donor": "Merck KGaA",
+      "country": "Zanzibar",
+      "total_pos": 10,
+      "total_tablets": 34551000,
+      "drugs": "PZQ",
+      "delivered_pos": 8
+    },
+    {
+      "donor": "Merck KGaA",
+      "country": "Chad",
+      "total_pos": 10,
+      "total_tablets": 33175000,
+      "drugs": "PZQ",
+      "delivered_pos": 9
+    },
+    {
+      "donor": "Merck KGaA",
+      "country": "Togo",
+      "total_pos": 8,
+      "total_tablets": 29385000,
+      "drugs": "PZQ",
+      "delivered_pos": 8
+    },
+    {
+      "donor": "Merck KGaA",
+      "country": "Burundi",
+      "total_pos": 10,
+      "total_tablets": 23877000,
+      "drugs": "PZQ",
+      "delivered_pos": 9
+    },
+    {
+      "donor": "Merck KGaA",
+      "country": "Benin",
+      "total_pos": 9,
+      "total_tablets": 19485000,
+      "drugs": "PZQ",
+      "delivered_pos": 8
+    },
+    {
+      "donor": "Merck KGaA",
+      "country": "Sierra Leone",
+      "total_pos": 7,
+      "total_tablets": 19341000,
+      "drugs": "PZQ",
+      "delivered_pos": 6
+    },
+    {
+      "donor": "Merck KGaA",
+      "country": "Zambia",
+      "total_pos": 3,
+      "total_tablets": 17788000,
+      "drugs": "PZQ",
+      "delivered_pos": 3
+    },
+    {
+      "donor": "Merck KGaA",
+      "country": "Somalia",
+      "total_pos": 5,
+      "total_tablets": 17236000,
+      "drugs": "PZQ",
+      "delivered_pos": 5
+    },
+    {
+      "donor": "Merck KGaA",
+      "country": "Liberia",
+      "total_pos": 8,
+      "total_tablets": 13077000,
+      "drugs": "PZQ",
+      "delivered_pos": 8
+    },
+    {
+      "donor": "Merck KGaA",
+      "country": "South Sudan",
+      "total_pos": 7,
+      "total_tablets": 11142000,
+      "drugs": "PZQ",
+      "delivered_pos": 7
+    },
+    {
+      "donor": "Merck KGaA",
+      "country": "Yemen",
+      "total_pos": 2,
+      "total_tablets": 10044000,
+      "drugs": "PZQ",
+      "delivered_pos": 2
+    },
+    {
+      "donor": "Merck KGaA",
+      "country": "CAR",
+      "total_pos": 7,
+      "total_tablets": 8217000,
+      "drugs": "PZQ",
+      "delivered_pos": 7
+    },
+    {
+      "donor": "Merck KGaA",
+      "country": "Eritrea",
+      "total_pos": 9,
+      "total_tablets": 8011000,
+      "drugs": "PZQ",
+      "delivered_pos": 9
+    },
+    {
+      "donor": "Merck KGaA",
+      "country": "Mauritania",
+      "total_pos": 7,
+      "total_tablets": 7911000,
+      "drugs": "PZQ",
+      "delivered_pos": 7
+    },
+    {
+      "donor": "Merck KGaA",
+      "country": "Gambia",
+      "total_pos": 3,
+      "total_tablets": 2574000,
+      "drugs": "PZQ",
+      "delivered_pos": 3
+    },
+    {
+      "donor": "Merck KGaA",
+      "country": "Laos",
+      "total_pos": 10,
+      "total_tablets": 2538000,
+      "drugs": "PZQ",
+      "delivered_pos": 9
+    },
+    {
+      "donor": "Merck KGaA",
+      "country": "Gabon",
+      "total_pos": 2,
+      "total_tablets": 2394000,
+      "drugs": "PZQ",
+      "delivered_pos": 2
+    },
+    {
+      "donor": "Merck KGaA",
+      "country": "Eswatini",
+      "total_pos": 5,
+      "total_tablets": 2106000,
+      "drugs": "PZQ",
+      "delivered_pos": 5
+    },
+    {
+      "donor": "Merck KGaA",
+      "country": "Guinea Bissau",
+      "total_pos": 5,
+      "total_tablets": 2007000,
+      "drugs": "PZQ",
+      "delivered_pos": 4
+    },
+    {
+      "donor": "Merck KGaA",
+      "country": "Congo",
+      "total_pos": 7,
+      "total_tablets": 1881000,
+      "drugs": "PZQ",
+      "delivered_pos": 7
+    },
+    {
+      "donor": "Merck KGaA",
+      "country": "Cambodia",
+      "total_pos": 11,
+      "total_tablets": 1512000,
+      "drugs": "PZQ",
+      "delivered_pos": 10
+    },
+    {
+      "donor": "Merck KGaA",
+      "country": "Botswana",
+      "total_pos": 2,
+      "total_tablets": 1413000,
+      "drugs": "PZQ",
+      "delivered_pos": 2
+    },
+    {
+      "donor": "Merck KGaA",
+      "country": "Equatorial Guinea",
+      "total_pos": 3,
+      "total_tablets": 981000,
+      "drugs": "PZQ",
+      "delivered_pos": 2
+    },
+    {
+      "donor": "Merck KGaA",
+      "country": "Indonesia",
+      "total_pos": 10,
+      "total_tablets": 786000,
+      "drugs": "PZQ",
+      "delivered_pos": 9
+    },
+    {
+      "donor": "Merck KGaA",
+      "country": "Namibia",
+      "total_pos": 1,
+      "total_tablets": 396000,
+      "drugs": "PZQ",
+      "delivered_pos": 1
+    },
+    {
+      "donor": "Merck KGaA",
+      "country": "Sao Tome and Principe",
+      "total_pos": 4,
+      "total_tablets": 252000,
+      "drugs": "PZQ",
+      "delivered_pos": 4
+    },
+    {
+      "donor": "Merck KGaA",
+      "country": "Switzerland",
+      "total_pos": 1,
+      "total_tablets": 27000,
+      "drugs": "PZQ",
+      "delivered_pos": 1
+    },
+    {
+      "donor": "Merck KGaA",
+      "country": "WHO Geneva",
+      "total_pos": 1,
+      "total_tablets": 18000,
+      "drugs": "PZQ",
+      "delivered_pos": 0
+    },
+    {
+      "donor": "Merck KGaA",
+      "country": "Italy",
+      "total_pos": 1,
+      "total_tablets": 400,
+      "drugs": "PZQ",
+      "delivered_pos": 1
+    },
+    {
+      "donor": "Merck USA",
+      "country": "Bolivia",
+      "total_pos": 1,
+      "total_tablets": 586000,
+      "drugs": "TCZ",
+      "delivered_pos": 0
+    },
+    {
+      "donor": "Merck USA",
+      "country": "Ethiopia",
+      "total_pos": 1,
+      "total_tablets": 62500,
+      "drugs": "IVM",
+      "delivered_pos": 0
+    },
+    {
+      "donor": "Merck USA",
+      "country": "Viet Nam",
+      "total_pos": 1,
+      "total_tablets": 15000,
+      "drugs": "TCZ",
+      "delivered_pos": 0
+    },
+    {
+      "donor": "Merck USA",
+      "country": "Cambodia",
+      "total_pos": 1,
+      "total_tablets": 2000,
+      "drugs": "TCZ",
+      "delivered_pos": 0
+    },
+    {
+      "donor": "Merck USA",
+      "country": "Egypt",
+      "total_pos": 1,
+      "total_tablets": 1500,
+      "drugs": "TCZ",
+      "delivered_pos": 1
+    }
+  ],
+  "drug_country": [
+    {
+      "drug_code": "ALB",
+      "drug_name": "Albendazole",
+      "country": "India",
+      "total_pos": 173,
+      "total_tablets": 3717144600,
+      "donors": "GSK",
+      "delivered_pos": 166
+    },
+    {
+      "drug_code": "ALB",
+      "drug_name": "Albendazole",
+      "country": "Nigeria",
+      "total_pos": 24,
+      "total_tablets": 676716000,
+      "donors": "GSK",
+      "delivered_pos": 24
+    },
+    {
+      "drug_code": "ALB",
+      "drug_name": "Albendazole",
+      "country": "DRC",
+      "total_pos": 23,
+      "total_tablets": 466379000,
+      "donors": "GSK",
+      "delivered_pos": 22
+    },
+    {
+      "drug_code": "ALB",
+      "drug_name": "Albendazole",
+      "country": "Myanmar",
+      "total_pos": 16,
+      "total_tablets": 262285000,
+      "donors": "GSK",
+      "delivered_pos": 12
+    },
+    {
+      "drug_code": "ALB",
+      "drug_name": "Albendazole",
+      "country": "Indonesia",
+      "total_pos": 13,
+      "total_tablets": 202587000,
+      "donors": "GSK",
+      "delivered_pos": 13
+    },
+    {
+      "drug_code": "ALB",
+      "drug_name": "Albendazole",
+      "country": "Tanzania",
+      "total_pos": 18,
+      "total_tablets": 191252000,
+      "donors": "GSK",
+      "delivered_pos": 15
+    },
+    {
+      "drug_code": "ALB",
+      "drug_name": "Albendazole",
+      "country": "Philippines",
+      "total_pos": 12,
+      "total_tablets": 165330000,
+      "donors": "GSK",
+      "delivered_pos": 12
+    },
+    {
+      "drug_code": "ALB",
+      "drug_name": "Albendazole",
+      "country": "Nepal",
+      "total_pos": 19,
+      "total_tablets": 141633000,
+      "donors": "GSK",
+      "delivered_pos": 18
+    },
+    {
+      "drug_code": "ALB",
+      "drug_name": "Albendazole",
+      "country": "C\u00f4te d'Ivoire",
+      "total_pos": 11,
+      "total_tablets": 106512000,
+      "donors": "GSK",
+      "delivered_pos": 11
+    },
+    {
+      "drug_code": "ALB",
+      "drug_name": "Albendazole",
+      "country": "Madagascar",
+      "total_pos": 9,
+      "total_tablets": 102984000,
+      "donors": "GSK",
+      "delivered_pos": 9
+    },
+    {
+      "drug_code": "ALB",
+      "drug_name": "Albendazole",
+      "country": "Mozambique",
+      "total_pos": 14,
+      "total_tablets": 102038000,
+      "donors": "GSK",
+      "delivered_pos": 14
+    },
+    {
+      "drug_code": "ALB",
+      "drug_name": "Albendazole",
+      "country": "DPR Korea",
+      "total_pos": 8,
+      "total_tablets": 86577000,
+      "donors": "GSK",
+      "delivered_pos": 8
+    },
+    {
+      "drug_code": "ALB",
+      "drug_name": "Albendazole",
+      "country": "Rwanda",
+      "total_pos": 11,
+      "total_tablets": 68066000,
+      "donors": "GSK",
+      "delivered_pos": 11
+    },
+    {
+      "drug_code": "ALB",
+      "drug_name": "Albendazole",
+      "country": "Afghanistan",
+      "total_pos": 8,
+      "total_tablets": 59129000,
+      "donors": "GSK",
+      "delivered_pos": 7
+    },
+    {
+      "drug_code": "ALB",
+      "drug_name": "Albendazole",
+      "country": "Sudan",
+      "total_pos": 10,
+      "total_tablets": 58198000,
+      "donors": "GSK",
+      "delivered_pos": 10
+    },
+    {
+      "drug_code": "ALB",
+      "drug_name": "Albendazole",
+      "country": "Cameroon",
+      "total_pos": 5,
+      "total_tablets": 52654000,
+      "donors": "GSK",
+      "delivered_pos": 5
+    },
+    {
+      "drug_code": "ALB",
+      "drug_name": "Albendazole",
+      "country": "Cambodia",
+      "total_pos": 6,
+      "total_tablets": 51603000,
+      "donors": "GSK",
+      "delivered_pos": 5
+    },
+    {
+      "drug_code": "ALB",
+      "drug_name": "Albendazole",
+      "country": "Zambia",
+      "total_pos": 7,
+      "total_tablets": 51534000,
+      "donors": "GSK",
+      "delivered_pos": 7
+    },
+    {
+      "drug_code": "ALB",
+      "drug_name": "Albendazole",
+      "country": "Guinea",
+      "total_pos": 16,
+      "total_tablets": 50719000,
+      "donors": "GSK",
+      "delivered_pos": 16
+    },
+    {
+      "drug_code": "ALB",
+      "drug_name": "Albendazole",
+      "country": "South Sudan",
+      "total_pos": 9,
+      "total_tablets": 45966000,
+      "donors": "GSK",
+      "delivered_pos": 8
+    },
+    {
+      "drug_code": "ALB",
+      "drug_name": "Albendazole",
+      "country": "Angola",
+      "total_pos": 12,
+      "total_tablets": 43262000,
+      "donors": "GSK",
+      "delivered_pos": 12
+    },
+    {
+      "drug_code": "ALB",
+      "drug_name": "Albendazole",
+      "country": "Senegal",
+      "total_pos": 15,
+      "total_tablets": 42513000,
+      "donors": "GSK",
+      "delivered_pos": 15
+    },
+    {
+      "drug_code": "ALB",
+      "drug_name": "Albendazole",
+      "country": "Niger",
+      "total_pos": 11,
+      "total_tablets": 42018000,
+      "donors": "GSK",
+      "delivered_pos": 11
+    },
+    {
+      "drug_code": "ALB",
+      "drug_name": "Albendazole",
+      "country": "Bangladesh",
+      "total_pos": 2,
+      "total_tablets": 40202000,
+      "donors": "GSK",
+      "delivered_pos": 2
+    },
+    {
+      "drug_code": "ALB",
+      "drug_name": "Albendazole",
+      "country": "Kenya",
+      "total_pos": 12,
+      "total_tablets": 39657000,
+      "donors": "GSK",
+      "delivered_pos": 11
+    },
+    {
+      "drug_code": "ALB",
+      "drug_name": "Albendazole",
+      "country": "Uganda",
+      "total_pos": 7,
+      "total_tablets": 34891000,
+      "donors": "GSK",
+      "delivered_pos": 7
+    },
+    {
+      "drug_code": "ALB",
+      "drug_name": "Albendazole",
+      "country": "Ethiopia",
+      "total_pos": 11,
+      "total_tablets": 34780000,
+      "donors": "GSK",
+      "delivered_pos": 10
+    },
+    {
+      "drug_code": "ALB",
+      "drug_name": "Albendazole",
+      "country": "Sierra Leone",
+      "total_pos": 13,
+      "total_tablets": 33911000,
+      "donors": "GSK",
+      "delivered_pos": 12
+    },
+    {
+      "drug_code": "ALB",
+      "drug_name": "Albendazole",
+      "country": "CAR",
+      "total_pos": 15,
+      "total_tablets": 32104000,
+      "donors": "GSK",
+      "delivered_pos": 13
+    },
+    {
+      "drug_code": "ALB",
+      "drug_name": "Albendazole",
+      "country": "Chad",
+      "total_pos": 12,
+      "total_tablets": 31779000,
+      "donors": "GSK",
+      "delivered_pos": 12
+    },
+    {
+      "drug_code": "ALB",
+      "drug_name": "Albendazole",
+      "country": "Mali",
+      "total_pos": 8,
+      "total_tablets": 29643000,
+      "donors": "GSK",
+      "delivered_pos": 8
+    },
+    {
+      "drug_code": "ALB",
+      "drug_name": "Albendazole",
+      "country": "Togo",
+      "total_pos": 12,
+      "total_tablets": 29451000,
+      "donors": "GSK",
+      "delivered_pos": 12
+    },
+    {
+      "drug_code": "ALB",
+      "drug_name": "Albendazole",
+      "country": "Zimbabwe",
+      "total_pos": 10,
+      "total_tablets": 28465000,
+      "donors": "GSK",
+      "delivered_pos": 8
+    },
+    {
+      "drug_code": "ALB",
+      "drug_name": "Albendazole",
+      "country": "Burkina Faso",
+      "total_pos": 11,
+      "total_tablets": 27252000,
+      "donors": "GSK",
+      "delivered_pos": 10
+    },
+    {
+      "drug_code": "ALB",
+      "drug_name": "Albendazole",
+      "country": "Malawi",
+      "total_pos": 4,
+      "total_tablets": 26746000,
+      "donors": "GSK",
+      "delivered_pos": 4
+    },
+    {
+      "drug_code": "ALB",
+      "drug_name": "Albendazole",
+      "country": "Haiti",
+      "total_pos": 8,
+      "total_tablets": 25812000,
+      "donors": "GSK",
+      "delivered_pos": 8
+    },
+    {
+      "drug_code": "ALB",
+      "drug_name": "Albendazole",
+      "country": "Ghana",
+      "total_pos": 8,
+      "total_tablets": 25295000,
+      "donors": "GSK",
+      "delivered_pos": 6
+    },
+    {
+      "drug_code": "ALB",
+      "drug_name": "Albendazole",
+      "country": "Guatemala",
+      "total_pos": 5,
+      "total_tablets": 24572000,
+      "donors": "GSK",
+      "delivered_pos": 5
+    },
+    {
+      "drug_code": "ALB",
+      "drug_name": "Albendazole",
+      "country": "Zanzibar",
+      "total_pos": 18,
+      "total_tablets": 23711000,
+      "donors": "GSK",
+      "delivered_pos": 16
+    },
+    {
+      "drug_code": "ALB",
+      "drug_name": "Albendazole",
+      "country": "Honduras",
+      "total_pos": 6,
+      "total_tablets": 22767000,
+      "donors": "GSK",
+      "delivered_pos": 6
+    },
+    {
+      "drug_code": "ALB",
+      "drug_name": "Albendazole",
+      "country": "Benin",
+      "total_pos": 14,
+      "total_tablets": 20996000,
+      "donors": "GSK",
+      "delivered_pos": 14
+    },
+    {
+      "drug_code": "ALB",
+      "drug_name": "Albendazole",
+      "country": "Liberia",
+      "total_pos": 14,
+      "total_tablets": 20019000,
+      "donors": "GSK",
+      "delivered_pos": 14
+    },
+    {
+      "drug_code": "ALB",
+      "drug_name": "Albendazole",
+      "country": "Congo",
+      "total_pos": 17,
+      "total_tablets": 19098000,
+      "donors": "GSK",
+      "delivered_pos": 14
+    },
+    {
+      "drug_code": "ALB",
+      "drug_name": "Albendazole",
+      "country": "Dominican Republic",
+      "total_pos": 7,
+      "total_tablets": 18039000,
+      "donors": "GSK",
+      "delivered_pos": 7
+    },
+    {
+      "drug_code": "ALB",
+      "drug_name": "Albendazole",
+      "country": "Tajikistan",
+      "total_pos": 8,
+      "total_tablets": 17551000,
+      "donors": "GSK",
+      "delivered_pos": 7
+    },
+    {
+      "drug_code": "ALB",
+      "drug_name": "Albendazole",
+      "country": "Burundi",
+      "total_pos": 6,
+      "total_tablets": 16195000,
+      "donors": "GSK",
+      "delivered_pos": 4
+    },
+    {
+      "drug_code": "ALB",
+      "drug_name": "Albendazole",
+      "country": "Brazil",
+      "total_pos": 2,
+      "total_tablets": 14329000,
+      "donors": "GSK",
+      "delivered_pos": 2
+    },
+    {
+      "drug_code": "ALB",
+      "drug_name": "Albendazole",
+      "country": "Yemen",
+      "total_pos": 3,
+      "total_tablets": 13871000,
+      "donors": "GSK",
+      "delivered_pos": 3
+    },
+    {
+      "drug_code": "ALB",
+      "drug_name": "Albendazole",
+      "country": "Colombia",
+      "total_pos": 8,
+      "total_tablets": 12852000,
+      "donors": "GSK",
+      "delivered_pos": 8
+    },
+    {
+      "drug_code": "ALB",
+      "drug_name": "Albendazole",
+      "country": "Paraguay",
+      "total_pos": 8,
+      "total_tablets": 8415000,
+      "donors": "GSK",
+      "delivered_pos": 8
+    },
+    {
+      "drug_code": "ALB",
+      "drug_name": "Albendazole",
+      "country": "El Salvador",
+      "total_pos": 10,
+      "total_tablets": 8056000,
+      "donors": "GSK",
+      "delivered_pos": 9
+    },
+    {
+      "drug_code": "ALB",
+      "drug_name": "Albendazole",
+      "country": "Timor-Leste",
+      "total_pos": 12,
+      "total_tablets": 7455000,
+      "donors": "GSK",
+      "delivered_pos": 12
+    },
+    {
+      "drug_code": "ALB",
+      "drug_name": "Albendazole",
+      "country": "Uzbekistan",
+      "total_pos": 1,
+      "total_tablets": 7451000,
+      "donors": "GSK",
+      "delivered_pos": 1
+    },
+    {
+      "drug_code": "ALB",
+      "drug_name": "Albendazole",
+      "country": "Laos",
+      "total_pos": 8,
+      "total_tablets": 6188000,
+      "donors": "GSK",
+      "delivered_pos": 8
+    },
+    {
+      "drug_code": "ALB",
+      "drug_name": "Albendazole",
+      "country": "Guinea Bissau",
+      "total_pos": 11,
+      "total_tablets": 6066000,
+      "donors": "GSK",
+      "delivered_pos": 9
+    },
+    {
+      "drug_code": "ALB",
+      "drug_name": "Albendazole",
+      "country": "Egypt",
+      "total_pos": 3,
+      "total_tablets": 4060000,
+      "donors": "GSK",
+      "delivered_pos": 3
+    },
+    {
+      "drug_code": "ALB",
+      "drug_name": "Albendazole",
+      "country": "Equatorial Guinea",
+      "total_pos": 4,
+      "total_tablets": 3474000,
+      "donors": "GSK",
+      "delivered_pos": 4
+    },
+    {
+      "drug_code": "ALB",
+      "drug_name": "Albendazole",
+      "country": "Guyana",
+      "total_pos": 5,
+      "total_tablets": 2937000,
+      "donors": "GSK",
+      "delivered_pos": 5
+    },
+    {
+      "drug_code": "ALB",
+      "drug_name": "Albendazole",
+      "country": "Gabon",
+      "total_pos": 6,
+      "total_tablets": 2919000,
+      "donors": "GSK",
+      "delivered_pos": 6
+    },
+    {
+      "drug_code": "ALB",
+      "drug_name": "Albendazole",
+      "country": "Papua New Guinea",
+      "total_pos": 7,
+      "total_tablets": 2779000,
+      "donors": "GSK",
+      "delivered_pos": 7
+    },
+    {
+      "drug_code": "ALB",
+      "drug_name": "Albendazole",
+      "country": "Comoros",
+      "total_pos": 4,
+      "total_tablets": 2570000,
+      "donors": "GSK",
+      "delivered_pos": 4
+    },
+    {
+      "drug_code": "ALB",
+      "drug_name": "Albendazole",
+      "country": "Vanuatu",
+      "total_pos": 11,
+      "total_tablets": 2155000,
+      "donors": "GSK",
+      "delivered_pos": 11
+    },
+    {
+      "drug_code": "ALB",
+      "drug_name": "Albendazole",
+      "country": "Lesotho",
+      "total_pos": 4,
+      "total_tablets": 1842000,
+      "donors": "GSK",
+      "delivered_pos": 4
+    },
+    {
+      "drug_code": "ALB",
+      "drug_name": "Albendazole",
+      "country": "Kyrgyzstan",
+      "total_pos": 3,
+      "total_tablets": 1728000,
+      "donors": "GSK",
+      "delivered_pos": 3
+    },
+    {
+      "drug_code": "ALB",
+      "drug_name": "Albendazole",
+      "country": "Eswatini",
+      "total_pos": 6,
+      "total_tablets": 1651000,
+      "donors": "GSK",
+      "delivered_pos": 6
+    },
+    {
+      "drug_code": "ALB",
+      "drug_name": "Albendazole",
+      "country": "Bhutan",
+      "total_pos": 6,
+      "total_tablets": 1632000,
+      "donors": "GSK",
+      "delivered_pos": 6
+    },
+    {
+      "drug_code": "ALB",
+      "drug_name": "Albendazole",
+      "country": "Fiji",
+      "total_pos": 9,
+      "total_tablets": 1419000,
+      "donors": "GSK",
+      "delivered_pos": 9
+    },
+    {
+      "drug_code": "ALB",
+      "drug_name": "Albendazole",
+      "country": "Mauritania",
+      "total_pos": 2,
+      "total_tablets": 1348000,
+      "donors": "GSK",
+      "delivered_pos": 2
+    },
+    {
+      "drug_code": "ALB",
+      "drug_name": "Albendazole",
+      "country": "Sri Lanka",
+      "total_pos": 1,
+      "total_tablets": 1000000,
+      "donors": "GSK",
+      "delivered_pos": 0
+    },
+    {
+      "drug_code": "ALB",
+      "drug_name": "Albendazole",
+      "country": "Sao Tome and Principe",
+      "total_pos": 7,
+      "total_tablets": 824000,
+      "donors": "GSK",
+      "delivered_pos": 7
+    },
+    {
+      "drug_code": "ALB",
+      "drug_name": "Albendazole",
+      "country": "Kiribati",
+      "total_pos": 8,
+      "total_tablets": 686000,
+      "donors": "GSK",
+      "delivered_pos": 7
+    },
+    {
+      "drug_code": "ALB",
+      "drug_name": "Albendazole",
+      "country": "Solomon Islands",
+      "total_pos": 7,
+      "total_tablets": 637000,
+      "donors": "GSK",
+      "delivered_pos": 7
+    },
+    {
+      "drug_code": "ALB",
+      "drug_name": "Albendazole",
+      "country": "Azerbaijan",
+      "total_pos": 1,
+      "total_tablets": 508000,
+      "donors": "GSK",
+      "delivered_pos": 1
+    },
+    {
+      "drug_code": "ALB",
+      "drug_name": "Albendazole",
+      "country": "Botswana",
+      "total_pos": 3,
+      "total_tablets": 489000,
+      "donors": "GSK",
+      "delivered_pos": 3
+    },
+    {
+      "drug_code": "ALB",
+      "drug_name": "Albendazole",
+      "country": "French Polynesia",
+      "total_pos": 7,
+      "total_tablets": 474000,
+      "donors": "GSK",
+      "delivered_pos": 7
+    },
+    {
+      "drug_code": "ALB",
+      "drug_name": "Albendazole",
+      "country": "Eritrea",
+      "total_pos": 6,
+      "total_tablets": 450000,
+      "donors": "GSK",
+      "delivered_pos": 5
+    },
+    {
+      "drug_code": "ALB",
+      "drug_name": "Albendazole",
+      "country": "Samoa",
+      "total_pos": 3,
+      "total_tablets": 444000,
+      "donors": "GSK",
+      "delivered_pos": 3
+    },
+    {
+      "drug_code": "ALB",
+      "drug_name": "Albendazole",
+      "country": "Malaysia",
+      "total_pos": 5,
+      "total_tablets": 426000,
+      "donors": "GSK",
+      "delivered_pos": 5
+    },
+    {
+      "drug_code": "ALB",
+      "drug_name": "Albendazole",
+      "country": "Gambia",
+      "total_pos": 5,
+      "total_tablets": 276000,
+      "donors": "GSK",
+      "delivered_pos": 5
+    },
+    {
+      "drug_code": "ALB",
+      "drug_name": "Albendazole",
+      "country": "Namibia",
+      "total_pos": 1,
+      "total_tablets": 260000,
+      "donors": "GSK",
+      "delivered_pos": 1
+    },
+    {
+      "drug_code": "ALB",
+      "drug_name": "Albendazole",
+      "country": "Marshall Islands",
+      "total_pos": 4,
+      "total_tablets": 129000,
+      "donors": "GSK",
+      "delivered_pos": 3
+    },
+    {
+      "drug_code": "ALB",
+      "drug_name": "Albendazole",
+      "country": "American Samoa",
+      "total_pos": 3,
+      "total_tablets": 127000,
+      "donors": "GSK",
+      "delivered_pos": 3
+    },
+    {
+      "drug_code": "ALB",
+      "drug_name": "Albendazole",
+      "country": "Fed States of Mic",
+      "total_pos": 2,
+      "total_tablets": 126000,
+      "donors": "GSK",
+      "delivered_pos": 2
+    },
+    {
+      "drug_code": "ALB",
+      "drug_name": "Albendazole",
+      "country": "Cape Verde",
+      "total_pos": 1,
+      "total_tablets": 102000,
+      "donors": "GSK",
+      "delivered_pos": 1
+    },
+    {
+      "drug_code": "ALB",
+      "drug_name": "Albendazole",
+      "country": "Tuvalu",
+      "total_pos": 5,
+      "total_tablets": 47000,
+      "donors": "GSK",
+      "delivered_pos": 5
+    },
+    {
+      "drug_code": "ALB",
+      "drug_name": "Albendazole",
+      "country": "Tonga",
+      "total_pos": 1,
+      "total_tablets": 26000,
+      "donors": "GSK",
+      "delivered_pos": 1
+    },
+    {
+      "drug_code": "ALB",
+      "drug_name": "Albendazole",
+      "country": "Cook Islands",
+      "total_pos": 1,
+      "total_tablets": 7000,
+      "donors": "GSK",
+      "delivered_pos": 1
+    },
+    {
+      "drug_code": "DEC",
+      "drug_name": "Diethylcarbamazine",
+      "country": "India",
+      "total_pos": 41,
+      "total_tablets": 1185951000,
+      "donors": "Eisai",
+      "delivered_pos": 33
+    },
+    {
+      "drug_code": "DEC",
+      "drug_name": "Diethylcarbamazine",
+      "country": "Myanmar",
+      "total_pos": 14,
+      "total_tablets": 446976000,
+      "donors": "Eisai",
+      "delivered_pos": 12
+    },
+    {
+      "drug_code": "DEC",
+      "drug_name": "Diethylcarbamazine",
+      "country": "Indonesia",
+      "total_pos": 12,
+      "total_tablets": 337932000,
+      "donors": "Eisai",
+      "delivered_pos": 8
+    },
+    {
+      "drug_code": "DEC",
+      "drug_name": "Diethylcarbamazine",
+      "country": "Madagascar",
+      "total_pos": 9,
+      "total_tablets": 200224000,
+      "donors": "Eisai",
+      "delivered_pos": 7
+    },
+    {
+      "drug_code": "DEC",
+      "drug_name": "Diethylcarbamazine",
+      "country": "Zambia",
+      "total_pos": 6,
+      "total_tablets": 117320000,
+      "donors": "Eisai",
+      "delivered_pos": 4
+    },
+    {
+      "drug_code": "DEC",
+      "drug_name": "Diethylcarbamazine",
+      "country": "Nepal",
+      "total_pos": 4,
+      "total_tablets": 83664000,
+      "donors": "Eisai",
+      "delivered_pos": 4
+    },
+    {
+      "drug_code": "DEC",
+      "drug_name": "Diethylcarbamazine",
+      "country": "Zimbabwe",
+      "total_pos": 5,
+      "total_tablets": 63876000,
+      "donors": "Eisai",
+      "delivered_pos": 3
+    },
+    {
+      "drug_code": "DEC",
+      "drug_name": "Diethylcarbamazine",
+      "country": "Kenya",
+      "total_pos": 8,
+      "total_tablets": 57216000,
+      "donors": "Eisai",
+      "delivered_pos": 6
+    },
+    {
+      "drug_code": "DEC",
+      "drug_name": "Diethylcarbamazine",
+      "country": "Haiti",
+      "total_pos": 6,
+      "total_tablets": 50130000,
+      "donors": "Eisai",
+      "delivered_pos": 5
+    },
+    {
+      "drug_code": "DEC",
+      "drug_name": "Diethylcarbamazine",
+      "country": "Philippines",
+      "total_pos": 5,
+      "total_tablets": 19452000,
+      "donors": "Eisai",
+      "delivered_pos": 5
+    },
+    {
+      "drug_code": "DEC",
+      "drug_name": "Diethylcarbamazine",
+      "country": "Timor-Leste",
+      "total_pos": 6,
+      "total_tablets": 16452000,
+      "donors": "Eisai",
+      "delivered_pos": 6
+    },
+    {
+      "drug_code": "DEC",
+      "drug_name": "Diethylcarbamazine",
+      "country": "Papua New Guinea",
+      "total_pos": 11,
+      "total_tablets": 12860000,
+      "donors": "Eisai",
+      "delivered_pos": 9
+    },
+    {
+      "drug_code": "DEC",
+      "drug_name": "Diethylcarbamazine",
+      "country": "Guyana",
+      "total_pos": 8,
+      "total_tablets": 10944000,
+      "donors": "Eisai",
+      "delivered_pos": 7
+    },
+    {
+      "drug_code": "DEC",
+      "drug_name": "Diethylcarbamazine",
+      "country": "Comoros",
+      "total_pos": 3,
+      "total_tablets": 6144000,
+      "donors": "Eisai",
+      "delivered_pos": 3
+    },
+    {
+      "drug_code": "DEC",
+      "drug_name": "Diethylcarbamazine",
+      "country": "Fiji",
+      "total_pos": 8,
+      "total_tablets": 3276000,
+      "donors": "Eisai",
+      "delivered_pos": 5
+    },
+    {
+      "drug_code": "DEC",
+      "drug_name": "Diethylcarbamazine",
+      "country": "Sri Lanka",
+      "total_pos": 1,
+      "total_tablets": 2496000,
+      "donors": "Eisai",
+      "delivered_pos": 0
+    },
+    {
+      "drug_code": "DEC",
+      "drug_name": "Diethylcarbamazine",
+      "country": "French Polynesia",
+      "total_pos": 9,
+      "total_tablets": 2412000,
+      "donors": "Eisai",
+      "delivered_pos": 7
+    },
+    {
+      "drug_code": "DEC",
+      "drug_name": "Diethylcarbamazine",
+      "country": "Samoa",
+      "total_pos": 4,
+      "total_tablets": 1968000,
+      "donors": "Eisai",
+      "delivered_pos": 4
+    },
+    {
+      "drug_code": "DEC",
+      "drug_name": "Diethylcarbamazine",
+      "country": "Laos",
+      "total_pos": 4,
+      "total_tablets": 1464000,
+      "donors": "Eisai",
+      "delivered_pos": 4
+    },
+    {
+      "drug_code": "DEC",
+      "drug_name": "Diethylcarbamazine",
+      "country": "Sao Tome and Principe",
+      "total_pos": 3,
+      "total_tablets": 1356000,
+      "donors": "Eisai",
+      "delivered_pos": 3
+    },
+    {
+      "drug_code": "DEC",
+      "drug_name": "Diethylcarbamazine",
+      "country": "Eritrea",
+      "total_pos": 7,
+      "total_tablets": 1044000,
+      "donors": "Eisai",
+      "delivered_pos": 7
+    },
+    {
+      "drug_code": "DEC",
+      "drug_name": "Diethylcarbamazine",
+      "country": "Malaysia",
+      "total_pos": 7,
+      "total_tablets": 972000,
+      "donors": "Eisai",
+      "delivered_pos": 4
+    },
+    {
+      "drug_code": "DEC",
+      "drug_name": "Diethylcarbamazine",
+      "country": "Dominican Republic",
+      "total_pos": 3,
+      "total_tablets": 732000,
+      "donors": "Eisai",
+      "delivered_pos": 3
+    },
+    {
+      "drug_code": "DEC",
+      "drug_name": "Diethylcarbamazine",
+      "country": "American Samoa",
+      "total_pos": 3,
+      "total_tablets": 624000,
+      "donors": "Eisai",
+      "delivered_pos": 3
+    },
+    {
+      "drug_code": "DEC",
+      "drug_name": "Diethylcarbamazine",
+      "country": "Fed States of Mic",
+      "total_pos": 1,
+      "total_tablets": 240000,
+      "donors": "Eisai",
+      "delivered_pos": 0
+    },
+    {
+      "drug_code": "DEC",
+      "drug_name": "Diethylcarbamazine",
+      "country": "Egypt",
+      "total_pos": 3,
+      "total_tablets": 204000,
+      "donors": "Eisai",
+      "delivered_pos": 3
+    },
+    {
+      "drug_code": "DEC",
+      "drug_name": "Diethylcarbamazine",
+      "country": "Tuvalu",
+      "total_pos": 3,
+      "total_tablets": 132000,
+      "donors": "Eisai",
+      "delivered_pos": 3
+    },
+    {
+      "drug_code": "DEC",
+      "drug_name": "Diethylcarbamazine",
+      "country": "Maldives",
+      "total_pos": 1,
+      "total_tablets": 84000,
+      "donors": "Eisai",
+      "delivered_pos": 1
+    },
+    {
+      "drug_code": "DEC",
+      "drug_name": "Diethylcarbamazine",
+      "country": "Thailand",
+      "total_pos": 1,
+      "total_tablets": 84000,
+      "donors": "Eisai",
+      "delivered_pos": 1
+    },
+    {
+      "drug_code": "IVM",
+      "drug_name": "Ivermectin",
+      "country": "Ethiopia",
+      "total_pos": 1,
+      "total_tablets": 62500,
+      "donors": "Merck USA",
+      "delivered_pos": 0
+    },
+    {
+      "drug_code": "MEB",
+      "drug_name": "Mebendazole",
+      "country": "Bangladesh",
+      "total_pos": 27,
+      "total_tablets": 658442000,
+      "donors": "J&J",
+      "delivered_pos": 26
+    },
+    {
+      "drug_code": "MEB",
+      "drug_name": "Mebendazole",
+      "country": "Ethiopia",
+      "total_pos": 13,
+      "total_tablets": 239647000,
+      "donors": "J&J",
+      "delivered_pos": 12
+    },
+    {
+      "drug_code": "MEB",
+      "drug_name": "Mebendazole",
+      "country": "Uganda",
+      "total_pos": 13,
+      "total_tablets": 214874000,
+      "donors": "J&J",
+      "delivered_pos": 12
+    },
+    {
+      "drug_code": "MEB",
+      "drug_name": "Mebendazole",
+      "country": "Nigeria",
+      "total_pos": 8,
+      "total_tablets": 119992000,
+      "donors": "J&J",
+      "delivered_pos": 8
+    },
+    {
+      "drug_code": "MEB",
+      "drug_name": "Mebendazole",
+      "country": "Viet Nam",
+      "total_pos": 10,
+      "total_tablets": 106084000,
+      "donors": "J&J",
+      "delivered_pos": 9
+    },
+    {
+      "drug_code": "MEB",
+      "drug_name": "Mebendazole",
+      "country": "Pakistan",
+      "total_pos": 7,
+      "total_tablets": 81937000,
+      "donors": "J&J",
+      "delivered_pos": 5
+    },
+    {
+      "drug_code": "MEB",
+      "drug_name": "Mebendazole",
+      "country": "Cameroon",
+      "total_pos": 10,
+      "total_tablets": 66565000,
+      "donors": "J&J",
+      "delivered_pos": 9
+    },
+    {
+      "drug_code": "MEB",
+      "drug_name": "Mebendazole",
+      "country": "Rwanda",
+      "total_pos": 7,
+      "total_tablets": 63042000,
+      "donors": "J&J",
+      "delivered_pos": 7
+    },
+    {
+      "drug_code": "MEB",
+      "drug_name": "Mebendazole",
+      "country": "Cambodia",
+      "total_pos": 6,
+      "total_tablets": 53828000,
+      "donors": "J&J",
+      "delivered_pos": 6
+    },
+    {
+      "drug_code": "MEB",
+      "drug_name": "Mebendazole",
+      "country": "South Africa",
+      "total_pos": 6,
+      "total_tablets": 53776000,
+      "donors": "J&J",
+      "delivered_pos": 5
+    },
+    {
+      "drug_code": "MEB",
+      "drug_name": "Mebendazole",
+      "country": "Egypt",
+      "total_pos": 4,
+      "total_tablets": 52803000,
+      "donors": "J&J",
+      "delivered_pos": 4
+    },
+    {
+      "drug_code": "MEB",
+      "drug_name": "Mebendazole",
+      "country": "Philippines",
+      "total_pos": 2,
+      "total_tablets": 46734000,
+      "donors": "J&J",
+      "delivered_pos": 2
+    },
+    {
+      "drug_code": "MEB",
+      "drug_name": "Mebendazole",
+      "country": "Kenya",
+      "total_pos": 6,
+      "total_tablets": 37364000,
+      "donors": "J&J",
+      "delivered_pos": 6
+    },
+    {
+      "drug_code": "MEB",
+      "drug_name": "Mebendazole",
+      "country": "Tanzania",
+      "total_pos": 3,
+      "total_tablets": 22696000,
+      "donors": "J&J",
+      "delivered_pos": 1
+    },
+    {
+      "drug_code": "MEB",
+      "drug_name": "Mebendazole",
+      "country": "Iraq",
+      "total_pos": 4,
+      "total_tablets": 22333000,
+      "donors": "J&J",
+      "delivered_pos": 4
+    },
+    {
+      "drug_code": "MEB",
+      "drug_name": "Mebendazole",
+      "country": "Madagascar",
+      "total_pos": 5,
+      "total_tablets": 22175000,
+      "donors": "J&J",
+      "delivered_pos": 5
+    },
+    {
+      "drug_code": "MEB",
+      "drug_name": "Mebendazole",
+      "country": "Nicaragua",
+      "total_pos": 10,
+      "total_tablets": 20926000,
+      "donors": "J&J",
+      "delivered_pos": 9
+    },
+    {
+      "drug_code": "MEB",
+      "drug_name": "Mebendazole",
+      "country": "Afghanistan",
+      "total_pos": 3,
+      "total_tablets": 20486000,
+      "donors": "J&J",
+      "delivered_pos": 3
+    },
+    {
+      "drug_code": "MEB",
+      "drug_name": "Mebendazole",
+      "country": "Syria",
+      "total_pos": 13,
+      "total_tablets": 12266000,
+      "donors": "J&J",
+      "delivered_pos": 12
+    },
+    {
+      "drug_code": "MEB",
+      "drug_name": "Mebendazole",
+      "country": "Somalia",
+      "total_pos": 5,
+      "total_tablets": 11641000,
+      "donors": "J&J",
+      "delivered_pos": 5
+    },
+    {
+      "drug_code": "MEB",
+      "drug_name": "Mebendazole",
+      "country": "Laos",
+      "total_pos": 5,
+      "total_tablets": 10521000,
+      "donors": "J&J",
+      "delivered_pos": 5
+    },
+    {
+      "drug_code": "MEB",
+      "drug_name": "Mebendazole",
+      "country": "Dominican Republic",
+      "total_pos": 6,
+      "total_tablets": 10211000,
+      "donors": "J&J",
+      "delivered_pos": 6
+    },
+    {
+      "drug_code": "MEB",
+      "drug_name": "Mebendazole",
+      "country": "Colombia",
+      "total_pos": 7,
+      "total_tablets": 8428000,
+      "donors": "J&J",
+      "delivered_pos": 6
+    },
+    {
+      "drug_code": "MEB",
+      "drug_name": "Mebendazole",
+      "country": "Honduras",
+      "total_pos": 2,
+      "total_tablets": 5444000,
+      "donors": "J&J",
+      "delivered_pos": 2
+    },
+    {
+      "drug_code": "MEB",
+      "drug_name": "Mebendazole",
+      "country": "Zambia",
+      "total_pos": 3,
+      "total_tablets": 5407000,
+      "donors": "J&J",
+      "delivered_pos": 3
+    },
+    {
+      "drug_code": "MEB",
+      "drug_name": "Mebendazole",
+      "country": "Sierra Leone",
+      "total_pos": 2,
+      "total_tablets": 3344000,
+      "donors": "J&J",
+      "delivered_pos": 1
+    },
+    {
+      "drug_code": "MEB",
+      "drug_name": "Mebendazole",
+      "country": "Israel",
+      "total_pos": 15,
+      "total_tablets": 2886000,
+      "donors": "J&J",
+      "delivered_pos": 15
+    },
+    {
+      "drug_code": "MEB",
+      "drug_name": "Mebendazole",
+      "country": "Chad",
+      "total_pos": 7,
+      "total_tablets": 2535000,
+      "donors": "J&J",
+      "delivered_pos": 7
+    },
+    {
+      "drug_code": "MEB",
+      "drug_name": "Mebendazole",
+      "country": "Myanmar",
+      "total_pos": 3,
+      "total_tablets": 1740000,
+      "donors": "J&J",
+      "delivered_pos": 2
+    },
+    {
+      "drug_code": "MEB",
+      "drug_name": "Mebendazole",
+      "country": "Papua New Guinea",
+      "total_pos": 1,
+      "total_tablets": 1299000,
+      "donors": "J&J",
+      "delivered_pos": 1
+    },
+    {
+      "drug_code": "MEB",
+      "drug_name": "Mebendazole",
+      "country": "Angola",
+      "total_pos": 1,
+      "total_tablets": 1260000,
+      "donors": "J&J",
+      "delivered_pos": 1
+    },
+    {
+      "drug_code": "MEB",
+      "drug_name": "Mebendazole",
+      "country": "Jordan",
+      "total_pos": 10,
+      "total_tablets": 1253000,
+      "donors": "J&J",
+      "delivered_pos": 9
+    },
+    {
+      "drug_code": "MEB",
+      "drug_name": "Mebendazole",
+      "country": "Senegal",
+      "total_pos": 1,
+      "total_tablets": 1100000,
+      "donors": "J&J",
+      "delivered_pos": 1
+    },
+    {
+      "drug_code": "MEB",
+      "drug_name": "Mebendazole",
+      "country": "Zanzibar",
+      "total_pos": 2,
+      "total_tablets": 753000,
+      "donors": "J&J",
+      "delivered_pos": 2
+    },
+    {
+      "drug_code": "MEB",
+      "drug_name": "Mebendazole",
+      "country": "Eritrea",
+      "total_pos": 1,
+      "total_tablets": 684000,
+      "donors": "J&J",
+      "delivered_pos": 1
+    },
+    {
+      "drug_code": "MEB",
+      "drug_name": "Mebendazole",
+      "country": "Cape Verde",
+      "total_pos": 6,
+      "total_tablets": 536000,
+      "donors": "J&J",
+      "delivered_pos": 6
+    },
+    {
+      "drug_code": "MEB",
+      "drug_name": "Mebendazole",
+      "country": "Lebanon",
+      "total_pos": 9,
+      "total_tablets": 465000,
+      "donors": "J&J",
+      "delivered_pos": 8
+    },
+    {
+      "drug_code": "MEB",
+      "drug_name": "Mebendazole",
+      "country": "Gabon",
+      "total_pos": 2,
+      "total_tablets": 432000,
+      "donors": "J&J",
+      "delivered_pos": 2
+    },
+    {
+      "drug_code": "MEB",
+      "drug_name": "Mebendazole",
+      "country": "United Arab Emirates",
+      "total_pos": 1,
+      "total_tablets": 400000,
+      "donors": "J&J",
+      "delivered_pos": 1
+    },
+    {
+      "drug_code": "MEB",
+      "drug_name": "Mebendazole",
+      "country": "Guinea Bissau",
+      "total_pos": 2,
+      "total_tablets": 399000,
+      "donors": "J&J",
+      "delivered_pos": 2
+    },
+    {
+      "drug_code": "MEB",
+      "drug_name": "Mebendazole",
+      "country": "Georgia",
+      "total_pos": 1,
+      "total_tablets": 393000,
+      "donors": "J&J",
+      "delivered_pos": 1
+    },
+    {
+      "drug_code": "MEB",
+      "drug_name": "Mebendazole",
+      "country": "Liberia",
+      "total_pos": 1,
+      "total_tablets": 288000,
+      "donors": "J&J",
+      "delivered_pos": 1
+    },
+    {
+      "drug_code": "MEB",
+      "drug_name": "Mebendazole",
+      "country": "Sao Tome and Principe",
+      "total_pos": 3,
+      "total_tablets": 159000,
+      "donors": "J&J",
+      "delivered_pos": 3
+    },
+    {
+      "drug_code": "MEB",
+      "drug_name": "Mebendazole",
+      "country": "Congo",
+      "total_pos": 1,
+      "total_tablets": 124000,
+      "donors": "J&J",
+      "delivered_pos": 0
+    },
+    {
+      "drug_code": "MEB",
+      "drug_name": "Mebendazole",
+      "country": "Botswana",
+      "total_pos": 1,
+      "total_tablets": 108000,
+      "donors": "J&J",
+      "delivered_pos": 1
+    },
+    {
+      "drug_code": "PZQ",
+      "drug_name": "Praziquantel",
+      "country": "Nigeria",
+      "total_pos": 13,
+      "total_tablets": 297126000,
+      "donors": "Merck KGaA",
+      "delivered_pos": 12
+    },
+    {
+      "drug_code": "PZQ",
+      "drug_name": "Praziquantel",
+      "country": "DRC",
+      "total_pos": 11,
+      "total_tablets": 211024000,
+      "donors": "Merck KGaA",
+      "delivered_pos": 11
+    },
+    {
+      "drug_code": "PZQ",
+      "drug_name": "Praziquantel",
+      "country": "Ethiopia",
+      "total_pos": 14,
+      "total_tablets": 169967000,
+      "donors": "Merck KGaA",
+      "delivered_pos": 13
+    },
+    {
+      "drug_code": "PZQ",
+      "drug_name": "Praziquantel",
+      "country": "Tanzania",
+      "total_pos": 9,
+      "total_tablets": 117387000,
+      "donors": "Merck KGaA",
+      "delivered_pos": 8
+    },
+    {
+      "drug_code": "PZQ",
+      "drug_name": "Praziquantel",
+      "country": "Madagascar",
+      "total_pos": 9,
+      "total_tablets": 85851000,
+      "donors": "Merck KGaA",
+      "delivered_pos": 9
+    },
+    {
+      "drug_code": "PZQ",
+      "drug_name": "Praziquantel",
+      "country": "Mozambique",
+      "total_pos": 7,
+      "total_tablets": 84762000,
+      "donors": "Merck KGaA",
+      "delivered_pos": 7
+    },
+    {
+      "drug_code": "PZQ",
+      "drug_name": "Praziquantel",
+      "country": "Cameroon",
+      "total_pos": 12,
+      "total_tablets": 84259000,
+      "donors": "Merck KGaA",
+      "delivered_pos": 11
+    },
+    {
+      "drug_code": "PZQ",
+      "drug_name": "Praziquantel",
+      "country": "Mali",
+      "total_pos": 11,
+      "total_tablets": 74871000,
+      "donors": "Merck KGaA",
+      "delivered_pos": 10
+    },
+    {
+      "drug_code": "PZQ",
+      "drug_name": "Praziquantel",
+      "country": "Ghana",
+      "total_pos": 10,
+      "total_tablets": 69624000,
+      "donors": "Merck KGaA",
+      "delivered_pos": 10
+    },
+    {
+      "drug_code": "PZQ",
+      "drug_name": "Praziquantel",
+      "country": "Rwanda",
+      "total_pos": 14,
+      "total_tablets": 64999000,
+      "donors": "Merck KGaA",
+      "delivered_pos": 14
+    },
+    {
+      "drug_code": "PZQ",
+      "drug_name": "Praziquantel",
+      "country": "Malawi",
+      "total_pos": 8,
+      "total_tablets": 61254000,
+      "donors": "Merck KGaA",
+      "delivered_pos": 8
+    },
+    {
+      "drug_code": "PZQ",
+      "drug_name": "Praziquantel",
+      "country": "C\u00f4te d'Ivoire",
+      "total_pos": 10,
+      "total_tablets": 60624000,
+      "donors": "Merck KGaA",
+      "delivered_pos": 10
+    },
+    {
+      "drug_code": "PZQ",
+      "drug_name": "Praziquantel",
+      "country": "Uganda",
+      "total_pos": 10,
+      "total_tablets": 58842000,
+      "donors": "Merck KGaA",
+      "delivered_pos": 9
+    },
+    {
+      "drug_code": "PZQ",
+      "drug_name": "Praziquantel",
+      "country": "Burkina Faso",
+      "total_pos": 11,
+      "total_tablets": 55008000,
+      "donors": "Merck KGaA",
+      "delivered_pos": 10
+    },
+    {
+      "drug_code": "PZQ",
+      "drug_name": "Praziquantel",
+      "country": "Angola",
+      "total_pos": 11,
+      "total_tablets": 53550000,
+      "donors": "Merck KGaA",
+      "delivered_pos": 11
+    },
+    {
+      "drug_code": "PZQ",
+      "drug_name": "Praziquantel",
+      "country": "Kenya",
+      "total_pos": 10,
+      "total_tablets": 52020000,
+      "donors": "Merck KGaA",
+      "delivered_pos": 10
+    },
+    {
+      "drug_code": "PZQ",
+      "drug_name": "Praziquantel",
+      "country": "Sudan",
+      "total_pos": 4,
+      "total_tablets": 49024000,
+      "donors": "Merck KGaA",
+      "delivered_pos": 4
+    },
+    {
+      "drug_code": "PZQ",
+      "drug_name": "Praziquantel",
+      "country": "Guinea",
+      "total_pos": 11,
+      "total_tablets": 45000000,
+      "donors": "Merck KGaA",
+      "delivered_pos": 10
+    },
+    {
+      "drug_code": "PZQ",
+      "drug_name": "Praziquantel",
+      "country": "Niger",
+      "total_pos": 7,
+      "total_tablets": 43326000,
+      "donors": "Merck KGaA",
+      "delivered_pos": 7
+    },
+    {
+      "drug_code": "PZQ",
+      "drug_name": "Praziquantel",
+      "country": "Zimbabwe",
+      "total_pos": 6,
+      "total_tablets": 41211000,
+      "donors": "Merck KGaA",
+      "delivered_pos": 6
+    },
+    {
+      "drug_code": "PZQ",
+      "drug_name": "Praziquantel",
+      "country": "Senegal",
+      "total_pos": 12,
+      "total_tablets": 40279000,
+      "donors": "Merck KGaA",
+      "delivered_pos": 12
+    },
+    {
+      "drug_code": "PZQ",
+      "drug_name": "Praziquantel",
+      "country": "Egypt",
+      "total_pos": 5,
+      "total_tablets": 40174000,
+      "donors": "Merck KGaA",
+      "delivered_pos": 5
+    },
+    {
+      "drug_code": "PZQ",
+      "drug_name": "Praziquantel",
+      "country": "Zanzibar",
+      "total_pos": 10,
+      "total_tablets": 34551000,
+      "donors": "Merck KGaA",
+      "delivered_pos": 8
+    },
+    {
+      "drug_code": "PZQ",
+      "drug_name": "Praziquantel",
+      "country": "Chad",
+      "total_pos": 10,
+      "total_tablets": 33175000,
+      "donors": "Merck KGaA",
+      "delivered_pos": 9
+    },
+    {
+      "drug_code": "PZQ",
+      "drug_name": "Praziquantel",
+      "country": "Togo",
+      "total_pos": 8,
+      "total_tablets": 29385000,
+      "donors": "Merck KGaA",
+      "delivered_pos": 8
+    },
+    {
+      "drug_code": "PZQ",
+      "drug_name": "Praziquantel",
+      "country": "Burundi",
+      "total_pos": 10,
+      "total_tablets": 23877000,
+      "donors": "Merck KGaA",
+      "delivered_pos": 9
+    },
+    {
+      "drug_code": "PZQ",
+      "drug_name": "Praziquantel",
+      "country": "Benin",
+      "total_pos": 9,
+      "total_tablets": 19485000,
+      "donors": "Merck KGaA",
+      "delivered_pos": 8
+    },
+    {
+      "drug_code": "PZQ",
+      "drug_name": "Praziquantel",
+      "country": "Sierra Leone",
+      "total_pos": 7,
+      "total_tablets": 19341000,
+      "donors": "Merck KGaA",
+      "delivered_pos": 6
+    },
+    {
+      "drug_code": "PZQ",
+      "drug_name": "Praziquantel",
+      "country": "Zambia",
+      "total_pos": 3,
+      "total_tablets": 17788000,
+      "donors": "Merck KGaA",
+      "delivered_pos": 3
+    },
+    {
+      "drug_code": "PZQ",
+      "drug_name": "Praziquantel",
+      "country": "Somalia",
+      "total_pos": 5,
+      "total_tablets": 17236000,
+      "donors": "Merck KGaA",
+      "delivered_pos": 5
+    },
+    {
+      "drug_code": "PZQ",
+      "drug_name": "Praziquantel",
+      "country": "Liberia",
+      "total_pos": 8,
+      "total_tablets": 13077000,
+      "donors": "Merck KGaA",
+      "delivered_pos": 8
+    },
+    {
+      "drug_code": "PZQ",
+      "drug_name": "Praziquantel",
+      "country": "South Sudan",
+      "total_pos": 7,
+      "total_tablets": 11142000,
+      "donors": "Merck KGaA",
+      "delivered_pos": 7
+    },
+    {
+      "drug_code": "PZQ",
+      "drug_name": "Praziquantel",
+      "country": "Yemen",
+      "total_pos": 2,
+      "total_tablets": 10044000,
+      "donors": "Merck KGaA",
+      "delivered_pos": 2
+    },
+    {
+      "drug_code": "PZQ",
+      "drug_name": "Praziquantel",
+      "country": "CAR",
+      "total_pos": 7,
+      "total_tablets": 8217000,
+      "donors": "Merck KGaA",
+      "delivered_pos": 7
+    },
+    {
+      "drug_code": "PZQ",
+      "drug_name": "Praziquantel",
+      "country": "Eritrea",
+      "total_pos": 9,
+      "total_tablets": 8011000,
+      "donors": "Merck KGaA",
+      "delivered_pos": 9
+    },
+    {
+      "drug_code": "PZQ",
+      "drug_name": "Praziquantel",
+      "country": "Mauritania",
+      "total_pos": 7,
+      "total_tablets": 7911000,
+      "donors": "Merck KGaA",
+      "delivered_pos": 7
+    },
+    {
+      "drug_code": "PZQ",
+      "drug_name": "Praziquantel",
+      "country": "Gambia",
+      "total_pos": 3,
+      "total_tablets": 2574000,
+      "donors": "Merck KGaA",
+      "delivered_pos": 3
+    },
+    {
+      "drug_code": "PZQ",
+      "drug_name": "Praziquantel",
+      "country": "Laos",
+      "total_pos": 10,
+      "total_tablets": 2538000,
+      "donors": "Merck KGaA",
+      "delivered_pos": 9
+    },
+    {
+      "drug_code": "PZQ",
+      "drug_name": "Praziquantel",
+      "country": "Gabon",
+      "total_pos": 2,
+      "total_tablets": 2394000,
+      "donors": "Merck KGaA",
+      "delivered_pos": 2
+    },
+    {
+      "drug_code": "PZQ",
+      "drug_name": "Praziquantel",
+      "country": "Eswatini",
+      "total_pos": 5,
+      "total_tablets": 2106000,
+      "donors": "Merck KGaA",
+      "delivered_pos": 5
+    },
+    {
+      "drug_code": "PZQ",
+      "drug_name": "Praziquantel",
+      "country": "Guinea Bissau",
+      "total_pos": 5,
+      "total_tablets": 2007000,
+      "donors": "Merck KGaA",
+      "delivered_pos": 4
+    },
+    {
+      "drug_code": "PZQ",
+      "drug_name": "Praziquantel",
+      "country": "Congo",
+      "total_pos": 7,
+      "total_tablets": 1881000,
+      "donors": "Merck KGaA",
+      "delivered_pos": 7
+    },
+    {
+      "drug_code": "PZQ",
+      "drug_name": "Praziquantel",
+      "country": "Cambodia",
+      "total_pos": 11,
+      "total_tablets": 1512000,
+      "donors": "Merck KGaA",
+      "delivered_pos": 10
+    },
+    {
+      "drug_code": "PZQ",
+      "drug_name": "Praziquantel",
+      "country": "Botswana",
+      "total_pos": 2,
+      "total_tablets": 1413000,
+      "donors": "Merck KGaA",
+      "delivered_pos": 2
+    },
+    {
+      "drug_code": "PZQ",
+      "drug_name": "Praziquantel",
+      "country": "Equatorial Guinea",
+      "total_pos": 3,
+      "total_tablets": 981000,
+      "donors": "Merck KGaA",
+      "delivered_pos": 2
+    },
+    {
+      "drug_code": "PZQ",
+      "drug_name": "Praziquantel",
+      "country": "Indonesia",
+      "total_pos": 10,
+      "total_tablets": 786000,
+      "donors": "Merck KGaA",
+      "delivered_pos": 9
+    },
+    {
+      "drug_code": "PZQ",
+      "drug_name": "Praziquantel",
+      "country": "Namibia",
+      "total_pos": 1,
+      "total_tablets": 396000,
+      "donors": "Merck KGaA",
+      "delivered_pos": 1
+    },
+    {
+      "drug_code": "PZQ",
+      "drug_name": "Praziquantel",
+      "country": "Sao Tome and Principe",
+      "total_pos": 4,
+      "total_tablets": 252000,
+      "donors": "Merck KGaA",
+      "delivered_pos": 4
+    },
+    {
+      "drug_code": "PZQ",
+      "drug_name": "Praziquantel",
+      "country": "Switzerland",
+      "total_pos": 1,
+      "total_tablets": 27000,
+      "donors": "Merck KGaA",
+      "delivered_pos": 1
+    },
+    {
+      "drug_code": "PZQ",
+      "drug_name": "Praziquantel",
+      "country": "WHO Geneva",
+      "total_pos": 1,
+      "total_tablets": 18000,
+      "donors": "Merck KGaA",
+      "delivered_pos": 0
+    },
+    {
+      "drug_code": "PZQ",
+      "drug_name": "Praziquantel",
+      "country": "Italy",
+      "total_pos": 1,
+      "total_tablets": 400,
+      "donors": "Merck KGaA",
+      "delivered_pos": 1
+    },
+    {
+      "drug_code": "TCZ",
+      "drug_name": "Triclabendazole",
+      "country": "Bolivia",
+      "total_pos": 1,
+      "total_tablets": 586000,
+      "donors": "Merck USA",
+      "delivered_pos": 0
+    },
+    {
+      "drug_code": "TCZ",
+      "drug_name": "Triclabendazole",
+      "country": "Viet Nam",
+      "total_pos": 1,
+      "total_tablets": 15000,
+      "donors": "Merck USA",
+      "delivered_pos": 0
+    },
+    {
+      "drug_code": "TCZ",
+      "drug_name": "Triclabendazole",
+      "country": "Cambodia",
+      "total_pos": 1,
+      "total_tablets": 2000,
+      "donors": "Merck USA",
+      "delivered_pos": 0
+    },
+    {
+      "drug_code": "TCZ",
+      "drug_name": "Triclabendazole",
+      "country": "Egypt",
+      "total_pos": 1,
+      "total_tablets": 1500,
+      "donors": "Merck USA",
+      "delivered_pos": 1
+    }
+  ],
+  "reference": {
+    "drugs": {
+      "ALB": "Albendazole",
+      "DEC": "Diethylcarbamazine",
+      "IVM": "Ivermectin",
+      "MEB": "Mebendazole",
+      "PZQ": "Praziquantel",
+      "TCZ": "Triclabendazole"
+    },
+    "donors": [
+      "Eisai",
+      "GSK",
+      "J&J",
+      "Merck KGaA",
+      "Merck USA"
+    ],
+    "years": [
+      2014,
+      2015,
+      2016,
+      2017,
+      2018,
+      2019,
+      2020,
+      2021,
+      2022,
+      2023,
+      2024,
+      2025,
+      2026,
+      2027
+    ],
+    "countries": [
+      "Afghanistan",
+      "American Samoa",
+      "Angola",
+      "Azerbaijan",
+      "Bangladesh",
+      "Benin",
+      "Bhutan",
+      "Bolivia",
+      "Botswana",
+      "Brazil",
+      "Burkina Faso",
+      "Burundi",
+      "CAR",
+      "Cambodia",
+      "Cameroon",
+      "Cape Verde",
+      "Chad",
+      "Colombia",
+      "Comoros",
+      "Congo",
+      "Cook Islands",
+      "C\u00f4te d'Ivoire",
+      "DPR Korea",
+      "DRC",
+      "Dominican Republic",
+      "Egypt",
+      "El Salvador",
+      "Equatorial Guinea",
+      "Eritrea",
+      "Eswatini",
+      "Ethiopia",
+      "Fed States of Mic",
+      "Fiji",
+      "French Polynesia",
+      "Gabon",
+      "Gambia",
+      "Georgia",
+      "Ghana",
+      "Guatemala",
+      "Guinea",
+      "Guinea Bissau",
+      "Guyana",
+      "Haiti",
+      "Honduras",
+      "India",
+      "Indonesia",
+      "Iraq",
+      "Israel",
+      "Italy",
+      "Jordan",
+      "Kenya",
+      "Kiribati",
+      "Kyrgyzstan",
+      "Laos",
+      "Lebanon",
+      "Lesotho",
+      "Liberia",
+      "Madagascar",
+      "Malawi",
+      "Malaysia",
+      "Maldives",
+      "Mali",
+      "Marshall Islands",
+      "Mauritania",
+      "Mozambique",
+      "Myanmar",
+      "Namibia",
+      "Nepal",
+      "Nicaragua",
+      "Niger",
+      "Nigeria",
+      "Pakistan",
+      "Papua New Guinea",
+      "Paraguay",
+      "Philippines",
+      "Rwanda",
+      "Samoa",
+      "Sao Tome and Principe",
+      "Senegal",
+      "Sierra Leone",
+      "Solomon Islands",
+      "Somalia",
+      "South Africa",
+      "South Sudan",
+      "Sri Lanka",
+      "Sudan",
+      "Switzerland",
+      "Syria",
+      "Tajikistan",
+      "Tanzania",
+      "Thailand",
+      "Timor-Leste",
+      "Togo",
+      "Tonga",
+      "Tuvalu",
+      "Uganda",
+      "United Arab Emirates",
+      "Uzbekistan",
+      "Vanuatu",
+      "Viet Nam",
+      "WHO Geneva",
+      "Yemen",
+      "Zambia",
+      "Zanzibar",
+      "Zimbabwe"
+    ],
+    "delivery_statuses": [
+      "Delivered",
+      "In Transit",
+      "In Pipeline",
+      "Pre-Shipment"
+    ],
+    "pipeline_stages": [
+      "Application Submitted",
+      "Application Approved",
+      "PO Raised",
+      "PO Issued",
+      "PO Acknowledged",
+      "PO Packed",
+      "GL Requested",
+      "GL Approved",
+      "Booked",
+      "Departed",
+      "Arrived",
+      "Customs Cleared",
+      "Delivered"
+    ]
+  }
+}
