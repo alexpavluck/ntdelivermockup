@@ -379,13 +379,13 @@ nav {
   <div class="nav-item" onclick="setPage('pharma')">💊 Pharma</div>
   <div class="nav-divider"></div>
   <div class="nav-item" onclick="setPage('api')">⚡ Data &amp; API</div>
-  <div class="nav-item" onclick="setPage('assistant')">✨ PO AI Assistant</div>
 
-  <div class="nav-search">
+  <div class="nav-search" onclick="setPage('assistant')" style="cursor:pointer" title="Open PO AI Assistant">
     <svg width="13" height="13" fill="none" stroke="rgba(255,255,255,.5)" stroke-width="2" viewBox="0 0 24 24">
       <circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/>
     </svg>
-    <input placeholder="Enter PO number or search…">
+    <span style="font-size:11px;color:rgba(255,255,255,.55);font-weight:600;letter-spacing:.2px;white-space:nowrap">PO AI Assistant</span>
+    <span style="font-size:10px;background:rgba(255,255,255,.15);color:rgba(255,255,255,.8);padding:2px 7px;border-radius:99px;margin-left:4px;font-weight:600">✨ Ask</span>
   </div>
   <div class="nav-user">
     <div class="avatar">A</div>
@@ -393,10 +393,6 @@ nav {
   </div>
 </nav>
 
-<!-- mockup hint (subtle, single line) -->
-<div style="background:#f0f4fb;border-bottom:1px solid var(--border);padding:5px 24px;font-size:11px;color:var(--muted)">
-  🎨 <strong style="color:var(--navy)">Mockup</strong> — use the nav above to switch between workspaces and tools
-</div>
 
 
 <!-- ══════════════════════════════════════
