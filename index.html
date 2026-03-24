@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>NTDeliver — Workspace Redesign Mockup</title>
+<title>NTDeliver — Redesign Mockup</title>
 <style>
 /* ── Reset & base ── */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -71,24 +71,78 @@ nav {
   font-size: 12px; display: flex; align-items: center; justify-content: center;
 }
 
-/* ── Mockup tab bar ── */
-.mockup-bar {
-  background: #eaecf4; border-bottom: 2px solid var(--border);
-  display: flex; padding: 0 24px; gap: 2px; overflow-x: auto;
+/* ── Chat UI (PO Assistant) ── */
+.chat-shell {
+  display: flex; flex-direction: column; height: calc(100vh - 52px);
+  background: #eef1f8;
 }
-.mockup-tab {
-  padding: 9px 18px; font-size: 12px; font-weight: 600;
-  color: var(--muted); cursor: pointer;
-  border-bottom: 3px solid transparent; margin-bottom: -2px;
-  white-space: nowrap; transition: color .15s;
+.chat-header {
+  background: var(--navy); color: #fff; padding: 14px 32px;
+  display: flex; align-items: center; gap: 14px;
+  border-bottom: 1px solid rgba(255,255,255,.1);
 }
-.mockup-tab:hover { color: var(--navy); }
-.mockup-tab.active { color: var(--navy); border-bottom-color: var(--orange); }
-.mockup-notice {
-  padding: 6px 24px; background: #fff6ec; font-size: 11px;
-  color: #7a4200; border-bottom: 1px solid #fcd8aa;
-  display: flex; align-items: center; gap: 6px;
+.chat-header-icon {
+  width: 40px; height: 40px; border-radius: 10px;
+  background: linear-gradient(135deg,#1a6fc4,#0aa6a6);
+  display: flex; align-items: center; justify-content: center; font-size: 20px;
 }
+.chat-header-title { font-size: 16px; font-weight: 800; }
+.chat-header-sub   { font-size: 11px; opacity: .6; margin-top: 2px; }
+.chat-messages {
+  flex: 1; overflow-y: auto; padding: 28px 0;
+  display: flex; flex-direction: column; gap: 18px; align-items: center;
+}
+.chat-bubble-wrap { width: 100%; max-width: 760px; display: flex; gap: 10px; align-items: flex-start; }
+.chat-bubble-wrap.user { flex-direction: row-reverse; }
+.chat-avatar {
+  width: 32px; height: 32px; border-radius: 50%; flex-shrink: 0;
+  display: flex; align-items: center; justify-content: center; font-size: 14px; font-weight: 700;
+}
+.chat-avatar.ai   { background: linear-gradient(135deg,#1a6fc4,#0aa6a6); color: #fff; }
+.chat-avatar.user { background: var(--orange); color: #fff; }
+.chat-bubble {
+  max-width: 82%; padding: 12px 16px; border-radius: 14px; font-size: 13px; line-height: 1.65;
+}
+.chat-bubble.ai   { background: #fff; border: 1px solid var(--border);
+                    border-top-left-radius: 3px; color: var(--text); }
+.chat-bubble.user { background: var(--navy); color: #fff; border-top-right-radius: 3px; }
+.chat-bubble strong { color: var(--blue); }
+.chat-bubble.ai strong { color: var(--navy); }
+.chat-chips {
+  display: flex; flex-wrap: wrap; gap: 8px; margin-top: 14px;
+  max-width: 760px; width: 100%;
+}
+.chat-chip {
+  padding: 6px 14px; border: 1.5px solid var(--border); border-radius: 99px;
+  font-size: 12px; color: var(--text); background: #fff; cursor: pointer;
+  transition: all .15s; font-weight: 500;
+}
+.chat-chip:hover { border-color: var(--blue); color: var(--blue); background: #f0f5ff; }
+.chat-input-bar {
+  padding: 16px 32px; background: #fff; border-top: 1px solid var(--border);
+  display: flex; flex-direction: column; align-items: center; gap: 10px;
+}
+.chat-input-row {
+  display: flex; gap: 10px; width: 100%; max-width: 760px; align-items: center;
+}
+.chat-input {
+  flex: 1; padding: 12px 18px; border: 1.5px solid var(--border); border-radius: 99px;
+  font-size: 13px; outline: none; background: #f8faff;
+  transition: border-color .15s;
+}
+.chat-input:focus { border-color: var(--blue); background: #fff; }
+.chat-send {
+  padding: 12px 22px; background: var(--navy); color: #fff; border: none;
+  border-radius: 99px; font-size: 13px; font-weight: 700; cursor: pointer;
+}
+.chat-send:hover { background: var(--blue); }
+/* result table inside a bubble */
+.bubble-table { width: 100%; border-collapse: collapse; font-size: 12px; margin-top: 8px; }
+.bubble-table th { background: #f0f4fb; padding: 6px 10px; text-align: left;
+                   font-size: 10px; text-transform: uppercase; letter-spacing:.4px;
+                   color: var(--muted); border-bottom: 1px solid var(--border); }
+.bubble-table td { padding: 7px 10px; border-bottom: 1px solid #f0f3f8; }
+.bubble-table tr:last-child td { border-bottom: none; }
 
 /* ── Page visibility ── */
 .page { display: none; }
@@ -323,11 +377,9 @@ nav {
   <div class="nav-item active" onclick="setPage('country')">🌍 Country</div>
   <div class="nav-item" onclick="setPage('donor')">🤝 Partner / Donor</div>
   <div class="nav-item" onclick="setPage('pharma')">💊 Pharma</div>
-
   <div class="nav-divider"></div>
-  <div class="nav-item" style="opacity:.55">All Tools &amp; Reports</div>
-  <div class="nav-item" style="opacity:.55">Data &amp; API</div>
-  <div class="nav-item" style="opacity:.55">Support</div>
+  <div class="nav-item" onclick="setPage('api')">⚡ Data &amp; API</div>
+  <div class="nav-item" onclick="setPage('assistant')">✨ PO AI Assistant</div>
 
   <div class="nav-search">
     <svg width="13" height="13" fill="none" stroke="rgba(255,255,255,.5)" stroke-width="2" viewBox="0 0 24 24">
@@ -341,13 +393,10 @@ nav {
   </div>
 </nav>
 
-<!-- mockup tab bar -->
-<div class="mockup-bar">
-  <div class="mockup-tab active" data-page="country" onclick="setPage('country')">🌍 Country Workspace</div>
-  <div class="mockup-tab" data-page="donor"   onclick="setPage('donor')">🤝 Partner / Donor Workspace</div>
-  <div class="mockup-tab" data-page="pharma"  onclick="setPage('pharma')">💊 Pharma Workspace</div>
+<!-- mockup hint (subtle, single line) -->
+<div style="background:#f0f4fb;border-bottom:1px solid var(--border);padding:5px 24px;font-size:11px;color:var(--muted)">
+  🎨 <strong style="color:var(--navy)">Mockup</strong> — use the nav above to switch between workspaces and tools
 </div>
-<div class="mockup-notice">🎨 <strong>Mockup</strong> — click tabs to switch workspaces · click any "Open" button to see detail screens</div>
 
 
 <!-- ══════════════════════════════════════
@@ -1022,27 +1071,299 @@ nav {
 </div>
 </div><!-- /pharma -->
 
+<!-- ══════════════════════════════════════
+     DATA & API PAGE
+══════════════════════════════════════ -->
+<div class="page" id="page-api">
+<div class="container">
+
+  <div class="ws-hero" style="background:linear-gradient(135deg,#1e2d6b 0%,#1a5a9a 100%);margin-bottom:20px">
+    <h1>⚡ Data &amp; API</h1>
+    <div class="sub">Connect NTDeliver data to your own systems — DHIS2, Power BI, Tableau, Metabase, or any custom dashboard. Role-based access ensures each organisation sees only the data it's entitled to.</div>
+    <div class="pill-row">
+      <div class="pill blue"><span class="dot"></span> 4 API endpoints</div>
+      <div class="pill blue"><span class="dot"></span> Role-based access</div>
+      <div class="pill blue"><span class="dot"></span> Stable schemas · column dictionaries</div>
+    </div>
+  </div>
+
+  <div class="two-col">
+    <!-- API catalog -->
+    <div style="display:flex;flex-direction:column;gap:12px">
+      <div style="font-size:13px;font-weight:800;color:var(--navy);margin-bottom:4px">API Catalog</div>
+
+      <div class="card" style="padding:16px 18px;display:flex;gap:14px;align-items:flex-start">
+        <div style="font-size:10px;font-weight:800;padding:4px 8px;border-radius:5px;background:#d4f4e6;color:#0a6b3b;flex-shrink:0;margin-top:2px">GET</div>
+        <div>
+          <div style="font-weight:700;font-size:13px;color:var(--navy)">Shipments API</div>
+          <code style="font-size:11px;color:var(--blue);background:#f0f5ff;padding:2px 6px;border-radius:4px">/api/v1/shipments</code>
+          <div style="font-size:11px;color:var(--muted);margin-top:5px;line-height:1.5">POs, shipment lines, status, dates, quantities, donor, and pharma. Filterable by country, year, drug, and stage.</div>
+        </div>
+      </div>
+
+      <div class="card" style="padding:16px 18px;display:flex;gap:14px;align-items:flex-start">
+        <div style="font-size:10px;font-weight:800;padding:4px 8px;border-radius:5px;background:#d4f4e6;color:#0a6b3b;flex-shrink:0;margin-top:2px">GET</div>
+        <div>
+          <div style="font-weight:700;font-size:13px;color:var(--navy)">Inventory API</div>
+          <code style="font-size:11px;color:var(--blue);background:#f0f5ff;padding:2px 6px;border-radius:4px">/api/v1/inventory</code>
+          <div style="font-size:11px;color:var(--muted);margin-top:5px;line-height:1.5">On-hand quantities by batch, warehouse location, and expiry date.</div>
+        </div>
+      </div>
+
+      <div class="card" style="padding:16px 18px;display:flex;gap:14px;align-items:flex-start">
+        <div style="font-size:10px;font-weight:800;padding:4px 8px;border-radius:5px;background:#d4f4e6;color:#0a6b3b;flex-shrink:0;margin-top:2px">GET</div>
+        <div>
+          <div style="font-weight:700;font-size:13px;color:var(--navy)">Planning &amp; MDA API</div>
+          <code style="font-size:11px;color:var(--blue);background:#f0f5ff;padding:2px 6px;border-radius:4px">/api/v1/mda-plans</code>
+          <div style="font-size:11px;color:var(--muted);margin-top:5px;line-height:1.5">Planned MDA rounds, target populations, and quantities needed per drug and country.</div>
+        </div>
+      </div>
+
+      <div class="card" style="padding:16px 18px;display:flex;gap:14px;align-items:flex-start">
+        <div style="font-size:10px;font-weight:800;padding:4px 8px;border-radius:5px;background:#d4f4e6;color:#0a6b3b;flex-shrink:0;margin-top:2px">GET</div>
+        <div>
+          <div style="font-weight:700;font-size:13px;color:var(--navy)">KPIs &amp; Analytics API</div>
+          <code style="font-size:11px;color:var(--blue);background:#f0f5ff;padding:2px 6px;border-radius:4px">/api/v1/kpis</code>
+          <div style="font-size:11px;color:var(--muted);margin-top:5px;line-height:1.5">Pre-aggregated indicators by country, year, and product — where agreements allow.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Right column: recipes + access -->
+    <div style="display:flex;flex-direction:column;gap:14px">
+      <div style="font-size:13px;font-weight:800;color:var(--navy);margin-bottom:4px">Quick-start recipes</div>
+
+      <div class="card" style="padding:14px 16px">
+        <div style="font-weight:700;font-size:13px;margin-bottom:8px">📡 Get next 6 months of shipments for a country</div>
+        <div style="background:#1a2340;color:#a8d8ff;font-family:monospace;font-size:11px;border-radius:8px;padding:12px 14px;line-height:1.7">
+          <span style="color:#ff9eb5">GET</span> /api/v1/shipments?country=<span style="color:#a8ffb0">NGA</span><br>
+          &nbsp;&nbsp;&amp;after=<span style="color:#a8ffb0">2025-03-01</span>&amp;before=<span style="color:#a8ffb0">2025-09-01</span><br>
+          Authorization: Bearer <span style="color:#ffd580">YOUR_API_KEY</span>
+        </div>
+      </div>
+
+      <div class="card" style="padding:14px 16px">
+        <div style="font-weight:700;font-size:13px;margin-bottom:8px">📊 Compare MDA plans to stock on hand</div>
+        <div style="background:#1a2340;color:#a8d8ff;font-family:monospace;font-size:11px;border-radius:8px;padding:12px 14px;line-height:1.7">
+          <span style="color:#ff9eb5">GET</span> /api/v1/mda-plans?country=<span style="color:#a8ffb0">NGA</span>&amp;year=<span style="color:#ffd580">2025</span><br>
+          <span style="color:#ff9eb5">GET</span> /api/v1/inventory?country=<span style="color:#a8ffb0">NGA</span><br>
+          <span style="color:#6b7a99"># Join on drug code to compute adequacy gap</span>
+        </div>
+      </div>
+
+      <div class="card" style="padding:16px 18px">
+        <div class="card-title">Access &amp; governance</div>
+        <div style="display:flex;flex-direction:column;gap:8px;font-size:12px">
+          <div><span class="sdot g"></span><strong>Country users</strong> — own country data only</div>
+          <div><span class="sdot" style="background:var(--blue)"></span><strong>Donor / Partner</strong> — portfolio countries</div>
+          <div><span class="sdot o"></span><strong>Pharma</strong> — global or own products (per agreement)</div>
+        </div>
+        <div style="margin-top:12px;padding:10px 12px;background:#f0f5ff;border-radius:8px;font-size:11px;color:var(--navy)">
+          🔑 API keys, rate limits, and full documentation available after login. Integrates with DHIS2, Power BI, Tableau, and Metabase.
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+</div><!-- /api -->
+
+
+<!-- ══════════════════════════════════════
+     PO AI ASSISTANT PAGE
+══════════════════════════════════════ -->
+<div class="page" id="page-assistant">
+  <div class="chat-shell">
+
+    <!-- Chat header -->
+    <div class="chat-header">
+      <div class="chat-header-icon">✨</div>
+      <div>
+        <div class="chat-header-title">NTD Medicines — PO Assistant</div>
+        <div class="chat-header-sub">2,166 purchase orders · 100 countries · 6 donors · 2006–2025</div>
+      </div>
+    </div>
+
+    <!-- Messages -->
+    <div class="chat-messages" id="chat-messages">
+
+      <!-- AI greeting -->
+      <div class="chat-bubble-wrap">
+        <div class="chat-avatar ai">✨</div>
+        <div class="chat-bubble ai">
+          Hello! I have access to <strong>2,166 purchase orders</strong> across <strong>100 countries</strong>.<br><br>
+          Ask me about a country, drug, donor, or pipeline stage — or look up any PO by number.
+        </div>
+      </div>
+
+      <!-- Quick-start chips -->
+      <div class="chat-chips">
+        <div class="chat-chip" onclick="sendChip(this, 'Overview')">Overview</div>
+        <div class="chat-chip" onclick="sendChip(this, 'GSK summary')">GSK summary</div>
+        <div class="chat-chip" onclick="sendChip(this, 'Albendazole')">Albendazole</div>
+        <div class="chat-chip" onclick="sendChip(this, 'POs in transit')">POs in transit</div>
+        <div class="chat-chip" onclick="sendChip(this, 'Delivered orders')">Delivered orders</div>
+        <div class="chat-chip" onclick="sendChip(this, 'Kenya 2024')">Kenya 2024</div>
+        <div class="chat-chip" onclick="sendChip(this, 'ALB delivered')">ALB delivered</div>
+        <div class="chat-chip" onclick="sendChip(this, 'Orders by donor')">Orders by donor</div>
+        <div class="chat-chip" onclick="sendChip(this, 'Countries by drug')">Countries by drug</div>
+      </div>
+
+    </div>
+
+    <!-- Input bar -->
+    <div class="chat-input-bar">
+      <div class="chat-input-row">
+        <input class="chat-input" id="chat-input" placeholder="Ask about POs, drugs, countries, donors…" onkeydown="if(event.key==='Enter')sendMessage()">
+        <button class="chat-send" onclick="sendMessage()">Send</button>
+      </div>
+    </div>
+
+  </div>
+</div><!-- /assistant -->
+
+
 <script>
 function setPage(id) {
   document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
-  document.querySelectorAll('.mockup-tab').forEach(t => t.classList.remove('active'));
   document.querySelectorAll('.nav-item').forEach(n => n.classList.remove('active'));
 
   const pg = document.getElementById('page-' + id);
   if (pg) pg.classList.add('active');
 
-  // highlight tab bar
-  const root = id.split('-')[0]; // 'country', 'donor', 'pharma'
-  const tab = document.querySelector('[data-page="' + root + '"]');
-  if (tab) tab.classList.add('active');
-
-  // highlight nav
-  const navMap = { country:'🌍 Country', donor:'🤝 Partner / Donor', pharma:'💊 Pharma' };
+  // highlight correct nav item
+  const navLabels = {
+    'country': '🌍', 'country-mda': '🌍',
+    'donor':   '🤝',
+    'pharma':  '💊',
+    'api':     '⚡',
+    'assistant': '✨'
+  };
+  const emoji = navLabels[id] || '';
   document.querySelectorAll('.nav-item').forEach(n => {
-    if (n.textContent.trim().startsWith(navMap[root]?.slice(0,3) || '___')) n.classList.add('active');
+    if (emoji && n.textContent.trim().startsWith(emoji)) n.classList.add('active');
   });
 
   window.scrollTo(0, 0);
+}
+
+// ── PO Assistant demo interactions ──
+const demoReplies = {
+  'Overview': {
+    text: 'Here\'s a snapshot of the full dataset:',
+    table: {
+      headers: ['Metric', 'Value'],
+      rows: [
+        ['Total POs', '2,166'],
+        ['Countries covered', '100'],
+        ['Donors', '6 (Eisai, Merck, GSK, J&J, Novartis, LEP)'],
+        ['Year range', '2006 – 2025'],
+        ['Drugs tracked', 'IVM, ALB, PZQ, DEC, MBD'],
+        ['Active POs (2025)', '28'],
+      ]
+    }
+  },
+  'GSK summary': {
+    text: 'GSK has contributed <strong>312 POs</strong> across 48 countries since 2006, primarily for Albendazole. Here\'s the recent picture:',
+    table: {
+      headers: ['Year', 'POs', 'Tablets shipped', 'Countries'],
+      rows: [
+        ['2023', '41', '320M', '38'],
+        ['2024', '38', '298M', '35'],
+        ['2025 YTD', '12', '94M', '22'],
+      ]
+    }
+  },
+  'POs in transit': {
+    text: 'There are currently <strong>28 active POs</strong> in transit. Here are the most time-sensitive:',
+    table: {
+      headers: ['PO Number', 'Country', 'Drug', 'Qty', 'ETA', 'MDA in'],
+      rows: [
+        ['203692980', 'Myanmar', 'ALB', '2.8M', 'Mar 28', '18 days'],
+        ['203757763', 'Nigeria', 'ALB', '4.2M', 'Apr 14', '42 days'],
+        ['203678419', 'Zambia', 'IVM', '1.8M', 'May 3', '56 days'],
+        ['203576831', 'Indonesia', 'PZQ', '900K', 'May 22', '90 days'],
+      ]
+    }
+  },
+  'Kenya 2024': {
+    text: 'Kenya received <strong>4 POs</strong> in 2024 across IVM and ALB:',
+    table: {
+      headers: ['PO Number', 'Drug', 'Qty', 'Donor', 'Stage'],
+      rows: [
+        ['203512001', 'IVM', '1.4M', 'Merck', 'Delivered'],
+        ['203512002', 'ALB', '2.1M', 'GSK', 'Delivered'],
+        ['203512088', 'IVM', '600K', 'Merck', 'Delivered'],
+        ['203512099', 'ALB', '800K', 'GSK', 'Delivered'],
+      ]
+    }
+  },
+  'default': {
+    text: 'I\'ve searched the PO database for that query. Here\'s what I found across <strong>2,166 purchase orders</strong>. You can ask me to filter by country, drug, donor, year, or pipeline stage — or look up a specific PO number directly.',
+    table: null
+  }
+};
+
+function sendChip(el, text) {
+  el.style.display = 'none';
+  addMessage(text, 'user');
+  setTimeout(() => {
+    const reply = demoReplies[text] || demoReplies['default'];
+    addAIReply(reply);
+  }, 600);
+}
+
+function sendMessage() {
+  const input = document.getElementById('chat-input');
+  const text = input.value.trim();
+  if (!text) return;
+  input.value = '';
+  addMessage(text, 'user');
+  setTimeout(() => addAIReply(demoReplies['default']), 700);
+}
+
+function addMessage(text, role) {
+  const msgs = document.getElementById('chat-messages');
+  const wrap = document.createElement('div');
+  wrap.className = 'chat-bubble-wrap' + (role === 'user' ? ' user' : '');
+  const avatar = document.createElement('div');
+  avatar.className = 'chat-avatar ' + role;
+  avatar.textContent = role === 'user' ? 'A' : '✨';
+  const bubble = document.createElement('div');
+  bubble.className = 'chat-bubble ' + role;
+  bubble.innerHTML = text;
+  wrap.appendChild(avatar);
+  wrap.appendChild(bubble);
+  msgs.appendChild(wrap);
+  msgs.scrollTop = msgs.scrollHeight;
+}
+
+function addAIReply(reply) {
+  const msgs = document.getElementById('chat-messages');
+  const wrap = document.createElement('div');
+  wrap.className = 'chat-bubble-wrap';
+  const avatar = document.createElement('div');
+  avatar.className = 'chat-avatar ai';
+  avatar.textContent = '✨';
+  const bubble = document.createElement('div');
+  bubble.className = 'chat-bubble ai';
+  let html = '<p>' + reply.text + '</p>';
+  if (reply.table) {
+    html += '<table class="bubble-table" style="margin-top:10px"><thead><tr>';
+    reply.table.headers.forEach(h => { html += '<th>' + h + '</th>'; });
+    html += '</tr></thead><tbody>';
+    reply.table.rows.forEach(row => {
+      html += '<tr>';
+      row.forEach(cell => { html += '<td>' + cell + '</td>'; });
+      html += '</tr>';
+    });
+    html += '</tbody></table>';
+  }
+  bubble.innerHTML = html;
+  wrap.appendChild(avatar);
+  wrap.appendChild(bubble);
+  msgs.appendChild(wrap);
+  msgs.scrollTop = msgs.scrollHeight;
 }
 </script>
 </body>
